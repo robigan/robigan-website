@@ -1,40 +1,29 @@
 .nav {
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100% - 10px;
+  width: 20%;
   height: max-content;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  top: 15%;
+  left: 40%;
+  right: 40%;
   position: absolute;
   display: flex;
-  flex-flow: row wrap;
-  border-radius: 10px 25px 10px 25px;
+  flex-flow: column wrap;
 }
 
-.nav p {
+.nav a {
   margin: 10px;
   padding: 5px;
-  background-color: rgba(255, 255, 255, 0);
   border-radius: 5px;
   font-size: 3em;
-}
-
-.nav p:hover {
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-.content {
-  top: 50%;
-  position: absolute;
-  width: 50%;
-  left: 25%;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 25px;
-}
-
-.content-text {
-  margin: 1%;
   text-align: center;
-  font-size: 1.5em;
+  color: red;
+  background-color: #10101c;
+}
+
+.main-text {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  color: rgb(143, 143, 143)
 }

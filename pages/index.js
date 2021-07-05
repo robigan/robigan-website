@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -10,16 +11,17 @@ export default function Home() {
                 <meta name="description" content="Robigan's homepage" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div style={{backgroundColor: "blue", width: "100%"}}>
-                {<Image src="/images/background-homepage.jpeg" alt="Background Image" layout="fill" />
-                }
+            <Image src="/images/bg-homepage3.jpeg" alt="Background Image" layout="fill" />
+            <div>
                 <nav className={styles.nav}>
-                    <p>Test</p>
-                    <p>Test 2</p>
+                    <Link href="/about">
+                        <a>Start</a>
+                    </Link>
+                    <Link href="/contact">
+                        <a>Contact</a>
+                    </Link>
                 </nav>
-                <div className={styles.content}>
-                    <p className={styles["content-text"]}>I am a teenaged web developer that likes dipping his hands into anything, from setting up servers to making full stack apps. I am proficient in JavaScript and Lua, I can also script in Python and Java.</p>
-                </div>
+                <h1 className={styles["main-text"]} style={{fontSize: "3em"}}>robigan</h1>
             </div>
         </>
     );
