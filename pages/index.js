@@ -10,13 +10,16 @@ export default function Home() {
                 <meta name="description" content="Robigan's homepage" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div>
-                <Image src="/images/background-homepage.jpeg" alt="Background Image" layout="fill" />
+            <div style={{backgroundColor: "blue", width: "100%"}}>
+                {<Image src="/images/background-homepage.jpeg" alt="Background Image" layout="fill" />
+                }
                 <nav className={styles.nav}>
                     <p>Test</p>
                     <p>Test 2</p>
                 </nav>
-                <p className={styles["content-text"]}>I am a teenaged web developer that likes dipping his hands into anything, from setting up servers to making full stack apps. I am proficient in JavaScript and Lua, I can also script in Python and Java.</p>
+                <div className={styles.content}>
+                    <p className={styles["content-text"]}>I am a teenaged web developer that likes dipping his hands into anything, from setting up servers to making full stack apps. I am proficient in JavaScript and Lua, I can also script in Python and Java.</p>
+                </div>
             </div>
         </>
     );
