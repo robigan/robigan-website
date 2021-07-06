@@ -1,29 +1,11 @@
-.nav {
-  width: 20%;
-  height: max-content;
+.UIParent {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 15%;
   top: 15%;
-  left: 40%;
-  right: 40%;
-  position: absolute;
+  right: 15%;
   display: flex;
-  flex-flow: column wrap;
-}
-
-.nav a {
-  margin: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 3em;
-  text-align: center;
-  color: red;
-  background-color: #10101c;
-}
-
-.main-text {
-  position: absolute;
-  top: 70%;
-  left: 45%;
-  width: 10%;
-  text-align: center;
-  color: rgb(143, 143, 143)
+  flex-flow: column wrap-reverse;
+  justify-content: center;
 }

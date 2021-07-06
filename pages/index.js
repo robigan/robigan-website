@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+import UIBox from "../components/UIBox";
+import Console from "../components/Console";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -11,17 +12,19 @@ export default function Home() {
                 <meta name="description" content="Robigan's homepage" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Image src="/images/bg-homepage3.jpeg" alt="Background Image" layout="fill" />
-            <div>
-                <nav className={styles.nav}>
-                    <Link href="/about">
-                        <a>Start</a>
-                    </Link>
-                    <Link href="/contact">
-                        <a>Contact</a>
-                    </Link>
-                </nav>
-                <h1 className={styles["main-text"]} style={{fontSize: "3em"}}>robigan</h1>
+            <Image src="/images/bg-homepage2.jpeg" alt="Background Image" layout="fill" />
+            <div className={styles.UIParent}>
+                <UIBox StyleState={{ order: 0 }} props={<p>Lorem Ipsum Dolor</p>} />
+                <UIBox StyleState={{ order: 1 }} props={
+                    <>
+                        <p>To Do:</p>
+                        <p>Fix the flexbox container</p>
+                        <p>Fix relative positions</p>
+                        <p>Make the console lineAdd() function</p>
+                        <p>Learn about lifting states</p>
+                    </>
+                } />
+                <UIBox StyleState={{ order: 2, flexGrow: 0.5, borderRadius: "10px" }} props={<Console />} />
             </div>
         </>
     );
