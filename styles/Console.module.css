@@ -8,14 +8,20 @@
 }
 
 .ConsoleInput {
-    position: relative;
     top: 90%;
     height: 5%;
     width: 100%;
     background-color: rgba(0,0,0,0);
     border: none;
-    border-width: 0px;
+    border-top: solid;
+    border-width: 2px;
     color: greenyellow;
+}
+
+.ConsoleContent {
+    position: relative;
+    width: inherit;
+    height: 95%;
 }
 
 .ConsoleLine {

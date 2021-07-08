@@ -5,6 +5,8 @@ import Console from "../components/Console";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+    const ConsoleState = {};
+
     return (
         <>
             <Head>
@@ -24,7 +26,7 @@ export default function Home() {
                         <p>Learn about lifting states</p>
                     </>
                 } />
-                <UIBox StyleState={{ order: 2, flexGrow: 0.5, borderRadius: "10px" }} props={<Console />} />
+                <UIBox StyleState={{ order: 2, flexGrow: 0.5, borderRadius: "10px" }} props={<Console ConsoleState={ConsoleState} />} />
             </div>
         </>
     );
