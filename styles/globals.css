@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, 'Montserrat', sans-serif;
   color: white;
-  background: black;
+  background: tomato;
 }
 
 a {
@@ -12,6 +12,19 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: inherit;
+}
+
 * {
   box-sizing: border-box;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+h1 {
+  font-size: 1.5em;
 }
