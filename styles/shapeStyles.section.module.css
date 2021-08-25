@@ -1,0 +1,32 @@
+.Tilt1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.Tilt1 svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 100px;
+}
+
+.Wavy1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.Wavy1 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 125px;
+}

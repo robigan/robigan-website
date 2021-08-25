@@ -1,0 +1,10 @@
+.contacts {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.contacts svg {
+    margin-right: 10px;
+    margin-left: 10px;
+}

@@ -1,0 +1,8 @@
+.Sections section {
+    padding: 5vh 10vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 350px;
+  }
