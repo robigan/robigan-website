@@ -49,5 +49,5 @@ jobs:
         continue-on-error: true
 
       - name: Report non up-to date dependencies
-        if: ${{ steps.check-deps.conclusion == "success" }}
+        if: ${{ steps.check-deps.conclusion == 'success' }}
         run: npm run available-ups
