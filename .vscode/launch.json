@@ -11,6 +11,9 @@
                 "run-script",
                 "dev"
             ],
+            "env": {
+                "NODE_ENV": "developments"
+            },
             "runtimeExecutable": "npm",
             "skipFiles": [
                 "<node_internals>/**"
