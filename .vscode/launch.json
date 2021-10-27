@@ -12,7 +12,7 @@
                 "dev"
             ],
             "env": {
-                "NODE_ENV": "developments"
+                "NODE_ENV": "development"
             },
             "runtimeExecutable": "npm",
             "skipFiles": [

@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Change from "../components/Change.js";
 import "../styles/changes.module.css";
 
 export async function getStaticProps() {
@@ -19,25 +21,15 @@ export async function getStaticProps() {
     };
 }
 
-function Change({ commit }) {
-    return (
-        <div className="container bg-gray-500 bg-opacity-50 rounded m-2">
-            <h1 className="font-bold">Commit Message &quot;{commit.commit.message}&quot;</h1>
-            <h3>ID: {commit.sha}</h3>
-            {
-                commit.commit.verification.verified ? 
-                    <h3 className="text-green-300 border-gray-400 hover:border-green-300 rounded-full border-2 w-min p-1 min-w-max">Verified</h3> : 
-                    <h3 className="text-red-300 border-gray-400 hover:border-red-300 rounded-full border-2 w-min p-1 min-w-max">Not Verified</h3>
-            }
-        </div>
-    );
-}
-
 export default function Changes({ commits }) {
     return (
         <>
+            <Head>
+                <title>Robigan - Changes</title>
+                <meta name="description" content="A page for seeing all the changes made on the main github repo's branch" />
+            </Head>
             {commits.map((commit) => {
-                return Change({ commit: commit});
+                return Change({ commit: commit });
             })}
         </>
     );
