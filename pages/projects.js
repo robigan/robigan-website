@@ -1,5 +1,5 @@
 export default function Projects() {
     return (
-        <h1>This page is still under construction, please comeback later</h1>
+        <h1 style={{color: "black"}}>This page is still under construction, please comeback later</h1>
     );
 }

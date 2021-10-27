@@ -9,6 +9,7 @@ body {
   font-family: -apple-system, 'Montserrat', sans-serif;
   color: white;
   /* background-color: tomato; */
+  overscroll-behavior-x: none;
 }
 
 a {
