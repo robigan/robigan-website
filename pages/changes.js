@@ -29,6 +29,7 @@ export default function Changes({ commits }) {
                 <meta name="description" content="A page for seeing all the changes made on the main github repo's branch" />
             </Head>
             <PageSelector></PageSelector>
+            <h1 className="text-black text-center">This page is still under construction</h1>
             {commits.map((commit) => {
                 return Change({ commit: commit });
             })}
