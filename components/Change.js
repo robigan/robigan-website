@@ -2,7 +2,7 @@ export default function Change({ commit }) {
     console.log(commit.commit.message);
 
     return (
-        <div className="container bg-gray-500 bg-opacity-50 rounded m-2 flex justify-between flex-row w-full" key={commit.sha}>
+        <div className="bg-gray-500 bg-opacity-80 rounded my-2 flex justify-between flex-row container mx-auto" key={commit.sha}>
             <div className="m-2">
                 <h1 className="font-bold">{(commit.commit.message.split("\n"))[0]}</h1>
                 <h3>{`${commit.commit.author.name} commited on ${commit.commit.author.date}`}</h3>
