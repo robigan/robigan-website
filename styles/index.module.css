@@ -1,8 +1,12 @@
 .Sections section {
-    padding: 5vh 10vw;
+    padding: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 350px;
   }
+
+.Sections section div[sectionpadding="true"] {
+  padding: 5vh 10vw;
+}
