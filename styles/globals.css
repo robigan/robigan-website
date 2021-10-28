@@ -1,10 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, 'Montserrat', sans-serif;
   color: white;
-  background-color: tomato;
+  /* background-color: tomato; */
+  overscroll-behavior-x: none;
 }
 
 a {
@@ -14,7 +19,12 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-decoration-color: inherit;
+  animation: a-highlight 300ms linear;
+}
+
+a:focus {
+  text-decoration: underline;
+  animation: a-highlight 300ms linear;
 }
 
 * {
@@ -27,4 +37,15 @@ p {
 
 h1 {
   font-size: 1.5em;
+  font-weight: 400;
+}
+
+@keyframes a-highlight {
+  0% {
+    text-decoration-color: transparent;
+  }
+
+  100% {
+    text-decoration-color: inherit;
+  }
 }

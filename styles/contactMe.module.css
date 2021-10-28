@@ -1,10 +1,23 @@
-.contacts {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+@keyframes contact-highlight {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+    
+  100% {
+    color: rgba(229, 231, 235);
+  }
 }
 
-.contacts svg {
-    margin-right: 10px;
-    margin-left: 10px;
+.contact-me {
+  color: rgb(255, 255, 255);
+}
+
+.contact-me:hover {
+  animation: contact-highlight 150ms linear;
+  animation-fill-mode: forwards;
+}
+
+.contact-me:focus {
+  animation: contact-highlight 150ms linear;
+  animation-fill-mode: forwards;
 }

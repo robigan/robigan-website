@@ -1,5 +1,15 @@
+import Head from "next/head";
+import PageSelector from "../components/PageSelector";
+
 export default function Blog() {
     return (
-        <h1>This page is still under construction, please comeback later</h1>
+        <>
+            <Head>
+                <title>Robigan - Blog</title>
+                <meta name="description" content="Robigan's blog page" />
+            </Head>
+            <PageSelector></PageSelector>
+            <h1 className="text-black text-center">This page is still under construction, please comeback later</h1>
+        </>
     );
 }
