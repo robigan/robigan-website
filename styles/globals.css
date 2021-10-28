@@ -22,6 +22,11 @@ a:hover {
   animation: a-highlight 300ms linear;
 }
 
+a:focus {
+  text-decoration: underline;
+  animation: a-highlight 300ms linear;
+}
+
 * {
   box-sizing: border-box;
 }

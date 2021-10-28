@@ -1,5 +1,5 @@
 export default function Change({ commit }) {
-    console.log(commit.commit.message);
+    process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
         <div className="bg-gray-500 bg-opacity-80 rounded my-2 flex justify-between flex-row container mx-auto" key={commit.sha}>
