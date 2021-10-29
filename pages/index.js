@@ -38,6 +38,13 @@ export default function Home() {
                             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{ "fill": "#202731" }}></path>
                         </svg>
                     </div>
+                    <div>
+                        <svg viewBox="0 0 960 540" width="960" height="565" xmlns="http://www.w3.org/2000/svg" version="1.1" className={shapeStyles.Blob1}>
+                            <g transform="translate(434.46395291155767 261.85315901600404)">
+                                <path d="M287.9 -190.2C364.6 -133.3 412.6 -14.1 380.3 70.4C347.9 154.8 235.1 204.4 136.2 232.9C37.3 261.3 -47.7 268.5 -119.3 237.8C-190.9 207.2 -249 138.6 -278.7 51.3C-308.5 -36 -309.8 -142.1 -258.6 -193.1C-207.4 -244.2 -103.7 -240.2 0.9 -241C105.5 -241.7 211.1 -247.1 287.9 -190.2" style={{ "fill": "#78244C" }} />
+                            </g>
+                        </svg>
+                    </div>
                     <div sectionpadding="true">
                         <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" />
                     </div>

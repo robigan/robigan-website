@@ -62,3 +62,12 @@
     width: calc(185% + 1.3px);
     height: 125px;
 }
+
+.Blob1 {
+    aspect-ratio: 960/565;
+    position: absolute;
+    top: 238px;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+}
