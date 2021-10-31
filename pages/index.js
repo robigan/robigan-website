@@ -49,22 +49,25 @@ export default function Home() {
                         <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" />
                     </div>
                 </Section>
-                <Section backgroundColor="#78244C">
-                    <div className={shapeStyles.Wavy3}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" style={{ "fill": "#2D4159" }}></path>
-                        </svg>
-                    </div>
-                </Section>
                 <Section backgroundColor="#ff5233">
                     <div className={shapeStyles.Wavy1}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" style={{ "fill": "#78244C" }}></path>
+                            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" style={{ "fill": "#2D4159" }}></path>
                         </svg>
                     </div>
                     <div sectionpadding="true">
                         <h1 className="text-center">Contact Me</h1>
                         <ContactMe />
+                    </div>
+                </Section>
+                <Section backgroundColor="#78244C">
+                    <div className={shapeStyles.Wavy3}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" style={{ "fill": "#ff5233" }}></path>
+                        </svg>
+                    </div>
+                    <div sectionpadding="true">
+                        <p>Psst... Did you know this website&apos;s source code can be found on <a href="https://github.com/robigan/robigan-website" role="link" target="_blank" rel="noreferrer">github? Check it out!</a></p>
                     </div>
                     <div style={{ height: "calc(5rem)" }}></div>
                 </Section>
