@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const pages = {
     "/": "Home", 
-    "/changes": "Changes",
     "/blog": "Blog",
-    "/projects": "Projects"
+    "/projects": "Projects",
+    "/changes": "Changes"
 };
 
 export default function PageSelector() {
