@@ -20,6 +20,7 @@ export default function Home() {
             <Head>
                 <title>Robigan - Homepage</title>
                 <meta name="description" content="Robigan's homepage" />
+                <meta name="theme-color" content="blueviolet" />
             </Head>
             <PageSelector></PageSelector>
             <div className={styles.Sections}>
