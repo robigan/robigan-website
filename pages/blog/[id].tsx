@@ -56,8 +56,9 @@ export const getStaticProps: GetStaticProps<PostStaticPropsResultProps, PostPara
     };
 };
 
-const Post = ({ code, frontMatter, urlId }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Post = ({ code, frontMatter }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const MDXComponent = useMemo(() => getMDXComponent(code), [code]);
+    
     if (frontMatter.title === undefined) throw new TypeError("Internal error, although this should have been caught at build time, the post's frontmatter is missing the title property");
     if (frontMatter.description === undefined) throw new TypeError("Internal error, although this should have been caught at build time, the post's frontmatter is missing the description property");
 

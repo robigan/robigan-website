@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { PageSelectorPages } from "./PageSelectorTypes";
 
-const pages = {
+const pages: PageSelectorPages = {
     "/": "Home", 
     "/blog": "Blog",
     "/projects": "Projects",

@@ -1,11 +1,13 @@
 import Head from "next/head";
 // import Change from "../components/Change.js";
-import PageSelector from "../components/PageSelector.js";
-import BackgroundColor from "../components/BackgroundColor.js";
+import PageSelector from "../components/PageSelector";
+import BackgroundColor from "../components/BackgroundColor";
+
+import { Commits, ChangesProps, ChangeProps } from "./changesData";
 
 export async function getStaticProps() {
     const res = await fetch("https://api.github.com/repos/robigan/robigan-website/commits");
-    const data = await res.json();
+    const data = (await res.json()) as Commits;
 
     if (!data) {
         return {
@@ -22,19 +24,19 @@ export async function getStaticProps() {
     };
 }
 
-const Change = function({ commit }) {
+const Change = function({ commit }: ChangeProps) {
     process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
         <div className="rounded-lg my-2 flex justify-between flex-row flex-nowrap container mx-auto border-gray-500 border-opacity-80 border-2 content-center items-center" key={commit.sha}>
             <div className="m-2 order-1 flex-shrink">
                 <p className="font-bold text-lg">{(commit.commit.message.split("\n"))[0]}</p>
-                <h3>{`${commit.commit.author.name} commited on ${(new Date(commit.commit.author.date)).toDateString()}`}</h3>
+                <h3>{`${commit.commit.author?.name ?? "Comitter/author name not available"} commited on ${(new Date(commit.commit.author?.date ?? NaN)).toDateString()}`}</h3>
             </div>
 
             <div className="m-2 order-2 flex flex-row flex-nowrap justify-center content-center items-center flex-shrink">
                 {
-                    commit.commit.verification.verified ?
+                    (commit.commit.verification?.verified ?? false) ?
                         <h3 className="text-green-300 border-gray-400 hover:border-green-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Verified</h3> :
                         <h3 className="text-red-300 border-gray-400 hover:border-red-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Not Verified</h3>
                 }
@@ -44,7 +46,7 @@ const Change = function({ commit }) {
     );
 };
 
-export default function Changes({ commits }) {
+export default function Changes({ commits }: ChangesProps) {
     return (
         <>
             <Head>
