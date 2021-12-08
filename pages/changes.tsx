@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/BackgroundColor";
-import { Commits, ChangesProps, ChangeProps } from "./changesTypes";
+import { Commits, ChangesProps, ChangeProps } from "../lib/changesTypes";
 import { FC } from "react";
 
 export const getStaticProps = async () => {

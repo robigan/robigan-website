@@ -7,7 +7,7 @@ import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
 
 import { FC } from "react";
-import { SectionProps } from "./indexTypes";
+import { SectionProps } from "../lib/indexTypes";
 
 const Section: FC<SectionProps> = ({ children, backgroundColor = "#ffffff00" }) => {
     return (

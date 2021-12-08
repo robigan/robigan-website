@@ -7,7 +7,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
 
 import { GetStaticProps, GetStaticPaths, PreviewData, InferGetStaticPropsType } from "next";
-import { PostParams, PostStaticPropsResultProps, PostFrontMatter } from "./id";
+import { PostParams, PostStaticPropsResultProps, PostFrontMatter } from "../../lib/id";
 
 const development = process.env.NODE_ENV === "development";
 
