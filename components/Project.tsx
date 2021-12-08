@@ -1,7 +1,7 @@
 import styles from "../styles/project.module.css";
 
 import { FC } from "react";
-import { ProjectProps } from "./ProjectTypes";
+import { ProjectProps } from "../lib/ProjectTypes";
 
 const Project: FC<ProjectProps> = ({ backgroundColor = "#fff", textColor = "#000", text = "", title = "", url = "", extraStyles = {}}) => {
     return (

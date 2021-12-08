@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PageSelectorPages } from "./PageSelectorTypes";
+import { PageSelectorPages } from "../lib/PageSelectorTypes";
 
 const pages: PageSelectorPages = {
     "/": "Home", 

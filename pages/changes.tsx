@@ -26,6 +26,23 @@ export const getStaticProps = async () => {
 const Change: FC<ChangeProps> = ({ commit }) => {
     process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
+    let Component;
+
+    if (!(process.env.NODE_ENV === "development")) {
+        Component = <div className="m-2 order-2 flex flex-row flex-nowrap justify-center content-center items-center flex-shrink">
+            {
+                (commit.commit.verification?.verified ?? false) ?
+                    <h3 className="text-green-300 border-gray-400 hover:border-green-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Verified</h3> :
+                    <h3 className="text-red-300 border-gray-400 hover:border-red-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Not Verified</h3>
+            }
+            <h3 className="border-gray-400 rounded-r-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 ml-0 border-l">{commit.commit.tree.sha.substring(0, 6)}</h3>
+        </div>;
+    } else {
+        Component = (commit.commit.verification?.verified ?? false) ? 
+            <h3 className="text-green-300 border-gray-400 hover:border-green-600 rounded-full border-2 w-min p-1 min-w-max m-1 max-h-8 text-center self-center order-2">Verified</h3> : 
+            <h3 className="text-red-300 border-gray-400 hover:border-red-600 rounded-full border-2 w-min p-1 min-w-max m-1 max-h-8 text-center self-center order-2">Not Verified</h3>;
+    }
+
     return (
         <div className="rounded-lg my-2 flex justify-between flex-row flex-nowrap container mx-auto border-gray-500 border-opacity-80 border-2 content-center items-center" key={commit.sha}>
             <div className="m-2 order-1 flex-shrink">
@@ -33,14 +50,9 @@ const Change: FC<ChangeProps> = ({ commit }) => {
                 <h3>{`${commit.commit.author?.name ?? "Comitter/author name not available"} commited on ${(new Date(commit.commit.author?.date ?? NaN)).toDateString()}`}</h3>
             </div>
 
-            <div className="m-2 order-2 flex flex-row flex-nowrap justify-center content-center items-center flex-shrink">
-                {
-                    (commit.commit.verification?.verified ?? false) ?
-                        <h3 className="text-green-300 border-gray-400 hover:border-green-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Verified</h3> :
-                        <h3 className="text-red-300 border-gray-400 hover:border-red-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Not Verified</h3>
-                }
-                <h3 className="border-gray-400 rounded-r-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 ml-0 border-l">{commit.commit.tree.sha.substring(0, 6)}</h3>
-            </div>
+            {
+                Component
+            }
         </div>
     );
 };
