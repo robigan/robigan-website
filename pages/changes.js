@@ -62,7 +62,7 @@ export default function Changes({ commits }) {
                     return <h2>There seems to have been an error when fetching the data</h2>;
                 })()
             }
-            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" ></BackgroundColor>
+            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true}></BackgroundColor>
         </>
     );
 }

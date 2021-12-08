@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PageSelector from "../components/PageSelector";
+import PageSelector from "../../components/PageSelector";
 
 export default function Blog() {
     return (
