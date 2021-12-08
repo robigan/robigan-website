@@ -3,7 +3,7 @@ import Head from "next/head";
 import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/BackgroundColor";
 
-import { Commits, ChangesProps, ChangeProps } from "./changesData";
+import { Commits, ChangesProps, ChangeProps } from "./changesTypes";
 
 export async function getStaticProps() {
     const res = await fetch("https://api.github.com/repos/robigan/robigan-website/commits");

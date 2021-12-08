@@ -62,27 +62,21 @@ const Post = ({ code, frontMatter }: InferGetStaticPropsType<typeof getStaticPro
     if (frontMatter.title === undefined) throw new TypeError("Internal error, although this should have been caught at build time, the post's frontmatter is missing the title property");
     if (frontMatter.description === undefined) throw new TypeError("Internal error, although this should have been caught at build time, the post's frontmatter is missing the description property");
 
-    if (development) {
-        return (
-            <>
-                <Head>
-                    <title>Robigan - Blog | {frontMatter.title}</title>
-                    <meta name="description" content={frontMatter.description} />
-                </Head>
-                <h1 className="text-center m-2 my-5 text-5xl mb-1">{frontMatter.title}</h1>
-                <h3 className="text-center m-2 my-1 text-base">{frontMatter.description}</h3>
-                {/* <p>Frontmatter: {JSON.stringify(frontMatter)}</p> */}
-                <div className="text-center m-2 mt-10 text-base">
-                    <MDXComponent />
-                </div>
-                <BackgroundColor backgroundColor="#000" />
-            </>
-        );
-    } else {
-        return (
-            <h1 className="text-black text-center">This page is still under construction, please comeback later</h1>
-        );
-    }
+    return (
+        <>
+            <Head>
+                <title>Robigan - Blog | {frontMatter.title}</title>
+                <meta name="description" content={frontMatter.description} />
+            </Head>
+            <h1 className="text-center m-2 my-5 text-5xl mb-1">{frontMatter.title}</h1>
+            <h3 className="text-center m-2 my-1 text-base">{frontMatter.description}</h3>
+            {/* <p>Frontmatter: {JSON.stringify(frontMatter)}</p> */}
+            <div className="text-center m-2 mt-10 text-base">
+                <MDXComponent />
+            </div>
+            <BackgroundColor backgroundColor="#000" />
+        </>
+    );
 };
 
 export default Post;
