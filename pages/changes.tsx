@@ -28,7 +28,7 @@ const Change: FC<ChangeProps> = ({ commit }) => {
 
     let Component;
 
-    if (!(process.env.NODE_ENV === "development")) {
+    if (process.env.NODE_ENV === "development") {
         Component = <div className="m-2 order-2 flex flex-row flex-nowrap justify-center content-center items-center flex-shrink">
             {
                 (commit.commit.verification?.verified ?? false) ?
