@@ -1,13 +1,14 @@
 import Link from "next/link";
+import { PageSelectorPages } from "../lib/PageSelectorTypes";
 
-const pages = {
+const pages: PageSelectorPages = {
     "/": "Home", 
-    "/changes": "Changes",
     "/blog": "Blog",
-    "/projects": "Projects"
+    "/projects": "Projects",
+    "/changes": "Changes"
 };
 
-export default function PageSelector() {
+const PageSelector = () => {
     return (
         <div className={"fixed text-white bottom-16 z-10 transform left-2/4 -translate-x-2/4 bg-black bg-opacity-90 p-2 rounded-full"}>
             {Object.keys(pages).map((linkHref) => {
@@ -21,4 +22,6 @@ export default function PageSelector() {
             })}
         </div>
     );
-}
+};
+
+export default PageSelector;

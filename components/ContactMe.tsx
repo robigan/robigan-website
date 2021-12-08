@@ -2,7 +2,7 @@ import styles from "../styles/contactMe.module.css";
 
 const svgClass = styles["contact-me"] + " mx-2";
 
-export default function ContactMe() {
+const ContactMe = () => {
     return (
         <div className="flex flex-row flex-wrap items-center">
             <a href="https://discord.com/users/315526915828219906" role="button" target="_blank" rel="noreferrer" aria-label="Discord User Profile" className={svgClass}>
@@ -28,4 +28,6 @@ export default function ContactMe() {
             </a>
         </div>
     );
-}
+};
+
+export default ContactMe;
