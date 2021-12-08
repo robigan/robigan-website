@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageSelector from "../components/PageSelector";
 
-export default function Projects() {
+const Projects = () => {
     return (
         <>
             <Head>
@@ -12,4 +12,6 @@ export default function Projects() {
             <h1 className="text-black text-center">This page is still under construction, please comeback later</h1>
         </>
     );
-}
+};
+
+export default Projects;

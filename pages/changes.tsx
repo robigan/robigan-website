@@ -1,11 +1,10 @@
 import Head from "next/head";
-// import Change from "../components/Change.js";
 import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/BackgroundColor";
-
 import { Commits, ChangesProps, ChangeProps } from "./changesTypes";
+import { FC } from "react";
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
     const res = await fetch("https://api.github.com/repos/robigan/robigan-website/commits");
     const data = (await res.json()) as Commits;
 
@@ -22,9 +21,9 @@ export async function getStaticProps() {
             commits: data
         },
     };
-}
+};
 
-const Change = function({ commit }: ChangeProps) {
+const Change: FC<ChangeProps> = ({ commit }) => {
     process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
@@ -46,7 +45,7 @@ const Change = function({ commit }: ChangeProps) {
     );
 };
 
-export default function Changes({ commits }: ChangesProps) {
+const Changes: FC<ChangesProps> = ({ commits }) => {
     return (
         <>
             <Head>
@@ -67,4 +66,6 @@ export default function Changes({ commits }: ChangesProps) {
             <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true}></BackgroundColor>
         </>
     );
-}
+};
+
+export default Changes;

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PageSelector from "../../components/PageSelector";
 
-export default function Blog() {
+const Blog = () => {
     return (
         <>
             <Head>
@@ -12,4 +12,6 @@ export default function Blog() {
             <h1 className="text-black text-center">This page is still under construction, please comeback later</h1>
         </>
     );
-}
+};
+
+export default Blog;

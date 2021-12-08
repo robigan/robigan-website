@@ -1,6 +1,8 @@
-export default function Projects()  {
+const Projects = () =>  {
     return (
         <>
         </>
     );
-}
+};
+
+export default Projects;

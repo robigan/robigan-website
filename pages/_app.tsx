@@ -1,8 +1,9 @@
-import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
+import { AppProps } from "next/app";
+import { FC } from "react";
 
-function _App({ Component, pageProps }: AppProps) {
+const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
         <>
             <Head>
@@ -13,6 +14,6 @@ function _App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </>
     );
-}
+};
 
 export default _App;

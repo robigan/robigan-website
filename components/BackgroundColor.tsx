@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function BackgroundColor({ backgroundColor = "#ffffff00", disableMetaThemeColor = false }) {
+const BackgroundColor = ({ backgroundColor = "#ffffff00", disableMetaThemeColor = false }) => {
     return (
         <>
             {!disableMetaThemeColor && <Head>
@@ -10,4 +10,6 @@ export default function BackgroundColor({ backgroundColor = "#ffffff00", disable
             </div>
         </>
     );
-}
+};
+
+export default BackgroundColor;
