@@ -1,5 +1,17 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import PageSelector from "../../components/PageSelector";
+import { getStaticPaths as getStaticPosts } from "./[id]";
+
+export const getStaticProps: GetStaticProps = async () => {
+    const posts = (await getStaticPosts({})).paths;
+
+    return {
+        props: {
+            posts
+        }
+    };
+};
 
 const Blog = () => {
     return (

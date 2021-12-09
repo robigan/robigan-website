@@ -4,7 +4,7 @@ import BackgroundColor from "../../components/BackgroundColor";
 import { readdir, realpath, readFile } from "fs/promises";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
-import { useMemo } from "react";
+import { FC, useMemo } from "react";
 
 import { GetStaticProps, GetStaticPaths, PreviewData, InferGetStaticPropsType } from "next";
 import { PostParams, PostStaticPropsResultProps, PostFrontMatter } from "../../lib/idTypes";
@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps<PostStaticPropsResultProps, PostPara
     };
 };
 
-const Post = ({ code, frontMatter }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Post:FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ code, frontMatter }) => {
     const MDXComponent = useMemo(() => getMDXComponent(code), [code]);
     
     if (frontMatter.title === undefined) throw new TypeError("Internal error, although this should have been caught at build time, the post's frontmatter is missing the title property");
@@ -70,7 +70,6 @@ const Post = ({ code, frontMatter }: InferGetStaticPropsType<typeof getStaticPro
             </Head>
             <h1 className="text-center m-2 my-5 text-5xl mb-1">{frontMatter.title}</h1>
             <h3 className="text-center m-2 my-1 text-base">{frontMatter.description}</h3>
-            {/* <p>Frontmatter: {JSON.stringify(frontMatter)}</p> */}
             <div className="text-center m-2 mt-10 text-base">
                 <MDXComponent />
             </div>

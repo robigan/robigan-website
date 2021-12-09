@@ -6,7 +6,7 @@ export type ProjectProps = {
     text?: string,
     title?: string,
     url?: string,
-    extraStyles: CSSProperties
+    extraStyles?: CSSProperties
 }
 
 // export type Project = JSX.Element;

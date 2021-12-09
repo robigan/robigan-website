@@ -1,3 +1,3 @@
-export interface SectionProps {
+export type SectionProps = {
     backgroundColor: string
 }
