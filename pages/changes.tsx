@@ -1,6 +1,7 @@
 import Head from "next/head";
 import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/BackgroundColor";
+import UnderConstruct from "../components/UnderContruct";
 import { Commits, ChangesProps, ChangeProps } from "../lib/changesTypes";
 import { FC } from "react";
 
@@ -65,8 +66,8 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                 <meta name="description" content="A page for seeing all the changes made on the main github repo's branch" />
                 <meta name="theme-color" content="#78244C" />
             </Head>
-            <PageSelector></PageSelector>
-            <h1 className="text-white text-center">This page is still under construction</h1>
+            <PageSelector />
+            <UnderConstruct textWhite={true} />
             {
                 Array.isArray(commits) ? commits.map((commit) => {
                     return Change({ commit: commit });
@@ -75,7 +76,7 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                     return <h2>There seems to have been an error when fetching the data</h2>;
                 })()
             }
-            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true}></BackgroundColor>
+            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true} />
         </>
     );
 };

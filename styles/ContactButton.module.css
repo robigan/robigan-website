@@ -8,16 +8,16 @@
   }
 }
 
-.contact-me {
+.contact-button {
   color: rgb(255, 255, 255);
 }
 
-.contact-me:hover {
+.contact-button:hover {
   animation: contact-highlight 150ms linear;
   animation-fill-mode: forwards;
 }
 
-.contact-me:focus {
+.contact-button:focus {
   animation: contact-highlight 150ms linear;
   animation-fill-mode: forwards;
 }

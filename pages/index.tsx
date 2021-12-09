@@ -5,7 +5,6 @@ import styles from "../styles/index.module.css";
 import shapeStyles from "../styles/shapeStyles.section.module.css";
 import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
-
 import { FC } from "react";
 import { SectionProps } from "../lib/indexTypes";
 
@@ -25,7 +24,7 @@ const Home = () => {
                 <meta name="description" content="Robigan's homepage" />
                 <meta name="theme-color" content="blueviolet" />
             </Head>
-            <PageSelector></PageSelector>
+            <PageSelector />
             <div className={styles.Sections}>
                 <Section backgroundColor="blueviolet">
                     <div data-sectionpadding="true" style={{ top: "5vh" }}>

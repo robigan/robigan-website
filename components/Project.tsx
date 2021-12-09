@@ -1,4 +1,4 @@
-import styles from "../styles/project.module.css";
+import styles from "../styles/Project.module.css";
 
 import { FC } from "react";
 import { ProjectProps } from "../lib/ProjectTypes";
