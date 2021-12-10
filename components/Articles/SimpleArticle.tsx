@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SimpleArticleProps } from "../lib/SimpleArticleTypes";
+import { SimpleArticleProps } from "../../lib/SimpleArticleTypes";
 
 const SimpleArticle:FC<SimpleArticleProps> = ({ children, frontMatter }) => {
     if (children === undefined) throw new TypeError("For simple article to render, it needs children");

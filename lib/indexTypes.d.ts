@@ -1,3 +1,5 @@
 export type SectionProps = {
-    backgroundColor: string
+    backgroundColor?: string,
+    paddingTop?: boolean | string,
+    paddingBot?: boolean | string,
 }
