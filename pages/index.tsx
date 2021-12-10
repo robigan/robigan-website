@@ -10,17 +10,17 @@ import { SectionProps } from "../lib/indexTypes";
 import BackgroundImage from "../components/BackgroundImage";
 import BackgroundColor from "../components/BackgroundColor";
 
-const Section: FC<SectionProps> = ({ children, backgroundColor = "#ffffff00", paddingTop = false, paddingBot = false}) => {
+const Section: FC<SectionProps> = ({ children, backgroundColor = "#ffffff00", paddingTop = false, paddingBot = false, extraStyles = {self: {}, top: {}, bottom: {}}}) => {
     return (
-        <section style={{ backgroundColor: backgroundColor }}>
+        <section style={Object.assign({ backgroundColor: backgroundColor }, extraStyles.self ?? {} )}>
             {
-                (typeof paddingTop === "boolean") && paddingTop ? <div style={{ height: "5rem" }}></div> : 
-                    <div style={{ height: `calc(${paddingTop})` }}></div>
+                (typeof paddingTop === "boolean") && paddingTop ? <div style={{ height: "5vh" }}></div> : 
+                    <div style={Object.assign({ height: `calc(${paddingTop})` }, extraStyles.top ?? {})}></div>
             }
             {children}
             {
-                (typeof paddingBot === "boolean") && paddingBot ? <div style={{ height: "5rem" }}></div> : 
-                    <div style={{ height: `calc(${paddingBot})` }}></div>
+                (typeof paddingBot === "boolean") && paddingBot ? <div style={{ height: "5vh" }}></div> : 
+                    <div style={Object.assign({ height: `calc(${paddingBot})` }, extraStyles.bottom ?? {})}></div>
             }
         </section>
     );
@@ -36,7 +36,7 @@ const Home = () => {
             </Head>
             <PageSelector />
             <div className={styles.Sections}>
-                <Section paddingBot="8rem" paddingTop="5rem">
+                <Section paddingBot="10vh" paddingTop="10vh" extraStyles={{ bottom: { maxHeight: 80 }, top: { maxHeight: 80 }}}>
                     <div data-sectionpadding="true">
                         <h1 className="text-5xl text-center mb-5 font-bold">Robigan</h1>
                         <p className="text-2xl text-center font-bold">I am robigan and this is my web page.</p>
@@ -83,7 +83,7 @@ const Home = () => {
                         <ContactMe />
                     </div>
                 </Section>
-                <Section backgroundColor="#78244C" paddingBot={true}>
+                <Section backgroundColor="#78244C" paddingBot="5rem">
                     <div className={shapeStyles.Wavy3}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                             <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" style={{ "fill": "#ff5233" }}></path>
@@ -94,7 +94,7 @@ const Home = () => {
                     </div>
                 </Section>
             </div>
-            <BackgroundImage src="/Background.png" layout="intrinsic" alt="" width="2870" height="1740"/>
+            <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"/>
             <BackgroundColor backgroundColor="#202731"></BackgroundColor>
             {/* <div className="fixed z-50 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-primary p-2 rounded hover:bg-primary-dark">
                 <p>Hello World</p>
