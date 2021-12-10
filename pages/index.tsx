@@ -38,8 +38,8 @@ const Home = () => {
             <div className={styles.Sections}>
                 <Section paddingBot="8rem" paddingTop="5rem">
                     <div data-sectionpadding="true">
-                        <h1 className="text-5xl text-center mb-5">Robigan</h1>
-                        <p className="text-2xl">I am robigan and this is my web page.</p>
+                        <h1 className="text-5xl text-center mb-5 font-bold">Robigan</h1>
+                        <p className="text-2xl text-center font-bold">I am robigan and this is my web page.</p>
                     </div>
                 </Section>
                 <Section backgroundColor="#202731">

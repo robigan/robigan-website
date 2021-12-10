@@ -45,7 +45,7 @@ const Change: FC<ChangeProps> = ({ commit }) => {
     }
 
     return (
-        <div className="rounded-lg my-2 flex justify-between flex-row flex-nowrap container mx-auto border-gray-500 border-opacity-80 border-2 content-center items-center" key={commit.sha}>
+        <div className="rounded-lg my-2 flex justify-between flex-row flex-nowrap container mx-auto border-gray-500 border-opacity-80 border-2 content-center items-center bg-background" key={commit.sha}>
             <div className="m-2 order-1 flex-shrink">
                 <p className="font-bold text-lg">{(commit.commit.message.split("\n"))[0]}</p>
                 <h3>{`${commit.commit.author?.name ?? "Comitter/author name not available"} commited on ${(new Date(commit.commit.author?.date ?? NaN)).toDateString()}`}</h3>
