@@ -1,30 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/index.module.css";
-// import Section from "../components/Section";
-import shapeStyles from "../styles/shapeStyles.section.module.css";
+import shapeStyles from "../styles/shapeStyles.Section.module.css";
 import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
-import { FC } from "react";
-import { SectionProps } from "../lib/indexTypes";
-import BackgroundImage from "../components/BackgroundImage";
-import BackgroundColor from "../components/BackgroundColor";
-
-const Section: FC<SectionProps> = ({ children, backgroundColor = "#ffffff00", paddingTop = false, paddingBot = false, extraStyles = {self: {}, top: {}, bottom: {}}}) => {
-    return (
-        <section style={Object.assign({ backgroundColor: backgroundColor }, extraStyles.self ?? {} )}>
-            {
-                (typeof paddingTop === "boolean") && paddingTop ? <div style={{ height: "5vh" }}></div> : 
-                    <div style={Object.assign({ height: `calc(${paddingTop})` }, extraStyles.top ?? {})}></div>
-            }
-            {children}
-            {
-                (typeof paddingBot === "boolean") && paddingBot ? <div style={{ height: "5vh" }}></div> : 
-                    <div style={Object.assign({ height: `calc(${paddingBot})` }, extraStyles.bottom ?? {})}></div>
-            }
-        </section>
-    );
-};
+// import { FC } from "react";
+import Section from "../components/Sections/Section";
+import DefaultSection from "../components/Sections/DefaultSection";
+import BackgroundImage from "../components/Background/BackgroundImage";
+import BackgroundColor from "../components/Background/BackgroundColor";
 
 const Home = () => {
     return (
@@ -35,13 +18,10 @@ const Home = () => {
                 <meta name="theme-color" content="blueviolet" />
             </Head>
             <PageSelector />
-            <div className={styles.Sections}>
-                <Section paddingBot="10vh" paddingTop="10vh" extraStyles={{ bottom: { maxHeight: 80 }, top: { maxHeight: 80 }}}>
-                    <div data-sectionpadding="true">
-                        <h1 className="text-5xl text-center mb-5 font-bold">Robigan</h1>
-                        <p className="text-2xl text-center font-bold">I am robigan and this is my web page.</p>
-                    </div>
-                </Section>
+            <BackgroundColor backgroundColor="#202731"></BackgroundColor>
+            <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"/>
+            <div>
+                <DefaultSection />
                 <Section backgroundColor="#202731">
                     {/* <div className={shapeStyles.Tilt1}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -94,8 +74,6 @@ const Home = () => {
                     </div>
                 </Section>
             </div>
-            <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"/>
-            <BackgroundColor backgroundColor="#202731"></BackgroundColor>
             {/* <div className="fixed z-50 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-primary p-2 rounded hover:bg-primary-dark">
                 <p>Hello World</p>
             </div> */}

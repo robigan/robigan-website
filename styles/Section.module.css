@@ -1,0 +1,3 @@
+.Section-padding div[data-sectionpadding="true"] {
+  padding: 5vh 10vw;
+}

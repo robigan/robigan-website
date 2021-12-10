@@ -1,6 +1,6 @@
 import Head from "next/head";
 // import { useRouter } from "next/router";
-import BackgroundColor from "../../components/BackgroundColor";
+import BackgroundColor from "../../components/Background/BackgroundColor";
 import { readdir, realpath, readFile } from "fs/promises";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -68,12 +68,12 @@ const Post:FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ code, frontMa
                 <title>Robigan - Blog | {frontMatter.title}</title>
                 <meta name="description" content={frontMatter.description} />
             </Head>
+            <BackgroundColor backgroundColor="#000" />
             <h1 className="text-center m-2 my-5 text-5xl mb-1">{frontMatter.title}</h1>
             <h3 className="text-center m-2 my-1 text-base">{frontMatter.description}</h3>
             <div className="text-center m-2 mt-10 text-base">
                 <MDXComponent />
             </div>
-            <BackgroundColor backgroundColor="#000" />
         </>
     );
 };
