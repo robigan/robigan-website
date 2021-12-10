@@ -31,7 +31,7 @@ const Change: FC<ChangeProps> = ({ commit }) => {
 
     return (
         <li className="border-gray-400 flex flex-col mb-2" key={commit.sha}>
-            <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"}>
+            <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"} className="hover:no-underline">
                 <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-background rounded-lg flex flex-1 items-center p-4">
                     <div className="flex-1 pl-1 md:mr-16">
                         <div className="font-medium text-white text-lg">
@@ -78,6 +78,8 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
             <UnderConstruct textWhite={true} />
             <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true} />
             <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" />
+            <div style={{ zIndex: "-10", backgroundColor: "#202731" }} className="absolute w-screen h-2/4 top-2/4 left-0 select-none">
+            </div>
             <div className="bg-background-dark p-4">
                 <ul className="flex flex-col">
                     {
@@ -90,7 +92,7 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                     }
                 </ul>
                 {/* <ChangeList></ChangeList> */}
-                <div style={{ height: "7.5rem", minHeight: "calc(100vh - 20vh - 1.25rem - 3rem - 1.5rem - 1.875rem - 5rem)" }}></div>
+                <div style={{ height: "7.5rem" }}></div>
             </div>
         </>
     );
