@@ -30,6 +30,7 @@ const Change: FC<ChangeProps> = ({ commit }) => {
     process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
+        // Some of the code below is Copyright of Charlie85270 (MIT License)
         <li className="border-gray-400 flex flex-col mb-2" key={commit.sha}>
             <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"} className="hover:no-underline">
                 <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-background rounded-lg flex flex-1 items-center p-4">
