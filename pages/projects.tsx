@@ -10,7 +10,7 @@ const Projects = () => {
                 <meta name="description" content="A project containing all of robigan's flageship projects" />
             </Head>
             <PageSelector />
-            <UnderConstruct />
+            <UnderConstruct textWhite={false} />
         </>
     );
 };

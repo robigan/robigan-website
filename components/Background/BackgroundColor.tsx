@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const BackgroundColor = ({ backgroundColor = "#ffffff00", disableMetaThemeColor = false }) => {
+const BackgroundColor = ({ backgroundColor = "#202731ff", disableMetaThemeColor = false }) => {
     return (
         <>
             {!disableMetaThemeColor && <Head>

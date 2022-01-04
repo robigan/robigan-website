@@ -18,7 +18,7 @@ const Home = () => {
                 <meta name="theme-color" content="blueviolet" />
             </Head>
             <PageSelector />
-            <BackgroundColor backgroundColor="#202731"></BackgroundColor>
+            <BackgroundColor></BackgroundColor>
             <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"/>
             <div>
                 <DefaultSection />

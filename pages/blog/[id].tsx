@@ -5,9 +5,12 @@ import { readdir, realpath, readFile } from "fs/promises";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { FC, useMemo } from "react";
-
 import { GetStaticProps, GetStaticPaths, PreviewData, InferGetStaticPropsType } from "next";
 import { PostParams, PostStaticPropsResultProps, PostFrontMatter } from "../../lib/idTypes";
+import SimpleArticle from "../../components/Articles/SimpleArticle";
+import PageSelector from "../../components/PageSelector";
+import DefaultSection from "../../components/Sections/DefaultSection";
+import BackgroundImage from "../../components/Background/BackgroundImage";
 
 const development = process.env.NODE_ENV === "development";
 
@@ -68,11 +71,13 @@ const Post:FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ code, frontMa
                 <title>Robigan - Blog | {frontMatter.title}</title>
                 <meta name="description" content={frontMatter.description} />
             </Head>
-            <BackgroundColor backgroundColor="#000" />
-            <h1 className="text-center m-2 my-5 text-5xl mb-1">{frontMatter.title}</h1>
-            <h3 className="text-center m-2 my-1 text-base">{frontMatter.description}</h3>
-            <div className="text-center m-2 mt-10 text-base">
-                <MDXComponent />
+            <PageSelector />
+            <DefaultSection h1={"Blog - " + frontMatter.title} p={frontMatter.description} paddingBot="5vh"></DefaultSection>
+            <BackgroundColor />
+            <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" />
+            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"></BackgroundImage> */}
+            <div className="flex flex-col flex-auto items-center">
+                <SimpleArticle frontMatter={frontMatter} RenderedComponent={MDXComponent} />
             </div>
         </>
     );

@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
     if (!data) {
         return {
             props: {
-                commits: []
+                commits: null
             }
         };
     }
@@ -76,8 +76,8 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
             </Head>
             <PageSelector />
             <DefaultSection h1="Changes" p="A list of Changes as seen in the GitHub repository" paddingBot="5vh" />
-            <UnderConstruct textWhite={true} />
-            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true} />
+            <UnderConstruct />
+            <BackgroundColor /* backgroundColor="#78244C" */ disableMetaThemeColor={true} />
             <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" />
             <div style={{ zIndex: "-10", backgroundColor: "#202731" }} className="absolute w-screen h-2/4 top-2/4 left-0 select-none">
             </div>
@@ -88,7 +88,7 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                             return Change({ commit: commit });
                         }) : (() => {
                             if (process.env.NODE_ENV === "test") throw new TypeError(`GitHub commits data is not an array!\nCommits Object: ${JSON.stringify(commits, null, 4)}`);
-                            return <h2>There seems to have been an error when fetching the data</h2>;
+                            return <h2 className="text-center">There seems to have been an error while fetching the data</h2>;
                         })()
                     }
                 </ul>
