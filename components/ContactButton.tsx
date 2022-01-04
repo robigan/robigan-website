@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { ContactButtonProps } from "../lib/ContactButtonTypes";
-import styles from "../styles/ContactButton.module.css";
 
 const ContactButton:FC<ContactButtonProps> = ({ children, href, ariaLabel }) => {
     return (
-        <a href={href} role="button" target="_blank" rel="noreferrer" aria-label={ariaLabel} className={styles["contact-button"] + " mx-2"}>
+        <a href={href} role="button" target="_blank" rel="noreferrer" aria-label={ariaLabel} className="mx-2 hover:text-gray-200 transition ease-linear flex-auto">
             {
                 children
             }

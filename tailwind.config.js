@@ -14,6 +14,11 @@ module.exports = {
                     DEFAULT: "#2D4159",
                 },
             },
+            screens: {
+                "mo-sm": "320px",
+                "mo-md": "411px",
+                "contact": "380px"
+            }
         },
     },
     variants: {
