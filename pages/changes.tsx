@@ -3,7 +3,7 @@ import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/Background/BackgroundColor";
 import UnderConstruct from "../components/UnderContruct";
 import { Commits, ChangesProps, ChangeProps } from "../lib/changesTypes";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import BackgroundImage from "../components/Background/BackgroundImage";
 import DefaultSection from "../components/Sections/DefaultSection";
 
@@ -67,6 +67,21 @@ const Change: FC<ChangeProps> = ({ commit }) => {
 };
 
 const Changes: FC<ChangesProps> = ({ commits }) => {
+    const changeList = useMemo(() => {
+        return (
+            <ul className="flex flex-col">
+                {
+                    Array.isArray(commits) ? commits.map((commit) => {
+                        return Change({ commit: commit });
+                    }) : (() => {
+                        if (process.env.NODE_ENV === "test") throw new TypeError(`GitHub commits data is not an array!\nCommits Object: ${JSON.stringify(commits, null, 4)}`);
+                        return <h2 className="text-center">There seems to have been an error while fetching the data</h2>;
+                    })()
+                }
+            </ul>
+        );
+    }, [commits]);
+
     return (
         <>
             <Head>
@@ -82,17 +97,7 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
             <div style={{ zIndex: "-10", backgroundColor: "#202731" }} className="absolute w-screen h-2/4 top-2/4 left-0 select-none">
             </div>
             <div className="bg-background-dark p-4">
-                <ul className="flex flex-col">
-                    {
-                        Array.isArray(commits) ? commits.map((commit) => {
-                            return Change({ commit: commit });
-                        }) : (() => {
-                            if (process.env.NODE_ENV === "test") throw new TypeError(`GitHub commits data is not an array!\nCommits Object: ${JSON.stringify(commits, null, 4)}`);
-                            return <h2 className="text-center">There seems to have been an error while fetching the data</h2>;
-                        })()
-                    }
-                </ul>
-                {/* <ChangeList></ChangeList> */}
+                {changeList}
                 <div style={{ height: "7.5rem" }}></div>
             </div>
         </>

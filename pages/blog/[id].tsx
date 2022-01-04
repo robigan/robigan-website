@@ -16,7 +16,7 @@ const development = process.env.NODE_ENV === "development";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const paths = (await readdir(await realpath("./_blogs"))).map((filename) => {
-        const formatted = filename.substr(0, filename.length - 3);
+        const formatted = filename.substring(0, filename.length - 3);
 
         return {
             params: {
