@@ -74,8 +74,7 @@ const Post:FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ code, frontMa
             <PageSelector />
             <DefaultSection h1={"Blog - " + frontMatter.title} p={frontMatter.description} paddingBot="5vh"></DefaultSection>
             <BackgroundColor />
-            <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" />
-            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"></BackgroundImage> */}
+            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" /> */}
             <div className="flex flex-col flex-auto items-center">
                 <SimpleArticle frontMatter={frontMatter} RenderedComponent={MDXComponent} />
             </div>
