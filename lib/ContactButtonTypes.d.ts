@@ -1,4 +1,4 @@
 export type ContactButtonProps = {
-    href: string,
-    ariaLabel: string,
+    href: string;
+    ariaLabel: string;
 }
