@@ -6,7 +6,6 @@ import PageSelector from "../components/PageSelector";
 // import { FC } from "react";
 import Section from "../components/Sections/Section";
 import DefaultSection from "../components/Sections/DefaultSection";
-import BackgroundImage from "../components/Background/BackgroundImage";
 import BackgroundColor from "../components/Background/BackgroundColor";
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
             </Head>
             <PageSelector />
             <BackgroundColor></BackgroundColor>
-            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740"/> */}
             <div>
                 <DefaultSection />
                 <Section backgroundColor="#202731">
@@ -44,7 +42,7 @@ const Home = () => {
                         </div> : <></>
                     }
                     <div data-sectionpadding="true">
-                        <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" />
+                        <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" layout="intrinsic" />
                     </div>
                 </Section>
                 <Section backgroundColor="#ff5233">

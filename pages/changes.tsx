@@ -3,12 +3,14 @@ import PageSelector from "../components/PageSelector";
 import BackgroundColor from "../components/Background/BackgroundColor";
 import { Commits, ChangesProps, ChangeProps } from "../lib/changesTypes";
 import { FC, useMemo } from "react";
-import BackgroundImage from "../components/Background/BackgroundImage";
 import DefaultSection from "../components/Sections/DefaultSection";
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://api.github.com/repos/robigan/robigan-website/commits");
-    const data = (await res.json()) as Commits;
+    const res = fetch("https://api.github.com/repos/robigan/robigan-website/commits").catch(() => {
+        return {json: () => null};
+    });
+
+    const data = (await (await res).json()) as Commits | undefined;
 
     if (!data) {
         return {
@@ -90,15 +92,8 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
             </Head>
             <PageSelector />
             <DefaultSection h1="Changes" p="A list of Changes as seen in the GitHub repository" paddingBot="5vh" />
-            {/* <UnderConstruct /> */}
             <BackgroundColor disableMetaThemeColor={true} />
-            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" /> */}
-            <div style={{ zIndex: "-10", backgroundColor: "#202731" }} className="absolute w-screen h-2/4 top-2/4 left-0 select-none">
-            </div>
-            <div className="bg-background-dark p-4">
-                {changeList}
-                <div style={{ height: "7.5rem" }}></div>
-            </div>
+            {changeList}
         </>
     );
 };

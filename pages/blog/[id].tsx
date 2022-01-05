@@ -10,7 +10,6 @@ import { PostParams, PostStaticPropsResultProps, PostFrontMatter } from "../../l
 import SimpleArticle from "../../components/Articles/SimpleArticle";
 import PageSelector from "../../components/PageSelector";
 import DefaultSection from "../../components/Sections/DefaultSection";
-import BackgroundImage from "../../components/Background/BackgroundImage";
 
 const development = process.env.NODE_ENV === "development";
 
@@ -72,9 +71,8 @@ const Post:FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ code, frontMa
                 <meta name="description" content={frontMatter.description} />
             </Head>
             <PageSelector />
-            <DefaultSection h1={"Blog - " + frontMatter.title} p={frontMatter.description} paddingBot="5vh"></DefaultSection>
+            <DefaultSection h1={"Blog - " + frontMatter.title} p={frontMatter.description} paddingBot="5vh" />
             <BackgroundColor />
-            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" /> */}
             <div className="flex flex-col flex-auto items-center">
                 <SimpleArticle frontMatter={frontMatter} RenderedComponent={MDXComponent} />
             </div>

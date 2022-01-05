@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import BackgroundColor from "../../components/Background/BackgroundColor";
-import BackgroundImage from "../../components/Background/BackgroundImage";
+import BlogPosts from "../../components/BlogPosts";
 import PageSelector from "../../components/PageSelector";
 import DefaultSection from "../../components/Sections/DefaultSection";
 import UnderConstruct from "../../components/UnderContruct";
@@ -27,13 +27,10 @@ const Blog = () => {
             <PageSelector />
             <DefaultSection h1="Blog" p="The dedicated homepage to the blogging portion of my site" paddingBot="5vh" />
             <BackgroundColor />
-            {/* <BackgroundImage src="/Background.png" layout="fixed" alt="" width="2870" height="1740" /> */}
             <UnderConstruct />
-            <div style={{ zIndex: "-10", backgroundColor: "#202731" }} className="absolute w-screen h-2/4 top-2/4 left-0 select-none">
-            </div>
-
-            <div className="bg-background-dark p-4">
-                <div style={{ height: "7.5rem" }}></div>
+            <div className="flex flex-nowrap flex-row flex-auto justify-center container left-1/2 -translate-x-1/2 absolute">
+                <BlogPosts title="Most popular blog posts"></BlogPosts>
+                <BlogPosts title="Most recent blog posts"></BlogPosts>
             </div>
         </>
     );
