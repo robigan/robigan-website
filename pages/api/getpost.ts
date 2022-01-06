@@ -1,9 +1,16 @@
-import type { NextApiResponse } from "next";
 import { GetPostReq, GetPostRes } from "../../lib/apiTypes/getpost";
+import { readPost } from "../../common/posts";
+import { WebsiteApiResponse } from "../../lib/apiTypes/api";
 
-const handler = async (req: GetPostReq, res: NextApiResponse<GetPostRes>) => {
-    
-    res.status(200).json({ name: "John Doe" });
+const handler = async (req: GetPostReq, res: WebsiteApiResponse<GetPostRes>) => {
+    if (req.query.id === undefined) {
+        res.status(400).json({status: "error", message: "Missing id property in the query string part of the request"});
+        return;
+    }
+
+    const mdxBundle = readPost(req.query.id);
+
+    res.status(200).json({frontMatter: (await mdxBundle).frontmatter});
 };
 
 export default handler;
