@@ -28,12 +28,12 @@ export const getStaticProps = async () => {
 };
 
 const Change: FC<ChangeProps> = ({ commit }) => {
-    process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
+    // process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
         // Some of the code below is Copyright of Charlie85270 (MIT License)
         <li className="border-gray-400 flex flex-col mb-2" key={commit.sha}>
-            <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"} className="hover:no-underline">
+            <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"} className="no-underline decoration-transparent transition duration-300 focus:underline focus:decoration-inherit focus:-translate-y-1 focus:shadow-lg">
                 <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-background rounded-lg flex flex-1 items-center p-4">
                     <div className="flex-1 pl-1 md:mr-16">
                         <div className="font-medium text-white text-lg">
@@ -70,7 +70,7 @@ const Change: FC<ChangeProps> = ({ commit }) => {
 const Changes: FC<ChangesProps> = ({ commits }) => {
     const changeList = useMemo(() => {
         return (
-            <ul className="flex flex-col">
+            <ul className="flex flex-col container m-auto">
                 {
                     Array.isArray(commits) ? commits.map((commit) => {
                         return Change({ commit: commit });
@@ -91,8 +91,9 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                 <meta name="theme-color" content="#78244C" />
             </Head>
             <PageSelector />
-            <DefaultSection h1="Changes" p="A list of Changes as seen in the GitHub repository" paddingBot="5vh" />
+            <DefaultSection h1="Recent Changes" p="A list of Changes as seen in the GitHub repository" paddingBot="5vh" />
             <BackgroundColor disableMetaThemeColor={true} />
+            <div className="w-full h-4"></div>
             {changeList}
         </>
     );

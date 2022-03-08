@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from "querystring";
+import { PostFrontMatter } from "./posts";
 
 export interface PostParams extends ParsedUrlQuery {
     id: string;

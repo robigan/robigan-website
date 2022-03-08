@@ -1,5 +1,5 @@
 import { NextApiRequest } from "next";
-import { PostFrontMatter } from "../idTypes";
+import { PostFrontMatter } from "../../posts";
 
 export interface GetPostReq extends NextApiRequest {
     query: {

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import shapeStyles from "../styles/shapeStyles.Section.module.css";
+import shapeStyles from "../styles/shapeStyles.module.css";
 import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
 // import { FC } from "react";

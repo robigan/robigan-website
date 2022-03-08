@@ -1,8 +1,6 @@
 import Head from "next/head";
 // import { useRouter } from "next/router";
 import BackgroundColor from "../../components/Background/BackgroundColor";
-import { readdir, realpath, readFile } from "fs/promises";
-import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { FC, useMemo } from "react";
 import { GetStaticProps, GetStaticPaths, PreviewData, InferGetStaticPropsType } from "next";
@@ -18,26 +16,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { result, error } = (await getEnumerablePosts(undefined, true));
     
     if (result === null || error !== null) {
+        console.error(error);
+
         return {
             paths: [],
             fallback: false
         };
     }
 
-    const paths = result.map((filename) => {
-        const formatted = filename.substring(0, filename.length - 3);
-
-        return {
-            params: {
-                id: formatted
-            },
-        };
-    });
-
-    // development && (console.log(posts, paths));
-
     return {
-        paths,
+        paths: (result.map((id) => {
+            return {
+                params: {
+                    id: id
+                },
+            };
+        })),
         fallback: false
     };
 };
@@ -46,12 +40,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<PostStaticPropsResultProps, PostParams, PreviewData> = async ({ params }) => {
     if (params === undefined) throw new TypeError("Internal error, params needs to be returned by getStaticPaths");
 
-    const mdxBundle = readPost(params.id);
+    const { result: mdxBundle, error } = await readPost(params.id);
+
+    if (mdxBundle === null || error !== null) {
+        throw (error !== null ? error : new Error("An unknown error was returned by readPost"));
+    }
 
     return {
         props: {
-            code: (await mdxBundle).code,
-            frontMatter: (await mdxBundle).frontmatter,
+            code: mdxBundle.code,
+            frontMatter: mdxBundle.frontmatter,
             urlId: params.id
         },
     };
