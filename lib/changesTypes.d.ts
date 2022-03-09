@@ -9,5 +9,5 @@ export type ChangeProps = {
 export type Commits = Commit[];
 
 export type ChangesProps = {
-    commits: Commits
+    commits: Commits | undefined;
 }

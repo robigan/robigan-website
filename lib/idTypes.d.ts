@@ -1,18 +1,12 @@
 import { ParsedUrlQuery } from "querystring";
+import { PostFrontMatter } from "./posts";
 
 export interface PostParams extends ParsedUrlQuery {
-    id: string
-}
-
-export type PostFrontMatter = {
-    title?: string,
-    description?: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key: string]: any,
+    id: string;
 }
 
 export type PostStaticPropsResultProps = {
-    code: string,
-    frontMatter: PostFrontMatter,
-    urlId: string
+    code: string;
+    frontMatter: PostFrontMatter;
+    urlId: string;
 }

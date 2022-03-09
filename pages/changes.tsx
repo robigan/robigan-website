@@ -1,17 +1,21 @@
 import Head from "next/head";
 import PageSelector from "../components/PageSelector";
-import BackgroundColor from "../components/BackgroundColor";
+import BackgroundColor from "../components/Background/BackgroundColor";
 import { Commits, ChangesProps, ChangeProps } from "../lib/changesTypes";
-import { FC } from "react";
+import { FC, useMemo } from "react";
+import DefaultSection from "../components/Sections/DefaultSection";
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://api.github.com/repos/robigan/robigan-website/commits");
-    const data = (await res.json()) as Commits;
+    const res = fetch("https://api.github.com/repos/robigan/robigan-website/commits").catch(() => {
+        return {json: () => null};
+    });
+
+    const data = (await (await res).json()) as Commits | undefined;
 
     if (!data) {
         return {
             props: {
-                commits: []
+                commits: null
             }
         };
     }
@@ -24,40 +28,61 @@ export const getStaticProps = async () => {
 };
 
 const Change: FC<ChangeProps> = ({ commit }) => {
-    process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
-
-    let Component;
-
-    if (process.env.NODE_ENV === "development") {
-        Component = <div className="m-2 order-2 flex flex-row flex-nowrap justify-center content-center items-center flex-shrink">
-            {
-                (commit.commit.verification?.verified ?? false) ?
-                    <h3 className="text-green-300 border-gray-400 hover:border-green-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Verified</h3> :
-                    <h3 className="text-red-300 border-gray-400 hover:border-red-800 rounded-l-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 mr-0 border-r">Not Verified</h3>
-            }
-            <h3 className="border-gray-400 rounded-r-full border-2 p-2 min-w-max m-1 max-h-8 text-center leading-4 ml-0 border-l">{commit.commit.tree.sha.substring(0, 6)}</h3>
-        </div>;
-    } else {
-        Component = (commit.commit.verification?.verified ?? false) ? 
-            <h3 className="text-green-300 border-gray-400 hover:border-green-600 rounded-full border-2 w-min p-1 min-w-max m-1 max-h-8 text-center self-center order-2">Verified</h3> : 
-            <h3 className="text-red-300 border-gray-400 hover:border-red-600 rounded-full border-2 w-min p-1 min-w-max m-1 max-h-8 text-center self-center order-2">Not Verified</h3>;
-    }
+    // process.env.NODE_ENV === "development" ? console.log(commit.commit.message) : undefined;
 
     return (
-        <div className="rounded-lg my-2 flex justify-between flex-row flex-nowrap container mx-auto border-gray-500 border-opacity-80 border-2 content-center items-center" key={commit.sha}>
-            <div className="m-2 order-1 flex-shrink">
-                <p className="font-bold text-lg">{(commit.commit.message.split("\n"))[0]}</p>
-                <h3>{`${commit.commit.author?.name ?? "Comitter/author name not available"} commited on ${(new Date(commit.commit.author?.date ?? NaN)).toDateString()}`}</h3>
-            </div>
-
-            {
-                Component
-            }
-        </div>
+        // Some of the code below is Copyright of Charlie85270 (MIT License)
+        <li className="border-gray-400 flex flex-col mb-2" key={commit.sha}>
+            <a href={commit.html_url} role="button" target="_blank" rel="noreferrer" aria-label={"Go to this commit's GitHub page"} className="no-underline decoration-transparent transition duration-300 focus:underline focus:decoration-inherit focus:-translate-y-1 focus:shadow-lg">
+                <div className="transition duration-500 shadow ease-in-out transform hover:-translate-y-1 hover:shadow-lg select-none cursor-pointer bg-background rounded-lg flex flex-1 items-center p-4">
+                    <div className="flex-1 pl-1 md:mr-16">
+                        <div className="font-medium text-white text-lg">
+                            {(commit.commit.message.split("\n"))[0]}
+                        </div>
+                        <div className="text-gray-200 text-sm">
+                            {commit.commit.author?.name ?? "Comitter/author name not available"}
+                        </div>
+                    </div>
+                    <div className="text-gray-200 text-xs mr-4">
+                        {(new Date(commit.commit.author?.date ?? NaN)).toDateString()}
+                    </div>
+                    {
+                        (commit.commit.verification?.verified ?? false) ?
+                            <div className="text-green-600 text-xs">
+                                Verified
+                            </div> :
+                            <div className="text-red-600 text-xs">
+                                Unverified
+                            </div>
+                    }
+                    <div className="w-24 text-right flex justify-end">
+                        <svg width="12" fill="currentColor" height="12" className="hover:text-gray-800 dark:hover:text-white dark:text-gray-200 text-gray-500" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </li>
     );
 };
 
 const Changes: FC<ChangesProps> = ({ commits }) => {
+    const changeList = useMemo(() => {
+        return (
+            <ul className="flex flex-col container m-auto">
+                {
+                    Array.isArray(commits) ? commits.map((commit) => {
+                        return Change({ commit: commit });
+                    }) : (() => {
+                        if (process.env.NODE_ENV === "test") throw new TypeError(`GitHub commits data is not an array!\nCommits Object: ${JSON.stringify(commits, null, 4)}`);
+                        return <h2 className="text-center">There seems to have been an error while fetching the data</h2>;
+                    })()
+                }
+            </ul>
+        );
+    }, [commits]);
+
     return (
         <>
             <Head>
@@ -65,17 +90,11 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
                 <meta name="description" content="A page for seeing all the changes made on the main github repo's branch" />
                 <meta name="theme-color" content="#78244C" />
             </Head>
-            <PageSelector></PageSelector>
-            <h1 className="text-white text-center">This page is still under construction</h1>
-            {
-                Array.isArray(commits) ? commits.map((commit) => {
-                    return Change({ commit: commit });
-                }) : (() => {
-                    if (process.env.NODE_ENV === "test") throw new TypeError(`GitHub commits data is not an array!\nCommits Object: ${JSON.stringify(commits, null, 4)}`);
-                    return <h2>There seems to have been an error when fetching the data</h2>;
-                })()
-            }
-            <BackgroundColor /* backgroundColor="#78244C" */ backgroundColor="#202731" disableMetaThemeColor={true}></BackgroundColor>
+            <PageSelector />
+            <DefaultSection h1="Recent Changes" p="A list of Changes as seen in the GitHub repository" paddingBot="5vh" />
+            <BackgroundColor disableMetaThemeColor={true} />
+            <div className="w-full h-4"></div>
+            {changeList}
         </>
     );
 };

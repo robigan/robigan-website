@@ -1,21 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/index.module.css";
-// import Section from "../components/Section";
-import shapeStyles from "../styles/shapeStyles.section.module.css";
+import shapeStyles from "../styles/shapeStyles.module.css";
 import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
-
-import { FC } from "react";
-import { SectionProps } from "../lib/indexTypes";
-
-const Section: FC<SectionProps> = ({ children, backgroundColor = "#ffffff00" }) => {
-    return (
-        <section style={{ backgroundColor: backgroundColor }}>
-            {children}
-        </section>
-    );
-};
+// import { FC } from "react";
+import Section from "../components/Sections/Section";
+import DefaultSection from "../components/Sections/DefaultSection";
+import BackgroundColor from "../components/Background/BackgroundColor";
 
 const Home = () => {
     return (
@@ -25,20 +16,11 @@ const Home = () => {
                 <meta name="description" content="Robigan's homepage" />
                 <meta name="theme-color" content="blueviolet" />
             </Head>
-            <PageSelector></PageSelector>
-            <div className={styles.Sections}>
-                <Section backgroundColor="blueviolet">
-                    <div data-sectionpadding="true" style={{ top: "5vh" }}>
-                        <h1>Hello There</h1>
-                        <p>I am robigan and this is my web page.</p>
-                    </div>
-                </Section>
+            <PageSelector />
+            <BackgroundColor></BackgroundColor>
+            <div>
+                <DefaultSection />
                 <Section backgroundColor="#202731">
-                    <div className={shapeStyles.Tilt1}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" style={{ "fill": "blueviolet" }}></path>
-                        </svg>
-                    </div>
                     <div data-sectionpadding="true">
                         <h1>About Me</h1>
                         <p>So, let&apos;s see... I started out on <a href="https://scratch.mit.edu/users/robigan/" role="link" target="_blank" rel="noreferrer">Scratch</a> in 2016 making projects and having fun, this is when I started out with Programming and it was the start of my passion/carrier. From there I started working on web development but eventually moved to backend JavaScript although I still like to do front end. Over the years I have also worked with Java, Python and C (when working on things like the arduino). Over the lockdown and summer of 2021, I spent my time living my life and casually coding while working on my own take of a <a href="https://github.com/robigan/RobBot" role="link" target="_blank" rel="noreferrer">full purpose discord bot (currently in pause)</a>, building <a href="https://github.com/robigan/robigan-website" role="link" target="_blank" rel="noreferrer">this website</a> and developing for <a href="https://gaming.cosup.eu" role="link" target="_blank" rel="noreferrer">Cosup Gaming</a>. Nowadays I attend an IT leading highschool and study the IB program, where I currently study web development with <a href="https://v3.vuejs.org/" role="link" target="_blank" rel="noreferrer">Vue.js</a>, game development with <a href="https://unity.com/" role="link" target="_blank" rel="noreferrer">Unity</a>/<a href="https://dotnet.microsoft.com/" role="link" target="_blank" rel="noreferrer">C#</a> and work on my personal projects, CineForum and <a href="https://github.com/robigan/ManageBack_ToBasics" role="link" target="_blank" rel="noreferrer">ManageBack To Basics</a>.</p>
@@ -60,7 +42,7 @@ const Home = () => {
                         </div> : <></>
                     }
                     <div data-sectionpadding="true">
-                        <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" />
+                        <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" layout="intrinsic" />
                     </div>
                 </Section>
                 <Section backgroundColor="#ff5233">
@@ -74,7 +56,7 @@ const Home = () => {
                         <ContactMe />
                     </div>
                 </Section>
-                <Section backgroundColor="#78244C">
+                <Section backgroundColor="#78244C" paddingBot="5rem">
                     <div className={shapeStyles.Wavy3}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                             <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" style={{ "fill": "#ff5233" }}></path>
@@ -83,9 +65,11 @@ const Home = () => {
                     <div data-sectionpadding="true">
                         <p>Psst... Did you know this website&apos;s source code can be found on <a href="https://github.com/robigan/robigan-website" role="link" target="_blank" rel="noreferrer">github? Check it out!</a></p>
                     </div>
-                    <div style={{ height: "calc(5rem)" }}></div>
                 </Section>
             </div>
+            {/* <div className="fixed z-50 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-primary p-2 rounded hover:bg-primary-dark">
+                <p>Hello World</p>
+            </div> */}
         </>
     );
 };
