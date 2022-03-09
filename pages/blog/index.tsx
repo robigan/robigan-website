@@ -7,6 +7,8 @@ import DefaultSection from "../../components/Sections/DefaultSection";
 import UnderConstruct from "../../components/UnderContruct";
 import { getStaticPaths as getStaticPosts } from "./[id]";
 
+const development = process.env.NODE_ENV === "development";
+
 export const getStaticProps: GetStaticProps = async () => {
     const posts = (await getStaticPosts({})).paths;
 
@@ -28,10 +30,10 @@ const Blog = () => {
             <DefaultSection h1="Blog" p="The dedicated homepage to the blogging portion of my site" paddingBot="5vh" />
             <BackgroundColor />
             <UnderConstruct />
-            <div className="flex flex-nowrap flex-row flex-auto justify-center container left-1/2 -translate-x-1/2 absolute">
+            {development && <div className="flex flex-nowrap flex-row flex-auto justify-center container left-1/2 -translate-x-1/2 absolute">
                 <BlogPosts title="Most popular blog posts"></BlogPosts>
                 <BlogPosts title="Most recent blog posts"></BlogPosts>
-            </div>
+            </div>}
         </>
     );
 };
