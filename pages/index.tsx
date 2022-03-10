@@ -40,7 +40,7 @@ const Home = () => {
                             </g>
                         </svg>
                     </div>
-                    <div data-sectionpadding="true">
+                    <div data-sectionpadding="true" className="select-none">
                         <Image src="https://raw.githubusercontent.com/robigan/robigan-metrics/main/github-metrics.svg" alt="" width="480" height="482" layout="intrinsic" tabIndex={0} />
                     </div>
                 </Section>
