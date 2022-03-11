@@ -2,6 +2,6 @@
 
 @layer components {
     .focusable-underline a {
-        @apply no-underline decoration-transparent transition duration-300 focus:underline focus:decoration-inherit;
+        @apply no-underline decoration-transparent transition duration-300 focus:underline focus:decoration-inherit hover:underline hover:decoration-inherit;
     }
 }

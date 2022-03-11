@@ -61,9 +61,10 @@ const Home = () => {
                             <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" style={{ "fill": "#ff5233" }}></path>
                         </svg>
                     </div>
-                    <div data-sectionpadding="true">
+                    <div data-sectionpadding="true" className={styles["focusable-underline"]}>
                         <p>Psst... Did you know this website&apos;s source code can be found on <a href="https://github.com/robigan/robigan-website" role="link" target="_blank" rel="noreferrer">github? Check it out!</a></p>
                     </div>
+                    <div className="py-4"></div>
                 </Section>
             </div>
             {/* <div className="fixed z-50 top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 bg-primary p-2 rounded hover:bg-primary-dark">

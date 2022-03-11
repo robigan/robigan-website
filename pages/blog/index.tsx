@@ -28,7 +28,7 @@ const Blog = () => {
             </Head>
             <PageSelector />
             <DefaultSection h1="Blog" p="The dedicated homepage to the blogging portion of my site" paddingBot="5vh" />
-            <BackgroundColor />
+            <BackgroundColor /* backgroundColor="#3b1226" */ disableMetaThemeColor={true} />
             <UnderConstruct />
             {development && <div className="flex flex-nowrap flex-row flex-auto justify-center container left-1/2 -translate-x-1/2 absolute">
                 <BlogPosts title="Most popular blog posts"></BlogPosts>
