@@ -8,7 +8,7 @@ const DefaultSection: FC<DefaultSectionProps> = ({ h1 = "Robigan", p = "I am rob
     return (
         <Section paddingBot={paddingBot} paddingTop={paddingTop} extraStyles={{ bottom: { maxHeight: 80 }, top: { maxHeight: 80 } }}>
             {
-                (typeof src === "boolean") && src ? <Image src={image} alt="" layout="fill" objectFit="cover" className="-z-10" placeholder="blur"/> : (typeof src === "string") ? <Image src={src} alt="" layout="fill" objectFit="cover" className="-z-10" /> : <></>
+                (typeof src === "boolean") && src ? <Image src={image} alt="" layout="fill" objectFit="cover" className="-z-10 select-none" placeholder="blur"/> : (typeof src === "string") ? <Image src={src} alt="" layout="fill" objectFit="cover" className="-z-10 select-none" /> : <></>
             }
             <div data-sectionpadding="true">
                 <h1 className="text-5xl text-center mb-5">{h1}</h1>

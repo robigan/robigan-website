@@ -95,6 +95,7 @@ const Changes: FC<ChangesProps> = ({ commits }) => {
             <BackgroundColor disableMetaThemeColor={true} />
             <div className="w-full h-4"></div>
             {changeList}
+            <div className="py-14"></div>
         </>
     );
 };
