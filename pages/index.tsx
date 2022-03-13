@@ -4,7 +4,6 @@ import shapeStyles from "../styles/shapeStyles.module.css";
 import styles from "../styles/index.module.css";
 import ContactMe from "../components/ContactMe";
 import PageSelector from "../components/PageSelector";
-// import { FC } from "react";
 import Section from "../components/Sections/Section";
 import DefaultSection from "../components/Sections/DefaultSection";
 import BackgroundColor from "../components/Background/BackgroundColor";
