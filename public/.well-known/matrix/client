@@ -1,5 +1,5 @@
 {
     "m.homeserver": {
-      "base_url": "https://matrix.robigan.com"
+      "base_url": "https://matrix.robigan.com:8443"
     }
   }
