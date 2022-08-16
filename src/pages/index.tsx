@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavBar from "../components/NavBar";
 import profilePicture from "../../public/person.png";
+import { BsArrowRight } from "react-icons/bs";
 
 const Home = () => (
     <>
@@ -51,9 +52,12 @@ const Home = () => (
                     {/* More about me call to action */}
                     <div className="mb-2 mt-16">
                         <Link href="/about">
-                            <a className="border border-primary rounded-full py-4 pl-4">
-                                <span className="mr-4">MORE ABOUT ME</span>
-                                <span className="rounded-full bg-primary p-4"> GO </span>
+                            <a className="border border-primary rounded-full py-4 pl-4 overflow-hidden relative bg-left hover:bg-right transition-all duration-300 ease-linear" style={{backgroundSize: "200%", backgroundImage: "linear-gradient(to left, #FFB400 50%, black 50%);"}}>
+                                <span className="mr-16">MORE ABOUT ME</span>
+                                <div className="absolute rounded-full bg-primary w-[53.5px] h-[53.5px] -top-px -right-px inline-flex justify-center items-center">
+                                    {/* <Image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1" height="1" /> */}
+                                    <BsArrowRight width="20" height="20" />
+                                </div>
                             </a>
                         </Link>
                     </div>

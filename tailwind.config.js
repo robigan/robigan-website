@@ -5,6 +5,11 @@ module.exports = {
         extend: {
             colors: {
                 primary: "#FFB400"
+            },
+            spacing: {
+                "48p": "48px",
+                "72p": "72px",
+                "96p": "96px"
             }
         },
     },
