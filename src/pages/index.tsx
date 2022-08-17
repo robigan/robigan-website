@@ -8,9 +8,8 @@ import { BsArrowRight } from "react-icons/bs";
 const Home = () => (
     <>
         <Head>
-            <title>Robigan - Homepage</title>
+            <title>Homepage</title>
             <meta name="description" content="Robigan's homepage" />
-            <meta name="theme-color" content="blueviolet" />
         </Head>
 
         <div className="absolute top-0 left-0 w-full h-full">
@@ -23,12 +22,12 @@ const Home = () => (
             <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center lg:flex-row lg:justify-around lg:items-center">
 
                 {/* Large width screen profile */}
-                <div className="hidden lg:block relative w-4/12 h-4/5 rounded-[3rem] overflow-hidden bg-black">
+                <div className="hidden lg:block relative w-4/12 h-4/5 rounded-[50px] overflow-hidden bg-black select-none">
                     <Image src={profilePicture} alt="Robigan's profile picture" layout="fill" objectFit="cover" />
                 </div>
 
                 {/* Small width rounded screen profile w/ border */}
-                <div className="lg:hidden h-64 w-64 relative bg-black rounded-full border-8 border-gray-800 overflow-hidden shrink-0">
+                <div className="lg:hidden h-64 w-64 relative bg-black rounded-full border-8 border-gray-800 overflow-hidden shrink-0 select-none">
                     <Image src={profilePicture} alt="Robigan's profile picture" layout="fill" objectFit="cover"></Image>
                 </div>
 
@@ -52,7 +51,7 @@ const Home = () => (
                     {/* More about me call to action */}
                     <div className="mb-2 mt-16">
                         <Link href="/about">
-                            <a className="border border-primary rounded-full py-4 pl-4 overflow-hidden relative bg-left hover:bg-right transition-all duration-300 ease-linear" style={{backgroundSize: "200%", backgroundImage: "linear-gradient(to left, #FFB400 50%, black 50%);"}}>
+                            <a className="border border-primary rounded-full py-4 pl-4 overflow-hidden relative bg-left hover:bg-right transition-all duration-300 ease-linear select-none" style={{backgroundSize: "200%", backgroundImage: "linear-gradient(to left, #FFB400 50%, black 50%);"}}>
                                 <span className="mr-16">MORE ABOUT ME</span>
                                 <div className="absolute rounded-full bg-primary w-[53.5px] h-[53.5px] -top-px -right-px inline-flex justify-center items-center">
                                     {/* <Image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1" height="1" /> */}
@@ -64,7 +63,7 @@ const Home = () => (
 
                 </div>
 
-                <NavBar />
+                <NavBar pathname="/" />
             </div>
         </div>
     </>

@@ -4,7 +4,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#FFB400"
+                primary: "#FFB400",
+                "black-light": "#101010",
+                "black-lighter": "#3C3C3C"
             },
             spacing: {
                 "48p": "48px",
