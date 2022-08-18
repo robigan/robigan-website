@@ -45,7 +45,7 @@ const Home = () => (
 
                     {/* Small about summary */}
                     <div className="my-2">
-                        <p>I am an <span className="text-green-500">Ita</span>li<span className="text-red-500">an</span> software engineer.<br />I love creating anything, refining whatever I make down to perfection. Always making sure that what I create is top notch and loved by the community.</p>
+                        <p>I am an <span className="text-green-500">Ita</span>li<span className="text-red-500">an</span> teenaged software engineer.<br />I love creating anything, refining whatever I make down to perfection. Always making sure that what I create is top notch and loved by the community.</p>
                     </div>
 
                     {/* More about me call to action */}
