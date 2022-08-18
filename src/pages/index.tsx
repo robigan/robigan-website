@@ -27,7 +27,7 @@ const Home = () => (
                 </div>
 
                 {/* Small width rounded screen profile w/ border */}
-                <div className="lg:hidden h-64 w-64 relative bg-black rounded-full border-8 border-gray-800 overflow-hidden shrink-0 select-none">
+                <div className="lg:hidden h-64 aspect-square relative bg-black rounded-full border-8 border-gray-800 overflow-hidden shrink select-none">
                     <Image src={profilePicture} alt="Robigan's profile picture" layout="fill" objectFit="cover"></Image>
                 </div>
 

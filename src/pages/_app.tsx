@@ -2,6 +2,7 @@ import Head from "next/head";
 import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { FC } from "react";
+import { IconContext } from "react-icons/lib";
 
 const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -11,7 +12,9 @@ const _App: FC<AppProps> = ({ Component, pageProps }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="theme-color" content="#101010" />
             </Head>
-            <Component {...pageProps} />
+            <IconContext.Provider value={{size: "100%"}}>
+                <Component {...pageProps} />
+            </IconContext.Provider>
         </>
     );
 };
