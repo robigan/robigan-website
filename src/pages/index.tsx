@@ -51,11 +51,11 @@ const Home = () => (
                     {/* More about me call to action */}
                     <div className="mb-2 mt-16">
                         <Link href="/about">
-                            <a className="border border-primary rounded-full py-4 pl-4 overflow-hidden relative bg-left hover:bg-right transition-all duration-300 ease-linear select-none" style={{backgroundSize: "200%", backgroundImage: "linear-gradient(to left, #FFB400 50%, black 50%);"}}>
+                            <a className="border border-primary rounded-full py-4 pl-4 overflow-hidden relative bg-left hover:bg-right transition-all duration-300 ease-linear select-none" style={{backgroundSize: "200%", backgroundImage: "linear-gradient(to left, #FFB400 50%, black 50%)"}}>
                                 <span className="mr-16">MORE ABOUT ME</span>
                                 <div className="absolute rounded-full bg-primary w-[53.5px] h-[53.5px] -top-px -right-px inline-flex justify-center items-center">
                                     {/* <Image src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1" height="1" /> */}
-                                    <BsArrowRight width="20" height="20" />
+                                    <BsArrowRight size="1em" />
                                 </div>
                             </a>
                         </Link>

@@ -25,9 +25,11 @@ type ContactTileProps = {
 
 const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ title, children, blankTarget = true, overwriteBlankTargetVisuals = false, ...linkProps }) => (
     <div className="basis-1/4 h-1/2 flex items-center">
-        <div className="w-3/4 lg:w-1/2 mx-auto relative">
+        <div className="w-3/4 lg:w-1/2 mx-auto">
+
             <Link passHref={blankTarget} {...linkProps}>
                 <a target={blankTarget ? "_blank" : "_self"} rel={blankTarget ? "noopener noreferrer" : ""} className="hover:underline active:underline">
+
                     <div className="aspect-square relative">
                         <div className="absolute h-full w-full z-10 opacity-0 hover:opacity-90 bg-black-light flex justify-center items-center transition-all duration-300">
                             <div className="h-1/4 w-1/4 flex justify-center items-center">
@@ -42,7 +44,8 @@ const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ titl
                             </div>
                         </div>
                     </div>
-                    <p className="w-fit absolute left-1/2 -translate-x-1/2 text-[1em] md:text-[1.1em]">{title}</p>
+
+                    <p className="w-fit mx-auto h-4 mb-2 text-[1em] md:text-[1.1em]">{title}</p>
                 </a>
             </Link>
         </div>
