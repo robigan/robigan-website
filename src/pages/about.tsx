@@ -1,15 +1,10 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { useEffect } from "react";
-import { BsKeyFill } from "react-icons/bs";
-import useAppDispatch from "../lib/hooks/useAppDispatch";
-import { pushExampleModalAction, pushModalStackAction } from "../lib/slices/ui";
+import { useContext } from "react";
+import { ModalContext } from "../components/ModalManager";
 
 const About: NextPage = () => {
-    const dispatch = useAppDispatch();
-    useEffect(() => {
-        useAppDispatch(pushExampleModalAction());
-    }, []);
+    const { pushModalStack, popModalStack } = useContext(ModalContext);
 
     return (<>
         <Head>
@@ -24,7 +19,7 @@ const About: NextPage = () => {
         </div>
 
         <div>
-            <button onClick={() => useAppDispatch()}>Click me</button>
+            <button onClick={() => pushModalStack({type: "generic", children: "Hello"})}>Click me</button>
         </div>
     </>);
 };
