@@ -19,5 +19,13 @@ export type ModalPayload = LinksModalPayload | GenericModalPayload
 export interface ModalsData {
     modalStack: ModalPayload[],
     pushModalStack: (payload: ModalPayload) => void,
-    popModalStack: () => void
+    popModalStack: () => void,
+    /**
+     * Read value that allows you to check what the current status of the clearStackPolicy is
+     */
+    clearStackPolicy: boolean
+    /**
+     * This option if set to false basically doesn't clear the stack if the router object in Next.js changes
+     */
+    setClearStackPolicy: (policy: boolean) => void
 }

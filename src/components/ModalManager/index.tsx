@@ -1,4 +1,5 @@
-import { createContext, FC, PropsWithChildren, useContext, useState } from "react";
+import { useRouter } from "next/router";
+import { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from "react";
 import Modal from "../Modal";
 import { ModalPayload, ModalsData } from "./types";
 
@@ -7,7 +8,10 @@ const initialData: ModalsData = {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     pushModalStack: () => {},
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    popModalStack: () => {}
+    popModalStack: () => {},
+    clearStackPolicy: true,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setClearStackPolicy: () => {}
 };
 
 export const ModalContext = createContext<ModalsData>(initialData);
@@ -39,6 +43,15 @@ const ModalManager: FC = () => {
 
 const Provider: FC<PropsWithChildren> = ({ children }) => {
     const [stack, setStack] = useState<ModalPayload[]>([]);
+    const [ clearStackPolicy, setClearStackPolicy ] = useState(true);
+    const router = useRouter();
+
+    useEffect(() => {
+        if (clearStackPolicy) {
+            setStack([]);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [router]);
 
     const value: ModalsData = {
         modalStack: stack,
@@ -52,6 +65,8 @@ const Provider: FC<PropsWithChildren> = ({ children }) => {
             const newStack = stack.slice(0, -1);
             setStack(newStack);
         },
+        clearStackPolicy,
+        setClearStackPolicy
     };
 
     return (

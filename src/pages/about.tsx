@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ModalContext } from "../components/ModalManager";
 
 const About: NextPage = () => {
-    const { pushModalStack, popModalStack } = useContext(ModalContext);
+    const { pushModalStack, popModalStack, clearStackPolicy, setClearStackPolicy } = useContext(ModalContext);
 
     return (<>
         <Head>
@@ -19,7 +19,15 @@ const About: NextPage = () => {
         </div>
 
         <div>
-            <button onClick={() => pushModalStack({type: "generic", children: "Hello"})}>Click me</button>
+            <button className="mx-2" onClick={() => pushModalStack({
+                type: "generic",
+                children: <>
+                    <p>Hello World</p>
+                    <button onClick={() => popModalStack()}>Click me to make me go away</button>
+                </>
+            })}>Click me</button>
+            <button className="mx-2" onClick={() => setClearStackPolicy(!clearStackPolicy)}>Toggle clearStackPolicy</button>
+            <p className="mx-2">Currently: {JSON.stringify(clearStackPolicy)}</p>
         </div>
     </>);
 };
