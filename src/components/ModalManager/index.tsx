@@ -1,15 +1,28 @@
-import { FC, ReactElement } from "react";
+import { FC } from "react";
+import useUISelector from "../../lib/hooks/useUISelector";
+import { getModalStack } from "../../lib/slices/ui/selectors";
 import Modal from "../Modal";
 
-interface ModalManagerProps {
-    targetModals: ReactElement<any, any>[]
-}
+const ModalManager: FC = () => {
+    const modals = useUISelector(getModalStack);
 
-const ModalManager: FC<ModalManagerProps> = ({ targetModals }) => {
     return (
         <>
             {
-                targetModals.map((child, index) => <Modal key={"ModalManager_" + index}>{child}</Modal>)
+                modals.map((child) => {
+                    switch (child.type) {
+                    case "links":
+                        return (
+                            <Modal.Links links={child.links} />
+                        );
+                    case "generic":
+                        return (
+                            <Modal>{child.children}</Modal>
+                        );
+                    default:
+                        throw new Error("Modal type not recognized");
+                    }
+                })
             }
         </>
     );

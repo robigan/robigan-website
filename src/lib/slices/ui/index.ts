@@ -1,19 +1,38 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { UIState } from "./types";
-import * as reducers from "./reducers";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ModalPayload, ModalRemovalPayload, UIState } from "./types";
 
 const initialState: UIState = {
-    value: 0
+    modalStack: []
 };
 
 export const uiSlice = createSlice({
-    name: "UserInterface",
+    name: "ui",
     initialState,
     reducers: {
-        ...reducers
+        pushModalStackAction: (state, payload: PayloadAction<ModalPayload>) => {
+            state.modalStack.push(payload.payload);
+        },
+        pushExampleModalAction: (state) => {
+            state.modalStack.push({
+                type: "generic",
+                children: "Hello World"
+            });
+        },
+        popModalStackAction: (state, payload: PayloadAction<ModalRemovalPayload>) => {
+            const targetData = payload.payload;
+            if (typeof targetData === "number") {
+                state.modalStack.splice(targetData, 1);
+            } else if (targetData === null) {
+                state.modalStack.pop();
+            }
+        },
     }
 });
 
-export const { increment } = uiSlice.actions;
+export const { 
+    pushModalStackAction,
+    popModalStackAction,
+    pushExampleModalAction
+} = uiSlice.actions;
 
 export default uiSlice.reducer;

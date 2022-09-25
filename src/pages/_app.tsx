@@ -4,7 +4,8 @@ import { AppProps } from "next/app";
 import { FC } from "react";
 import { IconContext } from "react-icons/lib";
 import ModalManager from "../components/ModalManager";
-import { wrapper } from "../lib/store";
+import store from "../lib/store";
+import { Provider } from "react-redux";
 
 const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -15,13 +16,15 @@ const _App: FC<AppProps> = ({ Component, pageProps }) => {
                 <meta name="theme-color" content="#101010" />
             </Head>
 
-            <ModalManager targetModals={[<p key="">Hello</p>]}/>
+            <Provider store={store}>
+                <ModalManager />
 
-            <IconContext.Provider value={{size: "100%"}}>
-                <Component {...pageProps} />
-            </IconContext.Provider>
+                <IconContext.Provider value={{size: "100%"}}>
+                    <Component {...pageProps} />
+                </IconContext.Provider>
+            </Provider>
         </>
     );
 };
 
-export default wrapper.withRedux(_App);
+export default _App;

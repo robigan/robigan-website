@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { createWrapper } from "next-redux-wrapper";
 import { rootReducer } from "../slices";
 
-const makeStore = () => configureStore({
+const store = configureStore({
     reducer: rootReducer,
     devTools: true
 });
 
-export const wrapper = createWrapper<ReturnType<typeof makeStore>>(makeStore);
+export type RootState = ReturnType<typeof store["getState"]>;
+export type AppDispatch = typeof store["dispatch"];
+
+export default store;
+// export const wrapper = createWrapper<ReturnType<typeof makeStore>>(makeStore);

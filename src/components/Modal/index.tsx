@@ -1,13 +1,6 @@
-import { FC, PropsWithChildren } from "react";
-import ModalBackground from "./background";
-import ModalInterface from "./interface";
+import LinksModal from "./linksModal";
+import GenericModal from "./genericModal";
 
-const Modal: FC<PropsWithChildren> = ({ children }) => (
-    <ModalBackground>
-        <ModalInterface>
-            {children}
-        </ModalInterface>
-    </ModalBackground>
-);
+const Modal = GenericModal;
 
-export default Modal;
+export default Object.assign(Modal, { Links: LinksModal });

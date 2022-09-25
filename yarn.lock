@@ -3528,17 +3528,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-redux-wrapper@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "next-redux-wrapper@npm:8.0.0"
-  peerDependencies:
-    next: ">=9"
-    react: "*"
-    react-redux: "*"
-  checksum: edced26b263d2484904d54542cd2c7d8e3a2c45fb571d075ca7f78cc32e16ef87c14737d47bf60db3b6e1859f4237c3a370285741d5cb7eda5cc7b5cb2590596
-  languageName: node
-  linkType: hard
-
 "next@npm:12.3.1":
   version: 12.3.1
   resolution: "next@npm:12.3.1"
@@ -4654,7 +4643,6 @@ __metadata:
     eslint-config-next: 12.3.1
     eslint-plugin-react: ^7.31.8
     next: 12.3.1
-    next-redux-wrapper: ^8.0.0
     npm-check-updates: ^16.3.2
     postcss: ^8.4.16
     react: 18.2.0
