@@ -1,13 +1,18 @@
-interface FileStructure {
-    type: "file",
+export enum NodeType {
+    FILE = "file",
+    DIR = "directory"
+}
+
+export interface FileStructure {
+    type: NodeType.FILE,
     name: string,
     contents?: ReactNode,
 }
 
-interface DirectoryStructure {
-    type: "directory",
+export interface DirectoryStructure {
+    type: NodeType.DIR,
     name: string,
     children?: Array<DirectoryStructure | FileStructure>,
 }
 
-type RootDirectoryStructure = DirectoryStructure[]
+export type RootDirectoryStructure = DirectoryStructure[]

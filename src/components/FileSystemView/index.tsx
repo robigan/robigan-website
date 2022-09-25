@@ -1,25 +1,24 @@
 import RootDirectory from "./directory";
+import { NodeType, RootDirectoryStructure } from "./types";
 
 export const TEST_DATA: RootDirectoryStructure = [
     {
         name: "home",
-        type: "directory",
+        type: NodeType.DIR,
         children: [
             {
                 name: "robigan",
-                type: "directory",
+                type: NodeType.DIR,
                 children: [
                     {
                         name: "About Me",
-                        type: "file",
+                        type: NodeType.FILE,
                         contents: <p>Hello World</p>
                     },
                     {
                         name: "Documents",
-                        type: "directory",
-                        children: [
-
-                        ],
+                        type: NodeType.DIR,
+                        children: [],
                     }
                 ]
             }

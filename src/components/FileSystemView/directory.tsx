@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Disclosure } from "@headlessui/react";
+import { DirectoryStructure, NodeType, RootDirectoryStructure } from "./types";
 
 interface DirectoryProps {
     payload: DirectoryStructure,
@@ -14,9 +15,9 @@ const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
                 payload.children && payload.children.map((childPayload) => {
                     const computedKey = refKey + "/" + childPayload.name;
                     
-                    if (childPayload.type === "directory") 
+                    if (childPayload.type === NodeType.DIR) 
                         return <Directory payload={childPayload} key={computedKey} refKey={computedKey} />;
-                    else if (childPayload.type === "file")
+                    else if (childPayload.type === NodeType.FILE)
                         return <></>;
                 })
             }
