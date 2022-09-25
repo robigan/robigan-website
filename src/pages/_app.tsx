@@ -3,7 +3,6 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { FC } from "react";
 import { IconContext } from "react-icons/lib";
-import ModalManager from "../components/ModalManager";
 
 const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -15,11 +14,9 @@ const _App: FC<AppProps> = ({ Component, pageProps }) => {
             </Head>
 
 
-            <ModalManager.Provider>
-                <IconContext.Provider value={{ size: "100%" }}>
-                    <Component {...pageProps} />
-                </IconContext.Provider>
-            </ModalManager.Provider>
+            <IconContext.Provider value={{ size: "100%" }}>
+                <Component {...pageProps} />
+            </IconContext.Provider>
         </>
     );
 };

@@ -14,9 +14,9 @@ interface GenericModalPayload extends PropsWithChildren {
     type: "generic"
 }
 
-export type ModalPayload = LinksModalPayload | GenericModalPayload
+type ModalPayload = LinksModalPayload | GenericModalPayload
 
-export interface ModalsData {
+interface ModalsData {
     modalStack: ModalPayload[],
     pushModalStack: (payload: ModalPayload) => void,
     popModalStack: () => void,
