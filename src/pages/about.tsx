@@ -8,7 +8,7 @@ import { ABOUT_FSV_DATA } from "../lib/data/about";
 const About: NextPage = () => (
     <>
         <Head>
-            <title>About</title>
+            <title>Robigan OS | About</title>
             <meta name="description" content="An all about robigan" />
         </Head>
 
