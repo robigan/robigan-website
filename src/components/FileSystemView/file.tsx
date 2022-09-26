@@ -55,7 +55,7 @@ export interface FileStructure extends BaseFileStructure {
  */
 const File: FC<{ payload: FileStructure }> = ({ payload }) => (
     <BaseFile payload={payload} icon={AiOutlineFile}>
-        <div className="w-full flex-grow bg-black overflow-y-auto p-2 rounded-xl min-w-[65vw]">
+        <div className="w-full flex-grow bg-black overflow-y-auto p-2 rounded-xl min-w-[65vw] whitespace-pre-wrap">
             {payload.contents}
         </div>
     </BaseFile>
