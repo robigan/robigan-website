@@ -105,7 +105,7 @@ const About = () => (
                 </div>
 
                 <div className="hidden lg:block invisible mx-8">
-                    {/* Serves asn invisible element meant to make space on the x-axis */}
+                    {/* Serves as an invisible element meant to make space on the x-axis */}
                     <NavBar pathname="" />
                 </div>
             </div>

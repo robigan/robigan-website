@@ -1,10 +1,11 @@
 import { FC, PropsWithChildren } from "react";
-import { AiOutlineFile, AiOutlineFolder, AiOutlineFolderOpen, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineFile, AiOutlineFileImage, AiOutlineFolder, AiOutlineFolderOpen, AiOutlineRight } from "react-icons/ai";
 
 export enum NodeType {
     FILE = "file",
     DIR = "directory",
-    ROOT = "root"
+    ROOT = "root",
+    IMAGE = "image"
 }
 
 interface DecoratedButtonProps {
@@ -37,6 +38,13 @@ const DecoratedButton:FC<PropsWithChildren<DecoratedButtonProps>> = ({ children,
         return (
             <h3 className={className}>
                 <AiOutlineRight size={size} />
+                {children}
+            </h3>
+        );
+    else if (type === NodeType.IMAGE)
+        return (
+            <h3 className={className}>
+                <AiOutlineFileImage size={size} />
                 {children}
             </h3>
         );

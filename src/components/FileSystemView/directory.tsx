@@ -2,11 +2,12 @@ import { FC } from "react";
 import { Disclosure } from "@headlessui/react";
 import File, { FileStructure } from "./file";
 import DecoratedButton, { NodeType } from "./common";
+import Image, { ImageStructure } from "./image";
 
 export interface DirectoryStructure {
     type: NodeType.DIR,
     name: string,
-    children?: Array<DirectoryStructure | FileStructure>,
+    children?: Array<DirectoryStructure | FileStructure | ImageStructure>,
 }
 
 export type RootDirectoryStructure = DirectoryStructure[]
@@ -37,6 +38,9 @@ const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
                         return <Directory payload={childPayload} key={computedKey} refKey={computedKey} />;
                     else if (childPayload.type === NodeType.FILE)
                         return <File payload={childPayload} key={computedKey} />;
+                    else if (childPayload.type === NodeType.IMAGE)
+                        // eslint-disable-next-line jsx-a11y/alt-text
+                        return <Image payload={childPayload} />;
                 })
             }
         </Disclosure.Panel>
