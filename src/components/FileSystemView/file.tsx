@@ -16,7 +16,7 @@ export const BaseFile: FC<PropsWithChildren<{ payload: BaseFileStructure, icon: 
         <>
             <button type="button" onClick={() => setIsOpen(true)} className="m-1 block">
                 <DecoratedButton state={isOpen} type={payload.type}>
-                    &#8200;{payload.name}
+                    {payload.name}
                 </DecoratedButton>
             </button>
 
@@ -28,7 +28,7 @@ export const BaseFile: FC<PropsWithChildren<{ payload: BaseFileStructure, icon: 
                     <div className="flex justify-between mb-8 mt-2 ml-2 mr-4">
 
                         <Dialog.Title className="flex items-center mr-12">
-                            <Icon size="1.75rem" />&#8200;{payload.name}
+                            <Icon size="1.75rem" />&nbsp;{payload.name}
                         </Dialog.Title>
 
                         <button type="button" onClick={() => setIsOpen(false)}>

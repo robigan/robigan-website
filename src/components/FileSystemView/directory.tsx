@@ -25,7 +25,7 @@ const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
         <Disclosure.Button className="m-1 block">
             {({ open }) => (            
                 <DecoratedButton state={open} type={NodeType.DIR}>
-                    &#8200;{payload.name} /
+                    {payload.name} /
                 </DecoratedButton>
             )}
         </Disclosure.Button>

@@ -24,28 +24,28 @@ const DecoratedButton:FC<PropsWithChildren<DecoratedButtonProps>> = ({ children,
         return (
             <h3 className={className}>
                 {state ? <AiOutlineFolderOpen size={size} /> : <AiOutlineFolder size={size} />}
-                {children}&#8200;
+                &nbsp;{children}
             </h3>
         );
     else if (type === NodeType.FILE)
         return (
             <h3 className={className}>
                 <AiOutlineFile size={size} />
-                {children}
+                &nbsp;{children}
             </h3>
         );
     else if (type === NodeType.ROOT)
         return (
             <h3 className={className}>
                 <AiOutlineRight size={size} />
-                {children}
+                &nbsp;{children}
             </h3>
         );
     else if (type === NodeType.IMAGE)
         return (
             <h3 className={className}>
                 <AiOutlineFileImage size={size} />
-                {children}
+                &nbsp;{children}
             </h3>
         );
     else
