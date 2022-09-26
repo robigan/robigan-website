@@ -430,10 +430,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.7.20":
-  version: 18.7.20
-  resolution: "@types/node@npm:18.7.20"
-  checksum: 83905b5528afe8c4e3f5f33de2699e1a12064d0e1b89310b179ab1801fca73157158ecf84c8dac3681afa77026f12440d34c37bc1107ca461da8df0f086b09e9
+"@types/node@npm:^18.7.21":
+  version: 18.7.21
+  resolution: "@types/node@npm:18.7.21"
+  checksum: 9e0558dd44766fb3b1b26815e9877849d8f1188115e0d2bee540cee2c5a11f90e4c00ee059edae8ea018e7f66217e4bf53271536c9a6fd05e33f713b8daa4c66
   languageName: node
   linkType: hard
 
@@ -4504,7 +4504,7 @@ __metadata:
   resolution: "robigan-website@workspace:."
   dependencies:
     "@headlessui/react": ^1.7.2
-    "@types/node": ^18.7.20
+    "@types/node": ^18.7.21
     "@types/react": ^18.0.21
     "@typescript-eslint/eslint-plugin": ^5.38.0
     "@typescript-eslint/parser": ^5.38.0

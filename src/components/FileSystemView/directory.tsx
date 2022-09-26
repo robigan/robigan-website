@@ -1,6 +1,15 @@
 import { FC } from "react";
 import { Disclosure } from "@headlessui/react";
-import { DirectoryStructure, NodeType, RootDirectoryStructure } from "./types";
+import { FileStructure } from "./file";
+import DecoratedButton, { NodeType } from "./common";
+
+export interface DirectoryStructure {
+    type: NodeType.DIR,
+    name: string,
+    children?: Array<DirectoryStructure | FileStructure>,
+}
+
+export type RootDirectoryStructure = DirectoryStructure[]
 
 interface DirectoryProps {
     payload: DirectoryStructure,
@@ -9,8 +18,12 @@ interface DirectoryProps {
 
 const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
     <Disclosure>
-        <Disclosure.Button>{payload.name}</Disclosure.Button>
-        <Disclosure.Panel>
+        <Disclosure.Button className="m-1">
+            <DecoratedButton state={true} type={payload.type}>
+                {payload.name} /
+            </DecoratedButton>
+        </Disclosure.Button>
+        <Disclosure.Panel className="ml-8">
             {
                 payload.children && payload.children.map((childPayload) => {
                     const computedKey = refKey + "/" + childPayload.name;
@@ -31,8 +44,10 @@ interface RootDirectoryProps {
 
 const RootDirectory: FC<RootDirectoryProps> = ({ payload }) => (
     <>
-        <div>/</div>
-        <div>
+        <DecoratedButton type={NodeType.ROOT}>
+            /
+        </DecoratedButton>
+        <div className="ml-8">
             {
                 payload.map((childPayload) => {
                     const computedKey = "/" + childPayload.name;

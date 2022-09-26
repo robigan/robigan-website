@@ -1,5 +1,5 @@
-import RootDirectory from "./directory";
-import { NodeType, RootDirectoryStructure } from "./types";
+import { NodeType } from "./common";
+import RootDirectory, { RootDirectoryStructure } from "./directory";
 
 export const TEST_DATA: RootDirectoryStructure = [
     {
