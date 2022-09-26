@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import FileSystemView, {TEST_DATA} from "../components/FileSystemView";
+import FileSystemView from "../components/FileSystemView";
 import ModalManager from "../components/ModalManager";
+import { ABOUT_FSV_DATA } from "../lib/data/about";
 
 const About: NextPage = () => (
     <>
@@ -21,7 +22,7 @@ const About: NextPage = () => (
 
                 {/* File System View */}
                 <div className="h-full container mx-auto">
-                    <FileSystemView.RootDirectory payload={TEST_DATA} />
+                    <FileSystemView.RootDirectory payload={ABOUT_FSV_DATA} />
                 </div>
             </div>
         </ModalManager.Provider>

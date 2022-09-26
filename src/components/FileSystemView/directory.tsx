@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Disclosure } from "@headlessui/react";
-import { FileStructure } from "./file";
+import File, { FileStructure } from "./file";
 import DecoratedButton, { NodeType } from "./common";
 
 export interface DirectoryStructure {
@@ -16,12 +16,17 @@ interface DirectoryProps {
     refKey: string,
 }
 
+/**
+ * Directory is a component that can be used to render a directory in the File System View and render it's children
+ */
 const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
     <Disclosure>
-        <Disclosure.Button className="m-1">
-            <DecoratedButton state={true} type={payload.type}>
-                {payload.name} /
-            </DecoratedButton>
+        <Disclosure.Button className="m-1 block">
+            {({ open }) => (            
+                <DecoratedButton state={open} type={NodeType.DIR}>
+                    &#8200;{payload.name} /
+                </DecoratedButton>
+            )}
         </Disclosure.Button>
         <Disclosure.Panel className="ml-8">
             {
@@ -31,7 +36,7 @@ const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
                     if (childPayload.type === NodeType.DIR) 
                         return <Directory payload={childPayload} key={computedKey} refKey={computedKey} />;
                     else if (childPayload.type === NodeType.FILE)
-                        return <></>;
+                        return <File payload={childPayload} key={computedKey} />;
                 })
             }
         </Disclosure.Panel>
@@ -42,8 +47,11 @@ interface RootDirectoryProps {
     payload: RootDirectoryStructure
 }
 
+/**
+ * RootDirectory is the entry point component that will be used to render the entire File System View hierarchy
+ */
 const RootDirectory: FC<RootDirectoryProps> = ({ payload }) => (
-    <>
+    <div className="font-mono">
         <DecoratedButton type={NodeType.ROOT}>
             /
         </DecoratedButton>
@@ -55,7 +63,7 @@ const RootDirectory: FC<RootDirectoryProps> = ({ payload }) => (
                 })
             }
         </div>
-    </>
+    </div>
 );
 
 export default RootDirectory;

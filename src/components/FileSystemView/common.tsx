@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import { AiOutlineFile, AiOutlineFolder, AiOutlineFolderOpen, AiOutlineRight } from "react-icons/ai";
 
 export enum NodeType {
@@ -7,61 +7,40 @@ export enum NodeType {
     ROOT = "root"
 }
 
-type NodeTypeIconMapping = {
-    [key in NodeType.FILE]: {
-        icon: ReactNode
-    };
-} & {
-    [key in NodeType.DIR]: {
-        open: ReactNode,
-        closed: ReactNode,
-    };
-} & {
-    [key in NodeType.ROOT]: {
-        icon: ReactNode
-    }
-}
-
-const nodeTypeIconMapping: NodeTypeIconMapping = {
-    [NodeType.FILE]: {
-        icon: <AiOutlineFile size="1.25rem" />
-    },
-    [NodeType.DIR]: {
-        open: <AiOutlineFolderOpen size="1.25rem" />,
-        closed: <AiOutlineFolder size="1.25rem" />
-    },
-    [NodeType.ROOT]: {
-        icon: <AiOutlineRight size="1.25rem" />
-    }
-};
-
 interface DecoratedButtonProps {
     state?: boolean,
     type: NodeType
 }
 
+/**
+ * DecoratedButton is the component used to render the entry for the presence of a node in the File System View hierarchy
+ */
 const DecoratedButton:FC<PropsWithChildren<DecoratedButtonProps>> = ({ children, state = true, type }) => {
-    const className = "inline-flex items-center";
+    const className = "flex items-center";
+    const size = "1.25rem";
 
     if (type === NodeType.DIR)
         return (
             <h3 className={className}>
-                {state ? nodeTypeIconMapping[type].open : nodeTypeIconMapping[type].closed}
-                <p>{children} </p>
+                {state ? <AiOutlineFolderOpen size={size} /> : <AiOutlineFolder size={size} />}
+                {children}&#8200;
             </h3>
         );
     else if (type === NodeType.FILE)
         return (
-            <h3 className={className}>{nodeTypeIconMapping[type].icon} {children}</h3>
+            <h3 className={className}>
+                <AiOutlineFile size={size} />
+                {children}
+            </h3>
         );
     else if (type === NodeType.ROOT)
         return (
             <h3 className={className}>
-                {nodeTypeIconMapping[type].icon} 
-                <p>{children}</p>
+                <AiOutlineRight size={size} />
+                {children}
             </h3>
         );
-    else 
+    else
         return (
             <h3 className={className}>{children}</h3>
         );
