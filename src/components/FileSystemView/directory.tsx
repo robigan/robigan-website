@@ -12,15 +12,18 @@ export interface DirectoryStructure {
 
 export type RootDirectoryStructure = DirectoryStructure[]
 
-interface DirectoryProps {
-    payload: DirectoryStructure,
-    refKey: string,
-}
+const ChildlessDirectory: FC<{ payload: DirectoryStructure }> = ({ payload }) => (
+    <div className="m-1 block">
+        <DecoratedButton state={false} type={NodeType.DIR}>
+            {payload.name} /
+        </DecoratedButton>
+    </div>
+);
 
 /**
  * Directory is a component that can be used to render a directory in the File System View and render it's children
  */
-const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
+const Directory: FC<{ payload: DirectoryStructure, refKey: string }> = ({ payload, refKey }) => (
     <Disclosure>
         <Disclosure.Button className="m-1 block">
             {({ open }) => (            
@@ -34,8 +37,12 @@ const Directory: FC<DirectoryProps> = ({ payload, refKey }) => (
                 payload.children && payload.children.map((childPayload) => {
                     const computedKey = refKey + "/" + childPayload.name;
                     
-                    if (childPayload.type === NodeType.DIR) 
-                        return <Directory payload={childPayload} key={computedKey} refKey={computedKey} />;
+                    if (childPayload.type === NodeType.DIR) {
+                        if (childPayload.children?.length ?? 0 > 0)
+                            return <Directory payload={childPayload} key={computedKey} refKey={computedKey} />;
+                        else
+                            return <ChildlessDirectory payload={childPayload} key={computedKey} />;
+                    }
                     else if (childPayload.type === NodeType.FILE)
                         return <File payload={childPayload} key={computedKey} />;
                     else if (childPayload.type === NodeType.IMAGE)
