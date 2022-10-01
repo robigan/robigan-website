@@ -18,7 +18,14 @@ export const ABOUT_FSV_DATA: RootDirectoryStructure = [
                             {
                                 name: "whoami.txt",
                                 type: NodeType.FILE,
-                                contents: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium consequatur reiciendis aut nisi perferendis aliquam architecto. Itaque placeat voluptatum dignissimos sapiente odio eius inventore distinctio esse magnam voluptatibus, nam laboriosam."
+                                contents: `(In Obi Wan Kenobi voice) Hello there.
+I am robigan.
+If you hadn't guessed by now, I am OBSESSED with software and computers. Yes, I am Italian, but also Australian.
+This website is both a home and place to show my passion and skills. Everything from my GitHub profile to the fact that you're reading this through a simulated linux filesystem hierarchy (written in 100% typescript) has all been meticulously planned to present what I love. In other words, I love writing code and making websites. If you do have any experience with web development yourself, I would describe this passion of mine as both a mental issue and skill.
+
+Enough about this website, and more about my past. I am an '06 kiddo that's been on the internet ever since 2009, with the origins of the "robigan" handle being traceable back to the early days of the internet Flash era, circa 2012. The name "robigan" was what I had originally used for my pet monster on a website called moshimonsters. Which was a website where you'd have minigames and challenges to complete everyday, essentially another neopets/club penguin website (if you're old enough to know what those are).
+
+Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 Macbook, which ultimately gave up in 2014 and corruped itself (I still vividly remember the day I got the disk not found error). At that point my mother had introduced to the household the iPad, and between the years of 2014 and 2016 I was an avid iPad user. In 2016 I managed to get my hands on another second-hand notebook and I spent a good time of my days on a website called scratch (scratch.mit.edu), this helped spark my passion for software development and my other IT-related passions.`
                             },
                         ],
                     },
@@ -32,6 +39,11 @@ export const ABOUT_FSV_DATA: RootDirectoryStructure = [
                                 contents: profilePicture
                             }
                         ]
+                    },
+                    {
+                        name: "goodbye-my-bestfriend.txt",
+                        type: NodeType.FILE,
+                        contents: "Today (at 2022-09-26T17:46:00Z) you died peacefully. I hope you have a great time in the after-life and that you'll forever remember me, and in turn I'll forever remember you. I hope you'll forgive me for not having spent your dying months closer together, but you were so frail that there was nothing I could really do. RIP my beloved friend."
                     }
                 ]
             }
@@ -47,7 +59,7 @@ export const ABOUT_FSV_DATA: RootDirectoryStructure = [
                 contents: `# This file describes all the languages used by the Operating System
 English (US)
 Italian (IT)
-French &nbsp;(FR)`
+French  (FR)`
             }
         ]
     },
@@ -79,10 +91,10 @@ French &nbsp;(FR)`
                                 type: NodeType.FILE,
                                 contents: `-----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
-&nbsp;
-Robigan&apos;s Bitcoin Address: bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf
+
+Robigan's Bitcoin Address: bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf
 -----BEGIN PGP SIGNATURE-----
-&nbsp;
+
 iHUEARYIAB0WIQQRFFWw9w2BJMcZ/I1nmaqp+xT87gUCYzICKwAKCRBnmaqp+xT8
 7gPGAQCd/aeAwGARs48e6mgqDTxCGn94kx34OFsZI6SJz56lGAEA9slygHebmQSx
 jToWvMz/fmO0YDZ57LUJFU1uoZ6HqwI=
@@ -94,10 +106,10 @@ jToWvMz/fmO0YDZ57LUJFU1uoZ6HqwI=
                                 type: NodeType.FILE,
                                 contents: `-----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
-&nbsp;
-Robigan&apos;s Ethereum Wallet: 0xb9B089388879F9e82125e7f5C6C73da574A0A6c1
+
+Robigan's Ethereum Wallet: 0xb9B089388879F9e82125e7f5C6C73da574A0A6c1
 -----BEGIN PGP SIGNATURE-----
-&nbsp;
+
 iHUEARYIAB0WIQQRFFWw9w2BJMcZ/I1nmaqp+xT87gUCYzIDmQAKCRBnmaqp+xT8
 7tShAP9kEaRBnWm+BPWhfSxDWJBkORHmYbNTisgE2+EXE+8YKgD+Ic5xAuf6Rg4S
 TsPenL9Ltx4QBoey0dyLMH833IwT7g4=
@@ -171,7 +183,42 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                             {
                                 name: "Minecraft",
                                 type: NodeType.DIR,
-                            }
+                            },
+                            {
+                                name: "Elite Dangerous",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Rocket League",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Mindustry",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Forza Horizon 3",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Hitman",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Forza Horizon 5",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Roblox",
+                                type: NodeType.DIR,
+                                children: [
+                                    {
+                                        name: "Disclaimer.txt",
+                                        type: NodeType.FILE,
+                                        contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company."
+                                    }
+                                ]
+                            },
                         ]
                     }
                 ]
