@@ -1,56 +1,12 @@
 import Head from "next/head";
-import Link, { LinkProps } from "next/link";
-import { FC, PropsWithChildren } from "react";
 import NavBar from "../../components/NavBar";
-import { BsArrowRightShort, BsDiscord, BsGithub, BsKeyFill, BsReddit } from "react-icons/bs";
+import { BsDiscord, BsGithub, BsKeyFill, BsReddit } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { SiMatrix } from "react-icons/si";
 import { FaSteam } from "react-icons/fa";
-import { BiLinkExternal, BiWallet } from "react-icons/bi";
-
-type ContactTileProps = {
-    /**
-     * Title string for the text below the icon
-     */
-    title: string,
-    /**
-     * Sets the a element to open the link in a new tab
-     */
-    blankTarget?: boolean,
-    /**
-     * Overwrite the visual aspects of blankTarget, such that if blankTarget is disabled, the visuals will still be enabled, useful for links that open up system prompts
-     */
-    overwriteBlankTargetVisuals?: boolean
-}
-
-const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ title, children, blankTarget = true, overwriteBlankTargetVisuals = false, ...linkProps }) => (
-    <div className="basis-1/4 h-1/2 flex items-center">
-        <div className="w-3/4 lg:w-1/2 mx-auto">
-
-            <Link passHref={blankTarget} {...linkProps}>
-                <a target={blankTarget ? "_blank" : "_self"} rel={blankTarget ? "noopener noreferrer" : ""} className="hover:underline active:underline">
-
-                    <div className="aspect-square relative">
-                        <div className="absolute h-full w-full z-10 opacity-0 hover:opacity-90 bg-black-light flex justify-center items-center transition-all duration-300">
-                            <div className="h-1/4 w-1/4 flex justify-center items-center">
-                                {
-                                    (blankTarget || overwriteBlankTargetVisuals) ? <BiLinkExternal /> : <BsArrowRightShort />
-                                }
-                            </div>
-                        </div>
-                        <div className="rounded-[50px] bg-black-lighter flex justify-center items-center h-full w-full">
-                            <div className="h-1/3 w-1/3 flex justify-center items-center">
-                                {children}
-                            </div>
-                        </div>
-                    </div>
-
-                    <p className="w-fit mx-auto h-4 mb-2 text-[1em] md:text-[1.1em]">{title}</p>
-                </a>
-            </Link>
-        </div>
-    </div>
-);
+import { BiWallet } from "react-icons/bi";
+import ContactTile from "../../components/ContactTile";
+import ModalTile from "../../components/ModalTile";
 
 const About = () => (
     <>
@@ -95,9 +51,9 @@ const About = () => (
                         <FaSteam />
                     </ContactTile>
 
-                    <ContactTile title="Crypto Wallets" href="/contact/wallets" blankTarget={false}>
+                    <ModalTile title="Crypto Wallets">
                         <BiWallet />
-                    </ContactTile>
+                    </ModalTile>
 
                     <ContactTile title="OpenPGP Key" href="https://keys.openpgp.org/search?q=robigan%40robigan.com">
                         <BsKeyFill />
