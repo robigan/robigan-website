@@ -23,7 +23,7 @@ const About = () => (
                 <div className="absolute left-1/2 -translate-x-1/2 -translate-y-[67.5%] text-[18vw] md:text-[10vw] font-extrabold text-[#fff1] tracking-widest">CONTACT</div>
             </div>
 
-            <div className="flex flex-row items-start w-full h-full">
+            <div className="flex items-start w-full h-full">
 
                 {/* Different links */}
                 <div className="container h-full flex-auto mx-auto flex flex-row justify-between items-start flex-wrap text-center">
