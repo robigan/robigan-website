@@ -20,7 +20,7 @@ const About: NextPage = () => (
                 <div className="absolute left-1/2 -translate-x-1/2 -translate-y-[67.5%] text-[20vw] md:text-[10vw] font-extrabold text-[#fff1] tracking-widest">ABOUT</div>
             </div>
 
-            <div className="flex items-start w-full h-full">
+            <div className="flex items-start w-full h-full lg:overflow-y-auto">
 
                 {/* File System View */}
                 <div className="h-full container mx-auto">

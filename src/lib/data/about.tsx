@@ -193,6 +193,10 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                                 type: NodeType.DIR,
                             },
                             {
+                                name: "Outer Worlds",
+                                type: NodeType.DIR,
+                            },
+                            {
                                 name: "Mindustry",
                                 type: NodeType.DIR,
                             },
@@ -206,6 +210,14 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                             },
                             {
                                 name: "Forza Horizon 5",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Subnautica",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Outer Wilds",
                                 type: NodeType.DIR,
                             },
                             {
