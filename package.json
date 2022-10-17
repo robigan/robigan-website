@@ -6,31 +6,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "check-deps": "ncu -e 2",
-    "update-deps": "ncu -u",
-    "available-ups": "ncu"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.2",
+    "@headlessui/react": "^1.7.3",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0",
-    "sharp": "^0.31.0"
+    "react-icons": "^4.6.0",
+    "sharp": "^0.31.1"
   },
   "devDependencies": {
-    "@types/node": "^18.7.21",
+    "@types/node": "^18.11.0",
     "@types/react": "^18.0.21",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "@typescript-eslint/parser": "^5.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "autoprefixer": "^10.4.12",
-    "esbuild": "^0.15.9",
-    "eslint": "^8.24.0",
+    "esbuild": "^0.15.11",
+    "eslint": "^8.25.0",
     "eslint-config-next": "12.3.1",
-    "eslint-plugin-react": "^7.31.8",
-    "npm-check-updates": "^16.3.2",
-    "postcss": "^8.4.16",
+    "eslint-plugin-react": "^7.31.10",
+    "postcss": "^8.4.18",
     "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
   },

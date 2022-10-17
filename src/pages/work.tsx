@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import NavBar from "../components/NavBar";
 import Timeline from "../components/Timeline";
 

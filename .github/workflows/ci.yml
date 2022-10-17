@@ -1,0 +1,38 @@
+# Workflow to test CI for dev branches
+name: CI
+
+on:
+  push:
+    branches: [ development-v2, main ]
+    paths-ignore:
+      - '.github/**'
+      - '.vscode/**'
+      - 'README.md'
+      - '.yarn/sdks/**'
+      - 'LICENSE'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+      - '.vscode/**'
+      - 'README.md'
+      - '.yarn/sdks/**'
+      - 'LICENSE'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install deps
+        run: yarn
+        
+      - name: Lint test
+        run: yarn run lint
+
+      - name: Build test
+        run: yarn run build
+        
