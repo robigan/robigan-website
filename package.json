@@ -6,35 +6,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "check-deps": "ncu -e 2",
-    "update-deps": "ncu -u",
-    "available-ups": "ncu"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sharp": "^0.30.2"
+    "@headlessui/react": "^1.7.3",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "sharp": "^0.31.1"
   },
   "devDependencies": {
-    "@octokit/openapi-types": "^11.2.0",
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
-    "autoprefixer": "^10.4.2",
-    "esbuild": "^0.14.25",
-    "eslint": "^8.10.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-plugin-react": "^7.29.3",
-    "mdx-bundler": "^8.0.1",
-    "npm-check-updates": "^12.5.2",
-    "postcss": "^8.4.8",
-    "tailwindcss": "^3.0.23"
+    "@types/node": "^18.11.0",
+    "@types/react": "^18.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "autoprefixer": "^10.4.12",
+    "esbuild": "^0.15.11",
+    "eslint": "^8.25.0",
+    "eslint-config-next": "12.3.1",
+    "eslint-plugin-react": "^7.31.10",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.7.4"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/robigan/robigan-website.git"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }

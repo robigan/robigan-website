@@ -3,51 +3,36 @@ name: CI
 
 on:
   push:
-    branches: [ development, main ]
+    branches: [ development-v2, main ]
     paths-ignore:
       - '.github/**'
       - '.vscode/**'
       - 'README.md'
+      - '.yarn/sdks/**'
+      - 'LICENSE'
   pull_request:
-    branches: [ development, main ]
+    branches: [ main ]
     paths-ignore:
       - '.github/**'
       - '.vscode/**'
       - 'README.md'
+      - '.yarn/sdks/**'
+      - 'LICENSE'
   workflow_dispatch:
 
 jobs:
-  next:
+  build:
     runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install deps
-        run: npm install
+        run: yarn
         
       - name: Lint test
-        run: npm run lint
+        run: yarn run lint
 
       - name: Build test
-        run: npm run build
+        run: yarn run build
         
-  dependencies:
-    needs: next
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Install deps
-        run: npm install
-
-      - name: Check up-to date dependencies
-        id: check-deps
-        run: npm run check-deps
-        continue-on-error: true
-
-      - name: Report non up-to date dependencies
-        if: ${{ steps.check-deps.conclusion == 'success' }}
-        run: npm run available-ups

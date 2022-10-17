@@ -8,17 +8,17 @@
             "name": "Development Server",
             "request": "launch",
             "runtimeArgs": [
-                "run-script",
+                "run",
                 "dev"
             ],
             "env": {
                 "NODE_ENV": "development"
             },
-            "runtimeExecutable": "npm",
+            "runtimeExecutable": "yarn",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "type": "pwa-node"
+            "type": "node"
         },
     ]
 }

@@ -1,25 +1,28 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
-    content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+    content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
     media: false, // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
-                primary: {
-                    dark: "#4f1732",
-                    DEFAULT: "#78244C",
-                    light: "#c43b7d",
-                },
-                background: {
-                    dark: "#202731",
-                    DEFAULT: "#2D4159",
-                },
+                primary: "#FFB400",
+                "black-light": "#101010",
+                "black-lighter": "#3C3C3C"
             },
-            screens: {
-                "mo-sm": "320px",
-                "mo-md": "411px",
-                "contact": "380px"
+            spacing: {
+                "48p": "48px",
+                "72p": "72px",
+                "96p": "96px"
             }
         },
+        // screens: {
+        //     "mo-sm": "240px",
+        //     "mo-md": "320px",
+        //     "mo-lg": "411px",
+        //     ...defaultTheme.screens,
+        // }
     },
     variants: {
         extend: {},
