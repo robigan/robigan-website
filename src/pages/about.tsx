@@ -23,7 +23,11 @@ const About: NextPage = () => (
             <div className="flex items-start w-full h-full lg:overflow-y-auto">
 
                 {/* File System View */}
-                <div className="h-full container mx-auto">
+                <div className="h-full container mx-auto relative">
+                    <div className="max-w-[50vw] lg:max-w-[30vw] absolute right-0 w-fit max-h-[2.5ex] overflow-hidden text-ellipsis whitespace-nowrap hover:max-h-full hover:whitespace-normal hover:lg:max-w-[40vw] hover:bg-black-light hover:p-2 focus:max-h-full focus:whitespace-normal focus:lg:max-w-[40vw] focus:bg-black-light focus:p-2 focus:mt-2 rounded-xl transition-all duration-500" tabIndex={0}>
+                        This file system hierarchy represents a similar hierarchy you might see in a Linux system, and takes inspiration from my own Arch Linux system. You don&apos;t need to know how Linux works to interact with it, just click around and discover by yourself :)
+                    </div>
+
                     <FileSystemView.RootDirectory payload={ABOUT_FSV_DATA} />
                 </div>
 

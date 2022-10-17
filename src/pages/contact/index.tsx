@@ -51,7 +51,7 @@ const About = () => (
                         <FaSteam />
                     </ContactTile>
 
-                    <ModalTile title="Crypto Wallets">
+                    <ModalTile title="Crypto Wallets" modalContent="You have found a part of this website that isn&apos;t finished yet! In the meantime my Bitcoin address is bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf and my Ethereum address is 0xb9B089388879F9e82125e7f5C6C73da574A0A6c1">
                         <BiWallet />
                     </ModalTile>
 

@@ -1,5 +1,5 @@
 import { Dialog } from "@headlessui/react";
-import { FC, PropsWithChildren, useState } from "react";
+import { FC, PropsWithChildren, ReactNode, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsArrowRightShort } from "react-icons/bs";
 import Tile from "../Tile";
@@ -9,15 +9,16 @@ type ModalTileProps = {
      * Title string for the text below the icon
      */
     title: string,
+    modalContent?: ReactNode,
 }
 
-const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children }) => {
+const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children, modalContent }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <Tile.OuterTile4x2>
 
-            <a type="button" onClick={() => setIsOpen(true)} className="cursor-pointer">
+            <a type="button" onClick={() => setIsOpen(true)} className="cursor-pointer" tabIndex={0}>
                 <Tile>
                     <Tile.InnerTile>
                         <Tile.InnerTileOverlay>
@@ -45,7 +46,7 @@ const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children }) =
                         </button>
                     </div>
 
-                    <div>Hello World</div>
+                    <div>{modalContent}</div>
                 </Dialog.Panel>
             </Dialog>
         </Tile.OuterTile4x2>

@@ -35,7 +35,7 @@ const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ titl
         <Tile.OuterTile4x2>
 
             <Link passHref={blankTarget} {...linkProps}>
-                <a target={blankTarget ? "_blank" : "_self"} rel={blankTarget ? "noopener noreferrer" : ""}>
+                <a target={blankTarget ? "_blank" : "_self"} rel={blankTarget ? "noopener noreferrer" : ""} tabIndex={0}>
                     <Tile>
                         <Tile.InnerTile>
                             <Tile.InnerTileOverlay>
