@@ -20,11 +20,39 @@ const Work = () => (
 
             <div className="flex items-start w-full h-full">
 
-                {/* Timeline */}
-                <div className="container mx-auto lg:overflow-y-auto">
+                {/* Container for Timeline */}
+                <div className="container mx-auto lg:overflow-y-auto pl-16">
                     <Timeline>
                         <h1>Start of passion for Computer Science</h1>
-                        <p><a className="hover:underline" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a>, 2016</p>
+                        <p><a className="hover:underline" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a> | 2016</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Work on embedded systems using C</h1>
+                        <p><a className="hover:underline" href="https://mitrol.it/en" target="_blank" rel="noopener noreferrer">Mitrol</a> | 2019, 2021</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Self-taught full-stack web development</h1>
+                        <p>Home | 2020</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Joined CoSup Gaming</h1>
+                        <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">CoSup Gaming</a> | 2021</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Developed Minecraft Server-sided Plugins using Java for CoSup Gaming</h1>
+                        <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">Cosup Gaming</a> | 2021 - 2022</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Attending an IT leading high-school</h1>
+                        <p>Italy | 2021 - 2025</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>Web Development using Vue.js & Game Development using Unity and C#</h1>
+                        <p>School | 2021 - 2022</p>
+                    </Timeline>
+                    <Timeline>
+                        <h1>C++ & Microelectronics</h1>
+                        <p>School | 2022 - Present</p>
                     </Timeline>
                 </div>
 
