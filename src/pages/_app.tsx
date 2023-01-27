@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { FC } from "react";
 import { IconContext } from "react-icons/lib";
+import { Analytics } from "@vercel/analytics/react";
 
 const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -17,6 +18,8 @@ const _App: FC<AppProps> = ({ Component, pageProps }) => {
             <IconContext.Provider value={{ size: "100%" }}>
                 <Component {...pageProps} />
             </IconContext.Provider>
+
+            <Analytics />
         </>
     );
 };

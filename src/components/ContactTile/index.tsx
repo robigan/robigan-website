@@ -34,20 +34,25 @@ const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ titl
     return (
         <Tile.OuterTile4x2>
 
-            <Link passHref={blankTarget} {...linkProps}>
-                <a target={blankTarget ? "_blank" : "_self"} rel={blankTarget ? "noopener noreferrer" : ""} tabIndex={0}>
-                    <Tile>
-                        <Tile.InnerTile>
-                            <Tile.InnerTileOverlay>
-                                <Icon />
-                            </Tile.InnerTileOverlay>
-                            <Tile.InnerTileContent>
-                                {children}
-                            </Tile.InnerTileContent>
-                        </Tile.InnerTile>
-                        <Tile.TileCaption>{title}</Tile.TileCaption>
-                    </Tile>
-                </a>
+            <Link
+                passHref={blankTarget}
+                {...linkProps}
+                target={blankTarget ? "_blank" : "_self"}
+                rel={blankTarget ? "noopener noreferrer" : ""}
+                tabIndex={0}>
+
+                <Tile>
+                    <Tile.InnerTile>
+                        <Tile.InnerTileOverlay>
+                            <Icon />
+                        </Tile.InnerTileOverlay>
+                        <Tile.InnerTileContent>
+                            {children}
+                        </Tile.InnerTileContent>
+                    </Tile.InnerTile>
+                    <Tile.TileCaption>{title}</Tile.TileCaption>
+                </Tile>
+
             </Link>
 
         </Tile.OuterTile4x2>

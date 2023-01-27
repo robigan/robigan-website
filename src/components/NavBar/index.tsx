@@ -10,11 +10,15 @@ const UniversalWrapper: FC<PropsWithChildren<LinkProps & { label?: string }>> = 
     const { pathname } = useContext(PathnameContext);
 
     return (
-        <Link {...linkProps}>
-            <a className="mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-full" style={pathname === linkProps.href ? { backgroundColor: "#FFB400" } : { backgroundColor: "#3C3C3C" }} title={label}>
-                <span aria-hidden="true">{children}</span>
-            </a>
-        </Link>
+        (<Link
+            {...linkProps}
+            className="mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-full"
+            style={pathname === linkProps.href ? { backgroundColor: "#FFB400" } : { backgroundColor: "#3C3C3C" }}
+            title={label}>
+
+            <span aria-hidden="true">{children}</span>
+
+        </Link>)
     );
 };
 
