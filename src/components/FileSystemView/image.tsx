@@ -13,7 +13,7 @@ export interface ImageStructure extends BaseFileStructure {
 const Image: FC<{ payload: ImageStructure }> = ({ payload }) => (
     <BaseFile payload={payload} icon={AiOutlineFileImage}>
         <div className="w-full h-[85vh] rounded-xl overflow-hidden relative">
-            <NextImage src={payload.contents} layout="fill" objectFit="contain" />
+            <NextImage src={payload.contents} fill className="object-contain" alt="" />
         </div>
     </BaseFile>
 );
