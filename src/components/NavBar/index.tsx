@@ -12,8 +12,7 @@ const UniversalWrapper: FC<PropsWithChildren<LinkProps & { label?: string }>> = 
     return (
         (<Link
             {...linkProps}
-            className="mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-full"
-            style={pathname === linkProps.href ? { backgroundColor: "#FFB400" } : { backgroundColor: "#3C3C3C" }}
+            className={"mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-[100%] " + (pathname === linkProps.href ? "bg-primary" : "bg-black-lighter" ) + " hover:rounded-[25%] transition-[border-radius] duration-500 ease-in-out"}
             title={label}>
 
             <span aria-hidden="true">{children}</span>
