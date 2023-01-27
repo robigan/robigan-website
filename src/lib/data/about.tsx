@@ -40,11 +40,11 @@ Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 M
                             }
                         ]
                     },
-                    {
-                        name: "goodbye-my-bestfriend.txt",
-                        type: NodeType.FILE,
-                        contents: "Today (at 2022-09-26T17:46:00Z) you died peacefully. I hope you have a great time in the after-life and that you'll forever remember me, and in turn I'll forever remember you. I hope you'll forgive me for not having spent your dying months closer together, but you were so frail that there was nothing I could really do. RIP my beloved friend."
-                    }
+                    // {
+                    //     name: "goodbye-my-bestfriend.txt",
+                    //     type: NodeType.FILE,
+                    //     contents: "Today (at 2022-09-26T17:46:00Z) you died peacefully. I hope you have a great time in the after-life and that you'll forever remember me, and in turn I'll forever remember you. I hope you'll forgive me for not having spent your dying months closer together, but you were so frail that there was nothing I could really do. RIP my beloved friend."
+                    // }
                 ]
             }
         ]
