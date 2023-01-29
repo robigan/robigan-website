@@ -57,15 +57,18 @@ const Work = () => (
                     <Timeline>
                         <AdaptiveHeader>C++</AdaptiveHeader>
                         <p>School | 2022 - Present</p>
+                        {/* <ul>
+                            <li> */}<a href="https://github.com/cs-class-07/CS-Snakes-and-Ladders-game" rel="noopener noreferrer" target="_blank">Console Snakes and Ladders</a>{/* </li>
+                        </ul> */}
                     </Timeline>
                     <Timeline>
-                        <AdaptiveHeader>Micro electronics</AdaptiveHeader>
+                        <AdaptiveHeader>Microelectronics</AdaptiveHeader>
                         <p>School | 2022 - 2023</p>
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Started Blogging</AdaptiveHeader>
-                        <p>School | 2022 - Present</p>
-                        <a className="hover:underline" href="https://archives.robigan.com">Check out my blog!</a>
+                        <p>Life | 2022 - Present</p>
+                        <a className="hover:underline" target="_blank" href="https://archives.robigan.com" rel="noopener noreferrer">archives.robigan.com</a>
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Swift & SwiftUI</AdaptiveHeader>
