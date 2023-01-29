@@ -16,7 +16,7 @@ const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children, mod
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <Tile.OuterTile4x2>
+        <Tile.OuterTile>
 
             <a type="button" onClick={() => setIsOpen(true)} className="cursor-pointer" tabIndex={0}>
                 <Tile>
@@ -46,10 +46,10 @@ const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children, mod
                         </button>
                     </div>
 
-                    <div>{modalContent}</div>
+                    {modalContent}
                 </Dialog.Panel>
             </Dialog>
-        </Tile.OuterTile4x2>
+        </Tile.OuterTile>
     );
 };
 

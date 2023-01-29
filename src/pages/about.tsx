@@ -29,6 +29,7 @@ const About: NextPage = () => (
                     </div>
 
                     <FileSystemView.RootDirectory payload={ABOUT_FSV_DATA} />
+                    <div className="lg:hidden h-20" />
                 </div>
 
                 <div className="hidden lg:block invisible mx-8">
@@ -38,7 +39,7 @@ const About: NextPage = () => (
 
             </div>
 
-            <div className="lg:hidden my-8">
+            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
                 <NavBar pathname="/about" />
             </div>
 
