@@ -32,7 +32,7 @@ const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ titl
     }, [blankTarget, overwriteBlankTargetVisuals]);
 
     return (
-        <Tile.OuterTile4x2>
+        <Tile.OuterTile>
 
             <Link
                 passHref={blankTarget}
@@ -55,7 +55,7 @@ const ContactTile: FC<PropsWithChildren<LinkProps & ContactTileProps>> = ({ titl
 
             </Link>
 
-        </Tile.OuterTile4x2>
+        </Tile.OuterTile>
     );
 };
 

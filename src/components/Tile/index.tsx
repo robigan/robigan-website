@@ -32,12 +32,13 @@ const Tile: FC<PropsWithChildren> = ({ children }) => (
     </span>
 );
 
-const OuterTile4x2: FC<PropsWithChildren> = ({ children }) => (
-    <div className="basis-1/4 h-1/2 flex items-center">
+const OuterTile: FC<PropsWithChildren> = ({ children }) => (
+    // `basis-1/2 lg:basis-1/4 lg:h-1/2 flex items-center` is proposed but the entries get too big on smaller devices
+    <div className="basis-1/4 h-1/2 flex items-center"> 
         <div className="w-3/4 lg:w-1/2 mx-auto">
             {children}
         </div>
     </div>
 );
 
-export default Object.assign(Tile, { OuterTile4x2, TileCaption, InnerTile, InnerTileContent, InnerTileOverlay });
+export default Object.assign(Tile, { OuterTile, TileCaption, InnerTile, InnerTileContent, InnerTileOverlay });

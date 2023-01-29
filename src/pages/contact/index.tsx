@@ -74,6 +74,7 @@ const About = () => (
                     <ContactTile title="OpenPGP Key" href="https://keys.openpgp.org/search?q=robigan%40robigan.com">
                         <BsKeyFill />
                     </ContactTile>
+                    <div className="basis-full lg:hidden h-16" />
                 </div>
 
                 <div className="hidden lg:block invisible mx-8">
@@ -82,7 +83,7 @@ const About = () => (
                 </div>
             </div>
 
-            <div className="lg:hidden my-8">
+            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
                 <NavBar pathname="/contact" />
             </div>
         </div>
