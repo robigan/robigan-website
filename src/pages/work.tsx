@@ -1,6 +1,11 @@
 import Head from "next/head";
+import { FC, PropsWithChildren } from "react";
 import NavBar from "../components/NavBar";
 import Timeline from "../components/Timeline";
+
+const AdaptiveHeader: FC<PropsWithChildren> = ({ children }) => (
+    <h1 className="text-xl md:text-4xl lg:text-6xl">{children}</h1>
+);
 
 const Work = () => (
     <>
@@ -20,39 +25,53 @@ const Work = () => (
             <div className="flex items-start w-full h-full">
 
                 {/* Container for Timeline */}
-                <div className="container mx-auto lg:overflow-y-auto pl-16">
+                <div className="container mx-auto lg:overflow-y-auto lg:pl-16">
                     <Timeline>
-                        <h1>Start of passion for Computer Science</h1>
+                        <AdaptiveHeader>Start of passion for Computer Science</AdaptiveHeader>
                         <p><a className="hover:underline" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a> | 2016</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Work on embedded systems using C</h1>
+                        <AdaptiveHeader>Work on embedded systems using C</AdaptiveHeader>
                         <p><a className="hover:underline" href="https://mitrol.it/en" target="_blank" rel="noopener noreferrer">Mitrol</a> | 2019, 2021</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Self-taught full-stack web development</h1>
+                        <AdaptiveHeader>Self-taught full-stack web development</AdaptiveHeader>
                         <p>Home | 2020</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Joined CoSup Gaming</h1>
+                        <AdaptiveHeader>Joined CoSup Gaming</AdaptiveHeader>
                         <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">CoSup Gaming</a> | 2021</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Developed Minecraft Server-sided Plugins using Java for CoSup Gaming</h1>
+                        <AdaptiveHeader>Developed Minecraft Server-sided Plugins using Java for CoSup Gaming</AdaptiveHeader>
                         <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">Cosup Gaming</a> | 2021 - 2022</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Attending an IT leading high-school</h1>
+                        <AdaptiveHeader>Attending an IT leading high-school</AdaptiveHeader>
                         <p>Italy | 2021 - 2025</p>
                     </Timeline>
                     <Timeline>
-                        <h1>Web Development using Vue.js & Game Development using Unity and C#</h1>
+                        <AdaptiveHeader>Web Development using Vue.js & Game Development using Unity and C#</AdaptiveHeader>
                         <p>School | 2021 - 2022</p>
                     </Timeline>
                     <Timeline>
-                        <h1>C++ & Microelectronics</h1>
+                        <AdaptiveHeader>C++</AdaptiveHeader>
                         <p>School | 2022 - Present</p>
                     </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Micro electronics</AdaptiveHeader>
+                        <p>School | 2022 - 2023</p>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Started Blogging</AdaptiveHeader>
+                        <p>School | 2022 - Present</p>
+                        <a className="hover:underline" href="https://archives.robigan.com">Check out my blog!</a>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Swift & SwiftUI</AdaptiveHeader>
+                        <p>School | 2023 - Present</p>
+                    </Timeline>
+                    <div className="lg:hidden h-16" />
                 </div>
 
                 <div className="hidden lg:block invisible mx-8">
@@ -62,7 +81,7 @@ const Work = () => (
 
             </div>
 
-            <div className="lg:hidden my-8">
+            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
                 <NavBar pathname="/work" />
             </div>
 
