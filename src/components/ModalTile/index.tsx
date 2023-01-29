@@ -46,7 +46,7 @@ const ModalTile: FC<PropsWithChildren<ModalTileProps>> = ({ title, children, mod
                         </button>
                     </div>
 
-                    <div>{modalContent}</div>
+                    {modalContent}
                 </Dialog.Panel>
             </Dialog>
         </Tile.OuterTile4x2>

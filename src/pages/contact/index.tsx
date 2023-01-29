@@ -3,10 +3,26 @@ import NavBar from "../../components/NavBar";
 import { BsDiscord, BsGithub, BsKeyFill, BsReddit } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { SiMatrix } from "react-icons/si";
-import { FaSteam } from "react-icons/fa";
-import { BiWallet } from "react-icons/bi";
+import { FaSteam, FaEthereum } from "react-icons/fa";
+import { BiWallet, BiBitcoin } from "react-icons/bi";
 import ContactTile from "../../components/ContactTile";
 import ModalTile from "../../components/ModalTile";
+import { FC } from "react";
+
+const CryptoWalletsContent: FC = () => (
+    <div className="flex-grow flex flex-flow justify-center items-center flex-nowrap">
+        <div className="flex-grow">
+            <ContactTile title="Bitcoin" href="https://www.blockchain.com/explorer/addresses/btc/bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf">
+                <BiBitcoin />
+            </ContactTile>
+        </div>
+        <div className="flex-grow">
+            <ContactTile title="Ethereum" href="https://etherscan.io/address/0xb9B089388879F9e82125e7f5C6C73da574A0A6c1">
+                <FaEthereum />
+            </ContactTile>
+        </div>
+    </div>
+);
 
 const About = () => (
     <>
@@ -51,7 +67,7 @@ const About = () => (
                         <FaSteam />
                     </ContactTile>
 
-                    <ModalTile title="Crypto Wallets" modalContent="You have found a part of this website that isn&apos;t finished yet! In the meantime my Bitcoin address is bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf and my Ethereum address is 0xb9B089388879F9e82125e7f5C6C73da574A0A6c1">
+                    <ModalTile title="Crypto Wallets" modalContent={<CryptoWalletsContent />}>
                         <BiWallet />
                     </ModalTile>
 
