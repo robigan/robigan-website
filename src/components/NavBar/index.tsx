@@ -6,14 +6,16 @@ import Link, { LinkProps } from "next/link";
 const PathnameContext = createContext({ pathname: "" });
 PathnameContext.displayName = "NavBarPathnameContext";
 
-const UniversalWrapper: FC<PropsWithChildren<LinkProps & { label?: string }>> = ({ children, label, ...linkProps }) => {
+const UniversalWrapper: FC<PropsWithChildren<LinkProps & { label?: string, external?: boolean }>> = ({ children, label, external, ...linkProps }) => {
     const { pathname } = useContext(PathnameContext);
-
+    
     return (
         (<Link
             {...linkProps}
             className={"mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-[100%] " + (pathname === linkProps.href ? "bg-primary" : "bg-black-lighter" ) + " hover:rounded-[25%] transition-[border-radius] duration-500 ease-in-out"}
-            title={label}>
+            title={label}
+            rel={external ? "noopener noreferrer" : undefined} 
+            target={external ? "_blank" : undefined}>
 
             <span aria-hidden="true">{children}</span>
 
@@ -55,11 +57,11 @@ const NavBar: FC<{ pathname: string }> = ({ pathname }) => {
                 </UniversalWrapper>
 
                 {/* Blog */}
-                {/* <UniversalWrapper href="/blog">
+                <UniversalWrapper href="https://archives.robigan.com/" external={true}>
                     <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M52 16H20C17.8 16 16.02 17.8 16.02 20L16 56L24 48H52C54.2 48 56 46.2 56 44V20C56 17.8 54.2 16 52 16ZM48 40H24V36H48V40ZM48 34H24V30H48V34ZM48 28H24V24H48V28Z" fill="white" />
                     </svg>
-                </UniversalWrapper> */}
+                </UniversalWrapper>
                 
             </PathnameContext.Provider>
         </nav>
