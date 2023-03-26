@@ -221,6 +221,37 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                                 type: NodeType.DIR,
                             },
                             {
+                                name: "Minecraft Dungeons",
+                                type: NodeType.DIR,
+                                children: [
+                                    {
+                                        name: "extras.txt",
+                                        type: NodeType.FILE,
+                                        contents: "This is honestly such a great game, would recommend anyone to play in Couch co-op with their friends. Me and my roommate have had loads of fun every night.\n\n'Better than the original' -robigan, 2023"
+                                    }
+                                ]
+                            },
+                            {
+                                name: "Fall Guys",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Crossout",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "No Man's Sky",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Sea of Thieves",
+                                type: NodeType.DIR,
+                            },
+                            {
+                                name: "Astroneer",
+                                type: NodeType.DIR,
+                            },
+                            {
                                 name: "Roblox",
                                 type: NodeType.DIR,
                                 children: [

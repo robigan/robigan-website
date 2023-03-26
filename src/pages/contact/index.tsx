@@ -1,5 +1,5 @@
 import Head from "next/head";
-import NavBar from "../../components/NavBar";
+import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../../components/NavBar";
 import { BsDiscord, BsGithub, BsKeyFill, BsReddit } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { SiMatrix } from "react-icons/si";
@@ -55,16 +55,8 @@ const About = () => (
                         <BsGithub />
                     </ContactTile>
 
-                    <ContactTile title="Reddit" href="https://reddit.com/u/robigan">
-                        <BsReddit />
-                    </ContactTile>
-
                     <ContactTile title="Matrix" href="https://matrix.to/#/@robigan:matrix.org">
                         <SiMatrix />
-                    </ContactTile>
-
-                    <ContactTile title="Steam" href="https://steamcommunity.com/id/robigan">
-                        <FaSteam />
                     </ContactTile>
 
                     <ModalTile title="Crypto Wallets" modalContent={<CryptoWalletsContent />}>
@@ -77,21 +69,13 @@ const About = () => (
                     <div className="basis-full lg:hidden h-16" />
                 </div>
 
-                <div className="hidden lg:block invisible mx-8">
-                    {/* Serves as an invisible element meant to make space on the x-axis */}
-                    <NavBar pathname="" />
-                </div>
+                <NavBarMobileSpacer />
             </div>
 
-            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
-                <NavBar pathname="/contact" />
-            </div>
+            <NavBarMobile pathname="/contact" />
         </div>
 
-        <div className="hidden lg:block fixed top-1/2 -translate-y-1/2 right-0 mx-8">
-            {/* Note that a different NavBar element is placed elsewhere such that it takes up the right amount of space to allow this one to be visually place correctly on the x-axis, while using this one to place it visually correctly on the y-axis */}
-            <NavBar pathname="/contact" />
-        </div>
+        <NavBarDesktop pathname="/contact" />
     </>
 );
 
