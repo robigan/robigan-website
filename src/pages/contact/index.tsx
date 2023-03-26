@@ -55,16 +55,8 @@ const About = () => (
                         <BsGithub />
                     </ContactTile>
 
-                    <ContactTile title="Reddit" href="https://reddit.com/u/robigan">
-                        <BsReddit />
-                    </ContactTile>
-
                     <ContactTile title="Matrix" href="https://matrix.to/#/@robigan:matrix.org">
                         <SiMatrix />
-                    </ContactTile>
-
-                    <ContactTile title="Steam" href="https://steamcommunity.com/id/robigan">
-                        <FaSteam />
                     </ContactTile>
 
                     <ModalTile title="Crypto Wallets" modalContent={<CryptoWalletsContent />}>
