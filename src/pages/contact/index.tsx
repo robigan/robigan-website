@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../../components/NavBar";
-import { BsDiscord, BsGithub, BsKeyFill, BsReddit } from "react-icons/bs";
+import { BsDiscord, BsGithub, BsKeyFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { SiMatrix } from "react-icons/si";
-import { FaSteam, FaEthereum } from "react-icons/fa";
+import { FaEthereum } from "react-icons/fa";
 import { BiWallet, BiBitcoin } from "react-icons/bi";
 import ContactTile from "../../components/ContactTile";
 import ModalTile from "../../components/ModalTile";
