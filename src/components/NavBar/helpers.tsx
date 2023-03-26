@@ -9,7 +9,7 @@ const NavBarMobileSpacer: FC = () => (
 );
 
 const NavBarMobile: FC<ComponentProps<typeof NavBar>> = ({ ...props }) => (
-    <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
+    <div className="lg:hidden pb-4 pt-2 fixed bottom-0 left-1/2 -translate-x-1/2 w-full bg-black-light border-t-2 border-t-black-lighter">
         <NavBar {...props} />
     </div>
 );
