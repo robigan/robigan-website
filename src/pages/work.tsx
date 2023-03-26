@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FC, PropsWithChildren } from "react";
-import NavBar from "../components/NavBar";
+import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../components/NavBar";
 import Timeline from "../components/Timeline";
 
 const AdaptiveHeader: FC<PropsWithChildren> = ({ children }) => (
@@ -10,8 +10,8 @@ const AdaptiveHeader: FC<PropsWithChildren> = ({ children }) => (
 const Work = () => (
     <>
         <Head>
-            <title>Contact</title>
-            <meta name="description" content="Robigan's contacts and how to contact him" />
+            <title>Work</title>
+            <meta name="description" content="Robigan's work experience" />
         </Head>
 
         <div className="h-screen w-screen flex flex-col justify-between">
@@ -58,7 +58,7 @@ const Work = () => (
                         <AdaptiveHeader>C++</AdaptiveHeader>
                         <p>School | 2022 - Present</p>
                         {/* <ul>
-                            <li> */}<a href="https://github.com/cs-class-07/CS-Snakes-and-Ladders-game" rel="noopener noreferrer" target="_blank">Console Snakes and Ladders</a>{/* </li>
+                            <li> */}<a className="hover:underline" href="https://github.com/cs-class-07/CS-Snakes-and-Ladders-game" rel="noopener noreferrer" target="_blank">Console Snakes and Ladders</a>{/* </li>
                         </ul> */}
                     </Timeline>
                     <Timeline>
@@ -72,26 +72,23 @@ const Work = () => (
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Swift & SwiftUI</AdaptiveHeader>
+                        <p>School | 2023</p>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Cisco Skills for All Network Academy Certification</AdaptiveHeader>
+                        <p>Currently working on a Network Defense certification by Cisco through their <a className="hover:underline" target="_blank" href="https://skillsforall.com/" rel="noopener noreferrer">Skills for All</a> platform</p>
                         <p>School | 2023 - Present</p>
                     </Timeline>
                     <div className="lg:hidden h-16" />
                 </div>
 
-                <div className="hidden lg:block invisible mx-8">
-                    {/* Serves as an invisible element meant to make space on the x-axis */}
-                    <NavBar pathname="" />
-                </div>
+                <NavBarMobileSpacer />
 
             </div>
 
-            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
-                <NavBar pathname="/work" />
-            </div>
+            <NavBarMobile pathname="/work" />
 
-            <div className="hidden lg:block fixed top-1/2 -translate-y-1/2 right-0 mx-8">
-                {/* Note that a different NavBar element is placed elsewhere such that it takes up the right amount of space to allow this one to be visually place correctly on the x-axis, while using this one to place it visually correctly on the y-axis */}
-                <NavBar pathname="/work" />
-            </div>
+            <NavBarDesktop pathname="/work" />
         </div>
     </>
 );

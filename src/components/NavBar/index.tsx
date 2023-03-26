@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren, createContext, useContext } from "react";
 import Link, { LinkProps } from "next/link";
-// import { useRouter } from "next/router";
-// import { GetStaticProps } from "next";
+export * from "./helpers";
 
 const PathnameContext = createContext({ pathname: "" });
 PathnameContext.displayName = "NavBarPathnameContext";

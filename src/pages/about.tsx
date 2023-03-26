@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import FileSystemView from "../components/FileSystemView";
-import NavBar from "../components/NavBar";
+import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../components/NavBar";
 import { ABOUT_FSV_DATA } from "../lib/data/about";
 
 const About: NextPage = () => (
@@ -32,21 +32,12 @@ const About: NextPage = () => (
                     <div className="lg:hidden h-20" />
                 </div>
 
-                <div className="hidden lg:block invisible mx-8">
-                    {/* Serves as an invisible element meant to make space on the x-axis */}
-                    <NavBar pathname="" />
-                </div>
-
+                <NavBarMobileSpacer />
             </div>
 
-            <div className="lg:hidden mb-4 fixed bottom-4 left-1/2 -translate-x-1/2">
-                <NavBar pathname="/about" />
-            </div>
+            <NavBarMobile pathname="/about" />
 
-            <div className="hidden lg:block fixed top-1/2 -translate-y-1/2 right-0 mx-8">
-                {/* Note that a different NavBar element is placed elsewhere such that it takes up the right amount of space to allow this one to be visually place correctly on the x-axis, while using this one to place it visually correctly on the y-axis */}
-                <NavBar pathname="/about" />
-            </div>
+            <NavBarDesktop pathname="/contact" />
         </div>
     </>
 );
