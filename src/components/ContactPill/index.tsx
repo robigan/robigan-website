@@ -3,7 +3,7 @@ import { FC, PropsWithChildren } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
 const BadgeWrapper: FC<PropsWithChildren> = ({ children }) => (
-    <div className="h-full object-contain rounded-full overflow-hidden">
+    <div className="h-10 aspect-square rounded-full overflow-hidden">
         {children}
     </div>
 );
