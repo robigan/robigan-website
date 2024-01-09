@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import { FC } from "react";
 import { IconContext } from "react-icons/lib";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const _App: FC<AppProps> = ({ Component, pageProps }) => {
     return (
@@ -20,6 +21,7 @@ const _App: FC<AppProps> = ({ Component, pageProps }) => {
             </IconContext.Provider>
 
             <Analytics />
+            <SpeedInsights />
         </>
     );
 };
