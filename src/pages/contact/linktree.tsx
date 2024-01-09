@@ -21,7 +21,7 @@ const Linktree = () => (
             </span>
         </div> */}
 
-        <div className="h-screen better-container mx-auto pt-4 flex flex-col items-center justify-between gap-2">
+        <div className="h-screen better-container mx-auto py-4 flex flex-col items-center justify-between gap-2">
             <div className="h-48 aspect-square">
                 <Image src={logo} alt="Logo" className="bg-white rounded-full" />
             </div>
@@ -64,7 +64,7 @@ const Linktree = () => (
 
             <div className="flex-grow" />
 
-            <p className="text-center">© Robigan</p>
+            <p className="text-center">© robigan</p>
         </div>
     </>
 );
