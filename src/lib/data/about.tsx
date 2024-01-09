@@ -23,9 +23,9 @@ I am robigan.
 If you hadn't guessed by now, I am OBSESSED with software and computers. Yes, I am Italian, but also Australian.
 This website is both a home and place to show my passion and skills. Everything from my GitHub profile to the fact that you're reading this through a simulated linux filesystem hierarchy (written in 100% typescript) has all been meticulously planned to present what I love. In other words, I love writing code and making websites. If you do have any experience with web development yourself, I would describe this passion of mine as both a mental issue and skill.
 
-Enough about this website, and more about my past. I am an '06 kiddo that's been on the internet ever since 2009, with the origins of the "robigan" handle being traceable back to the early days of the internet Flash era, circa 2012. The name "robigan" was what I had originally used for my pet monster on a website called moshimonsters. Which was a website where you'd have minigames and challenges to complete everyday, essentially another neopets/club penguin website (if you're old enough to know what those are).
+Enough about this website, and more about my past. I war born in the 2000s and have been on the internet ever since 2009, with the origins of the "robigan" handle being traceable back to the early days of the internet Flash era, circa 2012. The name "robigan" was what I had originally used for my pet monster on a website called moshimonsters. Which was a website where you'd have minigames and challenges to complete everyday, essentially another neopets/club penguin website (if you're old enough to know what those are).
 
-Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 Macbook, which ultimately gave up in 2014 and corruped itself (I still vividly remember the day I got the disk not found error). At that point my mother had introduced to the household the iPad, and between the years of 2014 and 2016 I was an avid iPad user. In 2016 I managed to get my hands on another second-hand notebook and I spent a good time of my days on a website called scratch (scratch.mit.edu), this helped spark my passion for software development and my other IT-related passions.`
+Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 Macbook, which ultimately gave up in 2014 and corrupted itself (I still vividly remember the day I got the disk not found error). At that point, I switched to being an iPad user, and between the years of 2014 and 2016 I avidly used the iPad. In 2016 I managed to get my hands on another second-hand notebook and spent loads of time on a website called scratch (scratch.mit.edu), this helped spark my passion for software development and my other IT-related passions.`
                             },
                         ],
                     },
@@ -258,7 +258,7 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                                     {
                                         name: "Disclaimer.txt",
                                         type: NodeType.FILE,
-                                        contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company."
+                                        contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company. See https://www.youtube.com/watch?v=_gXlauRB1EQ, https://www.youtube.com/watch?v=jQQpjjHXO1M, https://www.youtube.com/watch?v=CRH41vgIBuQ for more information."
                                     }
                                 ]
                             },

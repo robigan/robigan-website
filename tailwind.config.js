@@ -15,6 +15,9 @@ module.exports = {
                 "48p": "48px",
                 "72p": "72px",
                 "96p": "96px"
+            },
+            width: {
+                "full-0.5": "calc(100% - 0.5rem)",
             }
         },
         // screens: {
