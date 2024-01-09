@@ -1,0 +1,3 @@
+.invertedHover:hover .invertHoverChild {
+    filter: invert(1);
+}
