@@ -34,6 +34,10 @@ h3 {
   @apply font-medium text-xl;
 }
 
+.better-container {
+  @apply container sm:w-full w-full-0.5;
+}
+
 @keyframes a-highlight {
   0% {
     text-decoration-color: transparent;

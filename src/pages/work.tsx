@@ -25,7 +25,7 @@ const Work = () => (
             <div className="flex items-start w-full h-full">
 
                 {/* Container for Timeline */}
-                <div className="container mx-auto lg:overflow-y-auto lg:pl-16">
+                <div className="better-container mx-auto lg:overflow-y-auto lg:pl-16">
                     <Timeline>
                         <AdaptiveHeader>Start of passion for Computer Science</AdaptiveHeader>
                         <p><a className="hover:underline" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a> | 2016</p>
@@ -43,7 +43,8 @@ const Work = () => (
                         <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">CoSup Gaming</a> | 2021</p>
                     </Timeline>
                     <Timeline>
-                        <AdaptiveHeader>Developed Minecraft Server-sided Plugins using Java for CoSup Gaming</AdaptiveHeader>
+                        <AdaptiveHeader>Minecraft Server Plugins</AdaptiveHeader>
+                        <p>Developed Minecraft Server-sided Plugins using Java for CoSup Gaming</p>
                         <p><a className="hover:underline" href="https://gaming.cosup.eu/" target="_blank" rel="noopener noreferrer">Cosup Gaming</a> | 2021 - 2022</p>
                     </Timeline>
                     <Timeline>
@@ -51,7 +52,8 @@ const Work = () => (
                         <p>Italy | 2021 - 2025</p>
                     </Timeline>
                     <Timeline>
-                        <AdaptiveHeader>Web Development using Vue.js & Game Development using Unity and C#</AdaptiveHeader>
+                        <AdaptiveHeader>Web Development & Game Development</AdaptiveHeader>
+                        <p>Web Development using Vue.js & Game Development using Unity and C#</p>
                         <p>School | 2021 - 2022</p>
                     </Timeline>
                     <Timeline>
@@ -76,8 +78,25 @@ const Work = () => (
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Cisco Skills for All Network Academy Certification</AdaptiveHeader>
-                        <p>Currently working on a Network Defense certification by Cisco through their <a className="hover:underline" target="_blank" href="https://skillsforall.com/" rel="noopener noreferrer">Skills for All</a> platform</p>
-                        <p>School | 2023 - Present</p>
+                        <p>Worked for some time on a Network Defense certification by Cisco through their <a className="hover:underline" target="_blank" href="https://skillsforall.com/" rel="noopener noreferrer">Skills for All</a> platform.</p>
+                        <p>School | 2023</p>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Internship at Steelprojects</AdaptiveHeader>
+                        <p>Internshipped at a French software house that ideates solutions for the steel construction industry. During my tenure, I was afforded the opportunity to incorporate supplementary features into their Android mobile application to cater to the requirements of their clients.</p>
+                        <p>Vienne, France | 2023 (3 Weeks)</p>
+                        <a className="hover:underline" target="_blank" href="https://www.steelprojects.com/en/" rel="noopener noreferrer">steelprojects.com</a>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Internship at Brennan IT</AdaptiveHeader>
+                        <p>Internshipped at a Sydney-based Microsoft Cloud Solutions Partner (MSP) that provides tailored IT solutions to their customers. In the course of my time at the company, I worked alongside various teams & departments. I was involved in the software testing teams, data and cloud teams, and Azure infrastructure department.</p>
+                        <p>Sydney, Australia | 2023 (2 Weeks)</p>
+                        <a className="hover:underline" target="_blank" href="https://www.brennanit.com.au/" rel="noopener noreferrer">brennanit.com.au</a>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Hackathon</AdaptiveHeader>
+                        <p>Participated in a hackathon organized by my institution&apos;s parent company. My team and I worked on a killer project focusing on education as a theme. We hope to bring it to market some day once everyone has more time.</p>
+                        <p>School | 2023</p>
                     </Timeline>
                     <div className="lg:hidden h-16" />
                 </div>

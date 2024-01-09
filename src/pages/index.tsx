@@ -36,7 +36,7 @@ const Home = () => (
                     </div>
 
                     {/* Content area (using flex) */}
-                    <div className="container my-8 lg:my-0 lg:max-w-max lg:w-5/12 lg:h-4/5 flex flex-col justify-center text-center lg:text-left">
+                    <div className="better-container my-8 lg:my-0 lg:max-w-max lg:w-5/12 lg:h-4/5 flex flex-col justify-center text-center lg:text-left">
                         <div className="my-2">
                             <h1 className="text-primary" style={{ textShadow: "2px 0 #101010, -2px 0 #101010, 0 2px #101010, 0 -2px #101010, 1px 1px #101010, -1px -1px #101010, 1px -1px #101010, -1px 1px #101010" }}>WELCOME</h1>
                         </div>
