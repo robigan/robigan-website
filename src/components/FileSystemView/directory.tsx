@@ -47,7 +47,7 @@ const Directory: FC<{ payload: DirectoryStructure, refKey: string }> = ({ payloa
                         return <File payload={childPayload} key={computedKey} />;
                     else if (childPayload.type === NodeType.IMAGE)
                         // eslint-disable-next-line jsx-a11y/alt-text
-                        return <Image payload={childPayload} />;
+                        return <Image payload={childPayload} key={computedKey} />;
                 })
             }
         </Disclosure.Panel>
