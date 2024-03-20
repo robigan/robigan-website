@@ -32,7 +32,7 @@ const CryptoWalletsContent: FC<{ wallets: Contact[] }> = ({ wallets }) => (
                             {contact.preferredType === "ethereum" ? <FaEthereum /> : <></>}
                         </ContactTile>
                     </div>
-                )
+                );
             })
         }
     </div>
@@ -113,7 +113,7 @@ export const getStaticProps: GetStaticProps<{
             wallets: Object.values(contacts).filter((contact: Contact) => contact.preferredType === "bitcoin" || contact.preferredType === "ethereum"),
             openpgp: contacts.openpgp
         }
-    }
-}
+    };
+};
 
 export default ContactPage;

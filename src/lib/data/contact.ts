@@ -5,11 +5,11 @@ export interface Contacts {
 }
 
 export interface Contact {
-    preferredType?: 'uri' | 'bitcoin' | 'ethereum' | 'identifier' | string;
-    preferredScheme?: 'mailto' | 'https' | 'http' | 'hex' | 'tel' | 'sms' | 'whatsapp' | 'telegram' | 'instagram' | 'twitter' | 'facebook' | 'linkedin' | 'github' | 'matrix' | string;
+    preferredType?: "uri" | "bitcoin" | "ethereum" | "identifier" | string;
+    preferredScheme?: "mailto" | "https" | "http" | "hex" | "tel" | "sms" | "whatsapp" | "telegram" | "instagram" | "twitter" | "facebook" | "linkedin" | "github" | "matrix" | string;
     target: string;
     displayName: string;
-};
+}
 
 /**
  * Gets the hex value of the address WITHOUT the initial 0x.
