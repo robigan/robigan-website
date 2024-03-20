@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://robigan.com/contacts.schema.json",
+    "type": "object",
+    "properties": {
+        "contacts": {
+            "type": "object",
+            "properties": {
+                "example": {
+                    "type": "object",
+                    "properties": {
+                        "preferredType": {
+                            "type": "string",
+                            "description": "The type of content being stored. For example, 'uri' to specify a web address, 'bitcoin' to specify an address for the bitcoin network.",
+                            "enum": [
+                                "uri",
+                                "bitcoin",
+                                "ethereum",
+                                "identifier"
+                            ]
+                        },
+                        "preferredScheme": {
+                            "type": "string",
+                            "description": "The scheme of the content being stored. For example, 'https' to specify a web address, 'hex' to specify a UTF-8 encoded address in hexadecimal, 'mailto' to specify the email scheme. If a scheme is a service/company, then the target should be the username or identifier for that service/company. Additionally if the type is 'uri', then the final, formatted target may include a short link to that service. For example, 'twitter' to specify a twitter username.",
+                            "enum": [
+                                "mailto",
+                                "https",
+                                "http",
+                                "hex",
+                                "tel",
+                                "sms",
+                                "whatsapp",
+                                "telegram",
+                                "instagram",
+                                "twitter",
+                                "facebook",
+                                "linkedin",
+                                "github"
+                            ],
+                            "$comment": "The hex scheme is semantic, it's useful for the bitcoin and ethereum types to indicate that the target is formatted as `'0x' value`"
+                        },
+                        "target": {
+                            "type": "string",
+                            "description": "The content being stored. For example, 'www.robigan.com' to specify a web address or 'robigan@robigan.com' to specify an email address."
+                        },
+                        "displayName": {
+                            "type": "string",
+                            "description": "The name of the contact. For example, '' to specify the name of the contact."
+                        }
+                    },
+                    "required": ["target", "displayName"]
+                }
+            },
+            "patternProperties": {
+                "^[a-zA-Z][a-zA-Z0-9]*$": {
+                    "$ref": "#/properties/contacts/properties/example",
+                    "description": "A contact location."
+                },
+                "^_[a-zA-Z][a-zA-Z0-9]*$": {
+                    "$ref": "#/properties/contacts/properties/example",
+                    "description": "A contact for use internally."
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

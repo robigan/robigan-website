@@ -37,7 +37,7 @@ const About: NextPage = () => (
 
             <NavBarMobile pathname="/about" />
 
-            <NavBarDesktop pathname="/contact" />
+            <NavBarDesktop pathname="/about" />
         </div>
     </>
 );

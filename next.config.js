@@ -1,5 +1,13 @@
+// @ts-check
+// const contactsImport = require("./public/contacts.json");
+import contactsImport from "./public/contacts.json" assert { type: 'json' };
+import { _compileUri } from "./src/lib/data/_contact.js";
+
+/** @type {import('./src/lib/data/contact').Contacts} */
+const contacts = contactsImport.contacts;
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
     reactStrictMode: true,
     async rewrites() {
         return [
@@ -17,4 +25,24 @@ module.exports = {
             },
         ];
     },
+    async redirects() {
+        // return [
+        //   {
+        //     source: '/rdr/discord',
+        //     destination: 'https://discord.com/users/315526915828219906',
+        //     permanent: true,
+        //   },
+        // ]
+        return Object.entries(contacts).filter(([_, value]) => {
+            return value.preferredType === "uri";
+        }).map(([key, value]) => {
+            return {
+                source: `/contact/${key}`,
+                destination: _compileUri(value),
+                permanent: true,
+            };
+        });
+    },
 };
+
+export default nextConfig;
