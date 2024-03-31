@@ -101,7 +101,8 @@ export const getStaticProps: GetStaticProps<{
     wallets: Contact[],
     openpgp: Contact
 }> = async () => {
-    const { default: contactsImport } = await import("../../../public/contacts.json");
+    // NB: You can't import JSON files at build into { default: contactsImport } because code split will break it if you try to import only a portion of it
+    const contactsImport = await import("../../../public/contacts.json");
     const contacts = contactsImport.contacts;
 
     return {
