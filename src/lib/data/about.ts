@@ -222,14 +222,8 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                             },
                             {
                                 name: "Minecraft Dungeons",
-                                type: NodeType.DIR,
-                                children: [
-                                    {
-                                        name: "extras.txt",
-                                        type: NodeType.FILE,
-                                        contents: "This is honestly such a great game, would recommend anyone to play in Couch co-op with their friends. Me and my roommate have had loads of fun every night.\n\n'Better than the original' -robigan, 2023"
-                                    }
-                                ]
+                                type: NodeType.FILE,
+                                contents: "This is honestly such a great game, would recommend anyone to play in Couch co-op with their friends. Me and my roommate have had loads of fun every night.\n\n'Better than the original' -robigan, 2023"
                             },
                             {
                                 name: "Fall Guys",
@@ -253,14 +247,8 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                             },
                             {
                                 name: "Roblox",
-                                type: NodeType.DIR,
-                                children: [
-                                    {
-                                        name: "Disclaimer.txt",
-                                        type: NodeType.FILE,
-                                        contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company. See https://www.youtube.com/watch?v=_gXlauRB1EQ, https://www.youtube.com/watch?v=jQQpjjHXO1M, https://www.youtube.com/watch?v=CRH41vgIBuQ for more information."
-                                    }
-                                ]
+                                type: NodeType.FILE,
+                                contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company. See https://www.youtube.com/watch?v=_gXlauRB1EQ, https://www.youtube.com/watch?v=jQQpjjHXO1M, https://www.youtube.com/watch?v=CRH41vgIBuQ for more information."
                             },
                         ]
                     }
