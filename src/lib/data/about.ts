@@ -16,7 +16,7 @@ export const ABOUT_FSV_DATA: RootDirectoryStructure = [
                         type: NodeType.DIR,
                         children: [
                             {
-                                name: "whoami.txt",
+                                name: "Who Am I.txt",
                                 type: NodeType.FILE,
                                 contents: `(In Obi Wan Kenobi voice) Hello there.
 I am robigan.
@@ -34,7 +34,7 @@ Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 M
                         type: NodeType.DIR,
                         children: [
                             {
-                                name: "profile-picture.jpg",
+                                name: "Profile Picture.jpg",
                                 type: NodeType.IMAGE,
                                 contents: profilePicture
                             }
@@ -57,9 +57,9 @@ Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 M
                 name: "locales",
                 type: NodeType.FILE,
                 contents: `# This file describes all the languages used by the Operating System
-English (US)
-Italian (IT)
-French  (FR)`
+en-US.UTF-8 UTF-8 # English
+it-IT.UTF-8 UTF-8 # Italian
+fr-FR.UTF-8 UTF-8 # French`
             }
         ]
     },
@@ -182,43 +182,43 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                         children: [
                             {
                                 name: "Minecraft",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Elite Dangerous",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Rocket League",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Outer Worlds",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Mindustry",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Forza Horizon 3",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Hitman",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Forza Horizon 5",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Subnautica",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Outer Wilds",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Minecraft Dungeons",
@@ -233,23 +233,23 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                             },
                             {
                                 name: "Fall Guys",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Crossout",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "No Man's Sky",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Sea of Thieves",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Astroneer",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Roblox",

@@ -47,18 +47,31 @@ export const BaseFile: FC<PropsWithChildren<{ payload: BaseFileStructure, icon: 
 
 export interface FileStructure extends BaseFileStructure {
     type: NodeType.FILE,
-    contents?: ReactNode,
+    contents: ReactNode,
+}
+
+export interface EmptyFileStructure extends BaseFileStructure {
+    type: NodeType.EMPTY_FILE
 }
 
 /**
  * The File component is the component that renders all files in the File System View, its payload can include content that will be displayed to a user, just like a normal file does
  */
-const File: FC<{ payload: FileStructure }> = ({ payload }) => (
-    <BaseFile payload={payload} icon={AiOutlineFile}>
-        <div className="w-full flex-grow bg-black overflow-y-auto p-2 rounded-xl min-w-[65vw] whitespace-pre-wrap">
-            {payload.contents}
+const File: FC<{ payload: FileStructure | EmptyFileStructure }> = ({ payload }) => {
+    if (payload.type === NodeType.EMPTY_FILE) return (
+        <div className="block m-1">
+            <DecoratedButton state={false} type={payload.type}>
+                {payload.name}
+            </DecoratedButton>
         </div>
-    </BaseFile>
-);
+    );
+    else return (
+        <BaseFile payload={payload} icon={AiOutlineFile}>
+            <div className="w-full flex-grow bg-black overflow-y-auto p-2 rounded-xl min-w-[65vw] whitespace-pre-wrap">
+                {payload.contents}
+            </div>
+        </BaseFile>
+    );
+};
 
 export default File;
