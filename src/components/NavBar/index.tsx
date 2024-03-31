@@ -54,14 +54,6 @@ const NavBar: FC<{ pathname: string }> = ({ pathname }) => {
                         <path d="M40 16H24C21.8 16 20 17.8 20 20V52C20 54.2 21.8 56 24 56H48C50.2 56 52 54.2 52 52V28L40 16ZM36 32C38.2 32 40 33.8 40 36C40 38.2 38.2 40 36 40C33.8 40 32 38.2 32 36C32 33.8 33.8 32 36 32ZM44 48H28V46.86C28 45.24 28.96 43.8 30.44 43.16C32.14 42.42 34.02 42 36 42C37.98 42 39.86 42.42 41.56 43.16C43.04 43.8 44 45.24 44 46.86V48Z" fill="white" />
                     </svg>
                 </UniversalWrapper>
-
-                {/* Blog */}
-                <UniversalWrapper href="https://archives.robigan.com/" external={true}>
-                    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M52 16H20C17.8 16 16.02 17.8 16.02 20L16 56L24 48H52C54.2 48 56 46.2 56 44V20C56 17.8 54.2 16 52 16ZM48 40H24V36H48V40ZM48 34H24V30H48V34ZM48 28H24V24H48V28Z" fill="white" />
-                    </svg>
-                </UniversalWrapper>
-                
             </PathnameContext.Provider>
         </nav>
     );
