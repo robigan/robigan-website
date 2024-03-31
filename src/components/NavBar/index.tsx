@@ -11,7 +11,7 @@ const UniversalWrapper: FC<PropsWithChildren<LinkProps & { label?: string, exter
     return (
         (<Link
             {...linkProps}
-            className={"mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-[100%] " + (pathname === linkProps.href ? "bg-primary" : "bg-black-lighter" ) + " hover:rounded-[25%] transition-[border-radius] duration-500 ease-in-out"}
+            className={"mx-3 lg:mx-0 my-0 lg:my-3 w-48p h-48p rounded-[100%] " + (pathname === linkProps.href ? "bg-primary" : "bg-black-lighter" ) + " hover:rounded-[25%] focus:rounded-[25%] focus:duration-0 transition-[border-radius] duration-500 ease-in-out"}
             title={label}
             rel={external ? "noopener noreferrer" : undefined} 
             target={external ? "_blank" : undefined}>
