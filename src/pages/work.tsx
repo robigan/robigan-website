@@ -4,7 +4,7 @@ import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../components/N
 import Timeline from "../components/Timeline";
 
 const AdaptiveHeader: FC<PropsWithChildren> = ({ children }) => (
-    <h1 className="text-xl md:text-4xl lg:text-6xl">{children}</h1>
+    <h1 className="text-xl md:text-4xl lg:text-6xl" tabIndex={0}>{children}</h1>
 );
 
 const Work = () => (
