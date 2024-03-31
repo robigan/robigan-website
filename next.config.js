@@ -1,6 +1,6 @@
 // @ts-check
 // const contactsImport = require("./public/contacts.json");
-import contactsImport from "./public/contacts.json" assert { type: 'json' };
+import contactsImport from "./public/contacts.json" assert { type: "json" };
 import { _compileUri } from "./src/lib/data/_contact.js";
 
 /** @type {import('./src/lib/data/contact').Contacts} */
@@ -33,6 +33,7 @@ const nextConfig = {
         //     permanent: true,
         //   },
         // ]
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         return Object.entries(contacts).filter(([_, value]) => {
             return value.preferredType === "uri";
         }).map(([key, value]) => {
