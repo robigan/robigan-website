@@ -14,7 +14,7 @@ export const BaseFile: FC<PropsWithChildren<{ payload: BaseFileStructure, icon: 
 
     return (
         <>
-            <button type="button" onClick={() => setIsOpen(true)} className="m-1 block">
+            <button type="button" onClick={() => setIsOpen(true)} className="m-1 block w-fit">
                 <DecoratedButton state={isOpen} type={payload.type}>
                     {payload.name}
                 </DecoratedButton>
@@ -25,12 +25,14 @@ export const BaseFile: FC<PropsWithChildren<{ payload: BaseFileStructure, icon: 
 
                 <Dialog.Panel className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black-light rounded-3xl p-4 min-h-[50vh] max-h-[85vh] flex flex-col">
 
-                    <div className="flex justify-between mb-8 mt-2 ml-2 mr-4">
+                    <div className="flex justify-between mb-8 mt-2 mx-2 items-center">
 
-                        <Dialog.Title className="flex items-center mr-12">
-                            <Icon size="1.75rem" />&nbsp;{payload.name}
+                        <Icon size="1.75rem" className="flex-shrink-0" />
+                        <span className="w-4 flex-grow-0"></span>
+                        <Dialog.Title className="w-max text-ellipsis">
+                            {payload.name}
                         </Dialog.Title>
-
+                        <span className="w-8 flex-grow"></span>
                         <button type="button" onClick={() => setIsOpen(false)}>
                             <AiOutlineClose size="1.75rem" />
                         </button>
@@ -59,7 +61,7 @@ export interface EmptyFileStructure extends BaseFileStructure {
  */
 const File: FC<{ payload: FileStructure | EmptyFileStructure }> = ({ payload }) => {
     if (payload.type === NodeType.EMPTY_FILE) return (
-        <div className="block m-1">
+        <div className="block m-1 w-fit" tabIndex={0}>
             <DecoratedButton state={false} type={payload.type}>
                 {payload.name}
             </DecoratedButton>
