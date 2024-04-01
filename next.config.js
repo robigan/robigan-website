@@ -23,6 +23,10 @@ const nextConfig = {
                 source: "/contact/telegram",
                 destination: "/contact/linktree",
             },
+            {
+                source: "/contact/signal",
+                destination: "/contact/linktree",
+            },
         ];
     },
     async redirects() {
@@ -34,15 +38,56 @@ const nextConfig = {
         //   },
         // ]
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        return Object.entries(contacts).filter(([_, value]) => {
+        const computedRedirects = Object.entries(contacts).filter(([_, value]) => {
             return value.preferredType === "uri";
         }).map(([key, value]) => {
             return {
-                source: `/contact/${key}`,
+                source: `/rdr/${key}`,
                 destination: _compileUri(value),
                 permanent: true,
             };
         });
+
+        return [...computedRedirects, {
+            source: "/instagram",
+            destination: "/contact/instagram",
+            permanent: true,
+        },
+        {
+            source: "/ig",
+            destination: "/contact/instagram",
+            permanent: true,
+        },
+        {
+            source: "/whatsapp",
+            destination: "/contact/whatsapp",
+            permanent: true,
+        },
+        {
+            source: "/wa",
+            destination: "/contact/whatsapp",
+            permanent: true,
+        },
+        {
+            source: "/telegram",
+            destination: "/contact/telegram",
+            permanent: true,
+        },
+        {
+            source: "/tg",
+            destination: "/contact/telegram",
+            permanent: true,
+        },
+        {
+            source: "/signal",
+            destination: "/contact/signal",
+            permanent: true,
+        },
+        {
+            source: "/sgnl",
+            destination: "/contact/signal",
+            permanent: true,
+        }];
     },
 };
 
