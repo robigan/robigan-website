@@ -1,0 +1,63 @@
+{
+    "$schema": "contacts.schema.json",
+    "contacts": {
+        "discord": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "discord.com/users/315526915828219906",
+            "displayName": "Discord"
+        },
+        "github": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "github.com/robigan",
+            "displayName": "GitHub"
+        },
+        "matrix": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "matrix.to/#/@robigan:matrix.org",
+            "displayName": "Matrix"
+        },
+        "email": {
+            "preferredType": "uri",
+            "preferredScheme": "mailto",
+            "target": "robigan@robigan.com",
+            "displayName": "Email"
+        },
+        "openpgp": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "keys.openpgp.org/search?q=robigan%40robigan.com",
+            "displayName": "OpenPGP Keys"
+        },
+        "pgp": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "robigan.com/robigan.asc",
+            "displayName": "PGP Key"
+        },
+        "bitcoin": {
+            "preferredType": "bitcoin",
+            "preferredScheme": "hex",
+            "target": "0xbc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf",
+            "displayName": "Bitcoin"
+        },
+        "ethereum": {
+            "preferredType": "ethereum",
+            "preferredScheme": "hex",
+            "target": "0xb9B089388879F9e82125e7f5C6C73da574A0A6c1",
+            "displayName": "Ethereum"
+        },
+        "website": {
+            "preferredType": "uri",
+            "preferredScheme": "https",
+            "target": "robigan.com",
+            "displayName": "Website"
+        },
+        "_relWebsite": {
+            "target": "/",
+            "displayName": "Home"
+        }
+    }
+}

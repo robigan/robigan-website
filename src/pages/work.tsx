@@ -4,7 +4,7 @@ import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../components/N
 import Timeline from "../components/Timeline";
 
 const AdaptiveHeader: FC<PropsWithChildren> = ({ children }) => (
-    <h1 className="text-xl md:text-4xl lg:text-6xl">{children}</h1>
+    <h1 className="text-xl md:text-4xl lg:text-6xl" tabIndex={0}>{children}</h1>
 );
 
 const Work = () => (
@@ -69,8 +69,9 @@ const Work = () => (
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Started Blogging</AdaptiveHeader>
-                        <p>Life | 2022 - Present</p>
-                        <a className="hover:underline" target="_blank" href="https://archives.robigan.com" rel="noopener noreferrer">archives.robigan.com</a>
+                        <p>Life | 2022 - 2024</p>
+                        <i className="block">Eventually shut down the blog because the task of maintaining a self hosted blog with an editor&apos;s interface run by FOSS software is difficult to say the least and I would&apos;ve blogged about non tech things anyways.</i>
+                        <s className="block">archives.robigan.com</s>
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Swift & SwiftUI</AdaptiveHeader>

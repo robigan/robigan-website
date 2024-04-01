@@ -1,4 +1,5 @@
 import Head from "next/head";
+import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../../components/NavBar";
 import { BsDiscord, BsGithub, BsKeyFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -8,10 +9,11 @@ import { BiWallet, BiBitcoin } from "react-icons/bi";
 import ContactTile from "../../components/ContactTile";
 import ModalTile from "../../components/ModalTile";
 import { FC } from "react";
+import { Contact, getContactAddressWithUri, getContactBlockchainViewerUrl } from "../../lib/data/contact";
 
-const CryptoWalletsContent: FC = () => (
+const CryptoWalletsContent: FC<{ wallets: Contact[] }> = ({ wallets }) => (
     <div className="flex-grow flex flex-flow justify-center items-center flex-nowrap">
-        <div className="flex-grow">
+        {/* <div className="flex-grow">
             <ContactTile title="Bitcoin" href="https://www.blockchain.com/explorer/addresses/btc/bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf">
                 <BiBitcoin />
             </ContactTile>
@@ -20,11 +22,23 @@ const CryptoWalletsContent: FC = () => (
             <ContactTile title="Ethereum" href="https://etherscan.io/address/0xb9B089388879F9e82125e7f5C6C73da574A0A6c1">
                 <FaEthereum />
             </ContactTile>
-        </div>
+        </div> */}
+        {
+            wallets.map((contact, i) => {
+                return (
+                    <div key={i} className="flex-grow">
+                        <ContactTile title={contact.displayName} href={getContactBlockchainViewerUrl(contact)}>
+                            {contact.preferredType === "bitcoin" ? <BiBitcoin /> : <></>}
+                            {contact.preferredType === "ethereum" ? <FaEthereum /> : <></>}
+                        </ContactTile>
+                    </div>
+                );
+            })
+        }
     </div>
 );
 
-const About = () => (
+const ContactPage = ({ discord, email, github, matrix, openpgp, wallets }: InferGetStaticPropsType<typeof getStaticProps>) => (
     <>
         <Head>
             <title>Contact</title>
@@ -43,27 +57,27 @@ const About = () => (
 
                 {/* Different links */}
                 <div className="container h-full flex-auto mx-auto flex flex-row justify-between items-start flex-wrap text-center">
-                    <ContactTile title="Discord" href="https://discord.com/users/315526915828219906">
+                    <ContactTile title={discord.displayName} href={getContactAddressWithUri(discord)}>
                         <BsDiscord />
                     </ContactTile>
 
-                    <ContactTile title="Email" href="mailto:robigan@robigan.com" blankTarget={false} overwriteBlankTargetVisuals={true}>
+                    <ContactTile title={email.displayName} href={getContactAddressWithUri(email)} blankTarget={false} overwriteBlankTargetVisuals={true}>
                         <MdEmail />
                     </ContactTile>
 
-                    <ContactTile title="GitHub" href="https://github.com/robigan">
+                    <ContactTile title={github.displayName} href={getContactAddressWithUri(github)}>
                         <BsGithub />
                     </ContactTile>
 
-                    <ContactTile title="Matrix" href="https://matrix.to/#/@robigan:matrix.org">
+                    <ContactTile title={matrix.displayName} href={getContactAddressWithUri(matrix)}>
                         <SiMatrix />
                     </ContactTile>
 
-                    <ModalTile title="Crypto Wallets" modalContent={<CryptoWalletsContent />}>
+                    <ModalTile title="Crypto Wallets" modalContent={<CryptoWalletsContent wallets={wallets} />}>
                         <BiWallet />
                     </ModalTile>
 
-                    <ContactTile title="OpenPGP Key" href="https://keys.openpgp.org/search?q=robigan%40robigan.com">
+                    <ContactTile title={openpgp.displayName} href={getContactAddressWithUri(openpgp)}>
                         <BsKeyFill />
                     </ContactTile>
                     <div className="basis-full lg:hidden h-16" />
@@ -79,4 +93,28 @@ const About = () => (
     </>
 );
 
-export default About;
+export const getStaticProps: GetStaticProps<{
+    discord: Contact,
+    email: Contact,
+    github: Contact,
+    matrix: Contact,
+    wallets: Contact[],
+    openpgp: Contact
+}> = async () => {
+    // NB: You can't import JSON files at build into { default: contactsImport } because code split will break it if you try to import only a portion of it
+    const contactsImport = await import("../../../public/contacts.json");
+    const contacts = contactsImport.contacts;
+
+    return {
+        props: {
+            discord: contacts.discord,
+            email: contacts.email,
+            github: contacts.github,
+            matrix: contacts.matrix,
+            wallets: Object.values(contacts).filter((contact: Contact) => contact.preferredType === "bitcoin" || contact.preferredType === "ethereum"),
+            openpgp: contacts.openpgp
+        }
+    };
+};
+
+export default ContactPage;

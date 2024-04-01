@@ -16,7 +16,7 @@ export const ABOUT_FSV_DATA: RootDirectoryStructure = [
                         type: NodeType.DIR,
                         children: [
                             {
-                                name: "whoami.txt",
+                                name: "Who Am I.txt",
                                 type: NodeType.FILE,
                                 contents: `(In Obi Wan Kenobi voice) Hello there.
 I am robigan.
@@ -34,7 +34,7 @@ Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 M
                         type: NodeType.DIR,
                         children: [
                             {
-                                name: "profile-picture.jpg",
+                                name: "Profile Picture.jpg",
                                 type: NodeType.IMAGE,
                                 contents: profilePicture
                             }
@@ -57,9 +57,9 @@ Until circa 2014, I was a primarily Mac OS X user utilizing a second-hand 2005 M
                 name: "locales",
                 type: NodeType.FILE,
                 contents: `# This file describes all the languages used by the Operating System
-English (US)
-Italian (IT)
-French  (FR)`
+en-US.UTF-8 UTF-8 # English
+it-IT.UTF-8 UTF-8 # Italian
+fr-FR.UTF-8 UTF-8 # French`
             }
         ]
     },
@@ -182,85 +182,73 @@ jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
                         children: [
                             {
                                 name: "Minecraft",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Elite Dangerous",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Rocket League",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Outer Worlds",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Mindustry",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Forza Horizon 3",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Hitman",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Forza Horizon 5",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Subnautica",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Outer Wilds",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Minecraft Dungeons",
-                                type: NodeType.DIR,
-                                children: [
-                                    {
-                                        name: "extras.txt",
-                                        type: NodeType.FILE,
-                                        contents: "This is honestly such a great game, would recommend anyone to play in Couch co-op with their friends. Me and my roommate have had loads of fun every night.\n\n'Better than the original' -robigan, 2023"
-                                    }
-                                ]
+                                type: NodeType.FILE,
+                                contents: "This is honestly such a great game, would recommend anyone to play in Couch co-op with their friends. Me and my roommate have had loads of fun every night.\n\n'Better than the original' -robigan, 2023"
                             },
                             {
                                 name: "Fall Guys",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Crossout",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "No Man's Sky",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Sea of Thieves",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Astroneer",
-                                type: NodeType.DIR,
+                                type: NodeType.EMPTY_FILE,
                             },
                             {
                                 name: "Roblox",
-                                type: NodeType.DIR,
-                                children: [
-                                    {
-                                        name: "Disclaimer.txt",
-                                        type: NodeType.FILE,
-                                        contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company. See https://www.youtube.com/watch?v=_gXlauRB1EQ, https://www.youtube.com/watch?v=jQQpjjHXO1M, https://www.youtube.com/watch?v=CRH41vgIBuQ for more information."
-                                    }
-                                ]
+                                type: NodeType.FILE,
+                                contents: "This platform has honestly become disgusting and terrifying. If you're reading this, please cease any interaction with this horrible company. See https://www.youtube.com/watch?v=_gXlauRB1EQ, https://www.youtube.com/watch?v=jQQpjjHXO1M, https://www.youtube.com/watch?v=CRH41vgIBuQ for more information."
                             },
                         ]
                     }
