@@ -1,5 +1,5 @@
 import Head from "next/head";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import type { InferGetStaticPropsType, GetStaticProps, NextPage } from "next";
 import { NavBarDesktop, NavBarMobile, NavBarMobileSpacer } from "../../components/NavBar";
 import { BsDiscord, BsGithub, BsKeyFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -38,7 +38,7 @@ const CryptoWalletsContent: FC<{ wallets: Contact[] }> = ({ wallets }) => (
     </div>
 );
 
-const ContactPage = ({ discord, email, github, matrix, openpgp, wallets }: InferGetStaticPropsType<typeof getStaticProps>) => (
+const ContactPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ discord, email, github, matrix, openpgp, wallets }) => (
     <>
         <Head>
             <title>Contact</title>
