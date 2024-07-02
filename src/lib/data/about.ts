@@ -95,10 +95,10 @@ Hash: SHA256
 Robigan's Bitcoin Address: bc1qd5vxks668xywjg4w4ere495pycrxjp45wqdkuf
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQQRFFWw9w2BJMcZ/I1nmaqp+xT87gUCYzICKwAKCRBnmaqp+xT8
-7gPGAQCd/aeAwGARs48e6mgqDTxCGn94kx34OFsZI6SJz56lGAEA9slygHebmQSx
-jToWvMz/fmO0YDZ57LUJFU1uoZ6HqwI=
-=zeOj
+iHUEARYIAB0WIQTdly2VCJP+CzMIk6MGcQEO5YfImQUCZoQ9OgAKCRAGcQEO5YfI
+mQV4AQCXsJ/v9BmUtDrkgaQxrJflWjhsyL/+wmNGXFF3x2M/9AD/YYmC8Z3r/8OB
+9T4/UFcN45hyWz568F/tpC/UPQuDpQs=
+=LoiD
 -----END PGP SIGNATURE-----`
                             },
                             {
@@ -110,10 +110,10 @@ Hash: SHA256
 Robigan's Ethereum Wallet: 0xb9B089388879F9e82125e7f5C6C73da574A0A6c1
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQQRFFWw9w2BJMcZ/I1nmaqp+xT87gUCYzIDmQAKCRBnmaqp+xT8
-7tShAP9kEaRBnWm+BPWhfSxDWJBkORHmYbNTisgE2+EXE+8YKgD+Ic5xAuf6Rg4S
-TsPenL9Ltx4QBoey0dyLMH833IwT7g4=
-=UzJM
+iHUEARYIAB0WIQTdly2VCJP+CzMIk6MGcQEO5YfImQUCZoQ9vgAKCRAGcQEO5YfI
+medSAQCY3zZB9OC577ki9mXVHLyEbMs2D5zolrnur05Tjkxr3AD/aQTRHhcSgrUs
+ARkGSPcc/2+EkwNELsgF0zTjUWgbTAM=
+=T5j/
 -----END PGP SIGNATURE-----`
                             }
                         ]
@@ -126,8 +126,34 @@ TsPenL9Ltx4QBoey0dyLMH833IwT7g4=
                                 name: "General",
                                 type: NodeType.FILE,
                                 contents: `-----BEGIN PGP PUBLIC KEY BLOCK-----
-Comment: 1114 55B0 F70D 8124 C719  FC8D 6799 AAA9 FB14 FCEE
+Comment: 2482 E740 CEB6 94AF 0E24  B6AB 4643 CC01 3EC7 5214
 Comment: robigan (Robigan's personal PGP key) <robigan@robigan.com>
+Comment: This key was updated the 2024-07-02
+
+mDMEZoKMxhYJKwYBBAHaRw8BAQdA23eC3qyQFZyrSK/Q5CpViRnaI+UUkvQKJZrA
+k3vN++m0OnJvYmlnYW4gKFJvYmlnYW4ncyBwZXJzb25hbCBQR1Aga2V5KSA8cm9i
+aWdhbkByb2JpZ2FuLmNvbT6IkwQTFgoAOxYhBCSC50DOtpSvDiS2q0ZDzAE+x1IU
+BQJmgozGAhsBBQsJCAcCAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEEZDzAE+x1IU
+sgkA/RLlE6JMnkkRbQQWxGeGmhJHmiXMdec3rUqsk2t9rJgYAP9n+IxmUGAI80ef
+WPEJzc5Nc3T716TMFXuzIxHdxcREAoh1BBAWCgAdFiEEERRVsPcNgSTHGfyNZ5mq
+qfsU/O4FAmaEMlUACgkQZ5mqqfsU/O4YAgEA0OYWQPoXmgPvFqPQLS0h1Yg4dw8O
+echjqT+oDWatD7QBAPamUA6K6i9IojIkePcSY9JZj/AfGqzrJBErZZJPBU8CuDME
+ZoKNahYJKwYBBAHaRw8BAQdAgiPADazSsogxQc975iVqns9o0PM7lDamZw2l4RJ4
+jRmI9QQYFgoAJhYhBCSC50DOtpSvDiS2q0ZDzAE+x1IUBQJmgo1qAhsCBQkA7U4A
+AIEJEEZDzAE+x1IUdiAEGRYKAB0WIQTdly2VCJP+CzMIk6MGcQEO5YfImQUCZoKN
+agAKCRAGcQEO5YfImafkAQD1/zjxnbVRvhc5W6bAcTozzQ/b6CU1lCn2IbJ6LtMJ
+HAD+NH8NIzJLEQXagKLD88VvyvOjaEpZxPge2MzK9uQsJgYMNAD9HXDduKqLzdw9
+fsBb9g0s/ahcMLlrgyh1ExNzrlJvo/4BAL5r4rUcXXS6RSFEpOQSUpasT8Ell/GW
+dt+vlA1r0ecFuDgEZoKWQhIKKwYBBAGXVQEFAQEHQBkS5i86McKsHofkn48f+fSn
+eDAzZZ8uLjD2XxE4WWIOAwEIB4h+BBgWCgAmFiEEJILnQM62lK8OJLarRkPMAT7H
+UhQFAmaClkICGwwFCQDtTgAACgkQRkPMAT7HUhSniwEAkPawbdmb351gbxpQkL6u
+u404cr4DuLxp73UKm+X00PcA/1y50dGFLrkV2uVQx5pZiye2WzoDtYXm/yl+ofc9
+YJcC
+=e6Tr
+-----END PGP PUBLIC KEY BLOCK-----
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: 1114 55B0 F70D 8124 C719  FC8D 6799 AAA9 FB14 FCEE
+Comment: This key is expiring soon, please use the updated key
 
 xjMEYvzknxYJKwYBBAHaRw8BAQdAfhTOp6DmuXMS4mlnvcNtRooz+IzXmi960nZd
 NiNwvtbNOnJvYmlnYW4gKFJvYmlnYW4ncyBwZXJzb25hbCBQR1Aga2V5KSA8cm9i
@@ -148,18 +174,21 @@ KkoA/j+y+sBBUMi6Cn62L2plKSqYZ817ovc9bo5QETVa+rjtAQDeIxo0EmqgCtGP
                                 contents: `-----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: 5FCF C0F1 AC2C 8D63 162C  73F4 B176 B6C1 81F6 00D1
 Comment: robigan (Ultimate PGP key for GitHub related actions across all devices) <35210888+robigan@users.noreply.github.com>
+Comment: This key was updated the 2024-07-02. Expiry date extended and new signatures added.
 
 mDMEYy7jaRYJKwYBBAHaRw8BAQdAG6TP0/OqkNzxS7i0U3n/QogppZMiqEKVNDLN
 pmXBgDu0dHJvYmlnYW4gKFVsdGltYXRlIFBHUCBrZXkgZm9yIEdpdEh1YiByZWxh
 dGVkIGFjdGlvbnMgYWNyb3NzIGFsbCBkZXZpY2VzKSA8MzUyMTA4ODgrcm9iaWdh
-bkB1c2Vycy5ub3JlcGx5LmdpdGh1Yi5jb20+iJkEExYKAEEWIQRfz8DxrCyNYxYs
-c/SxdrbBgfYA0QUCYy7jaQIbAwUJA8JnAAULCQgHAgIiAgYVCgkICwIEFgIDAQIe
-BwIXgAAKCRCxdrbBgfYA0bItAP49GUWLRCtm3RnzdmiVsE9Dj7IP1aG0xFuSr/f6
-fB3LYgD/aG2ud6AGBgrnJULSZXit7RCcs1yb91lPIF9POGHmfwqIdQQQFggAHRYh
+bkB1c2Vycy5ub3JlcGx5LmdpdGh1Yi5jb20+iJkEExYKAEECGwMFCwkIBwICIgIG
+FQoJCAsCBBYCAwECHgcCF4AWIQRfz8DxrCyNYxYsc/SxdrbBgfYA0QUCZoQrtQUJ
+B4TOAAAKCRCxdrbBgfYA0ZKBAP9rqgzY7XOBbvplXm/6O6NM8qIc0pwUXHkIi/YB
+mniEKgD+NqsKwWQJuc/VyqdTgCfHnWQPD7R+hiodfHoCOSnT5gCIdQQQFggAHRYh
 BBEUVbD3DYEkxxn8jWeZqqn7FPzuBQJjMgyDAAoJEGeZqqn7FPzuX54A/Aq9jLu7
 jTcMlhVfn4qeXhTkE+tCSCj7RirPoPArns+6AP9ckv7jmH0PABbstZm8pm7CkQLr
-71bmrHRzTHJzM8CtAw==
-=ecXk
+71bmrHRzTHJzM8CtA4h1BBAWCgAdFiEEJILnQM62lK8OJLarRkPMAT7HUhQFAmaE
+OccACgkQRkPMAT7HUhQXjAD/Xzm0hyEsSbMQu4xslfULJ+fiGYGuJ6A2UiKM1zbf
+t0AA/3cUfirzK05Mpvs1HKU9QAOy1Mc93OqO8TF01JxfuKYG
+=Kllp
 -----END PGP PUBLIC KEY BLOCK-----`
                             }
                         ]
