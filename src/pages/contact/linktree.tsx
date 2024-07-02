@@ -7,8 +7,10 @@ import { MdEmail } from "react-icons/md";
 import { BsDiscord, BsGithub } from "react-icons/bs";
 import { SiMatrix } from "react-icons/si";
 import { IconContext } from "react-icons";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { getContactWithUri } from "../../lib/contact";
 
-const Linktree = () => (
+const Linktree: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ discord, email, github, matrix }) => (
     <>
         <Head>
             <title>Linktree Links</title>
@@ -35,25 +37,25 @@ const Linktree = () => (
                         </ContactPill.BadgeWrapper>
                         <p>my portfolio website</p>
                     </ContactPill>
-                    <ContactPill href="mailto:robigan@robigan.com" disableBlankTarget={true}>
+                    <ContactPill href={email} disableBlankTarget={true}>
                         <ContactPill.BadgeWrapper>
                             <MdEmail color="black" />
                         </ContactPill.BadgeWrapper>
                         <p>you&apos;ve got mail</p>
                     </ContactPill>
-                    <ContactPill href="https://discord.com/users/315526915828219906">
+                    <ContactPill href={discord}>
                         <ContactPill.BadgeWrapper>
                             <BsDiscord color="black" />
                         </ContactPill.BadgeWrapper>
                         <p>e-girl hang out hotpot</p>
                     </ContactPill>
-                    <ContactPill href="https://matrix.to/#/@robigan:matrix.org">
+                    <ContactPill href={matrix}>
                         <ContactPill.BadgeWrapper>
                             <SiMatrix color="black" />
                         </ContactPill.BadgeWrapper>
                         <p>based next gen irc</p>
                     </ContactPill>
-                    <ContactPill href="https://github.com/robigan">
+                    <ContactPill href={github}>
                         <ContactPill.BadgeWrapper>
                             <BsGithub color="black" />
                         </ContactPill.BadgeWrapper>
@@ -68,5 +70,34 @@ const Linktree = () => (
         </div>
     </>
 );
+
+type GSPProps = {
+    discord: string,
+    email: string,
+    github: string,
+    matrix: string,
+};
+
+export const getStaticProps: GetStaticProps<GSPProps> = async () => {
+    // NB: You can't import JSON files at build into { default: contactsImport } because code split will break it if you try to import only a portion of it
+    const contactsImport = await import("../../../public/contacts.json");
+    const contacts = contactsImport.contacts;
+
+    const props = {
+        discord: getContactWithUri(contacts.discord),
+        email: getContactWithUri(contacts.email),
+        github: getContactWithUri(contacts.github),
+        matrix: getContactWithUri(contacts.matrix),
+    };
+
+    for (const [key, source] of Object.entries(props)) {
+        if (source === undefined) {
+            throw new Error("Compilation of contact into URI failed. Offending source: " + key);
+        }
+    }
+
+    // This is dead simple. If the above loop doesn't throw an error, then we can safely return the props.
+    return { props } as { props: GSPProps };
+};
 
 export default Linktree;
