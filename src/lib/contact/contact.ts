@@ -30,9 +30,9 @@ export function getHexAddress(contact: Contact): string {
 }
 
 /**
- * Compiles a contact into an address. Useful if the contact is of type 'uri'.
+ * Compiles a contact into a web address. Useful if the contact is of type 'uri'.
  */
-export function getContactAddressWithUri(contact: Contact): string | undefined {
+export function getContactWithUri(contact: Contact): string | undefined {
     if (contact.preferredType === "uri") {
         return _compileUri(contact);
     } else {

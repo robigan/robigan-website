@@ -9,7 +9,7 @@ import { BiWallet, BiBitcoin } from "react-icons/bi";
 import ContactTile from "../../components/ContactTile";
 import ModalTile from "../../components/ModalTile";
 import { FC } from "react";
-import { Contact, getContactAddressWithUri, getContactBlockchainViewerUrl } from "../../lib/data/contact";
+import { Contact, getContactWithUri, getContactBlockchainViewerUrl } from "../../lib/contact";
 
 const CryptoWalletsContent: FC<{ wallets: Contact[] }> = ({ wallets }) => (
     <div className="flex-grow flex flex-flow justify-center items-center flex-nowrap">
@@ -57,19 +57,19 @@ const ContactPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
                 {/* Different links */}
                 <div className="container h-full flex-auto mx-auto flex flex-row justify-between items-start flex-wrap text-center">
-                    <ContactTile title={discord.displayName} href={getContactAddressWithUri(discord)}>
+                    <ContactTile title={discord.displayName} href={getContactWithUri(discord)}>
                         <BsDiscord />
                     </ContactTile>
 
-                    <ContactTile title={email.displayName} href={getContactAddressWithUri(email)} blankTarget={false} overwriteBlankTargetVisuals={true}>
+                    <ContactTile title={email.displayName} href={getContactWithUri(email)} blankTarget={false} overwriteBlankTargetVisuals={true}>
                         <MdEmail />
                     </ContactTile>
 
-                    <ContactTile title={github.displayName} href={getContactAddressWithUri(github)}>
+                    <ContactTile title={github.displayName} href={getContactWithUri(github)}>
                         <BsGithub />
                     </ContactTile>
 
-                    <ContactTile title={matrix.displayName} href={getContactAddressWithUri(matrix)}>
+                    <ContactTile title={matrix.displayName} href={getContactWithUri(matrix)}>
                         <SiMatrix />
                     </ContactTile>
 
@@ -77,7 +77,7 @@ const ContactPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                         <BiWallet />
                     </ModalTile>
 
-                    <ContactTile title={openpgp.displayName} href={getContactAddressWithUri(openpgp)}>
+                    <ContactTile title={openpgp.displayName} href={getContactWithUri(openpgp)}>
                         <BsKeyFill />
                     </ContactTile>
                     <div className="basis-full lg:hidden h-16" />

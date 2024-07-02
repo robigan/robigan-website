@@ -1,9 +1,9 @@
 // @ts-check
 // const contactsImport = require("./public/contacts.json");
 import contactsImport from "./public/contacts.json" assert { type: "json" };
-import { _compileUri } from "./src/lib/data/_contact.js";
+import { _compileUri } from "./src/lib/contact/_contact.js";
 
-/** @type {import('./src/lib/data/contact').Contacts} */
+/** @type {import('./src/lib/contact').Contacts} */
 const contacts = contactsImport.contacts;
 
 /** @type {import('next').NextConfig} */

@@ -1,5 +1,5 @@
 /**
- * @param {import('./contact').Contact} contact 
+ * @param {import('../data/contact').Contact} contact 
  * @returns {string}
  */
 export function _compileUri(contact) {
