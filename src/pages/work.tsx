@@ -14,7 +14,7 @@ const Work = () => (
             <meta name="description" content="Robigan's work experience" />
         </Head>
 
-        <div className="h-screen w-screen flex flex-col justify-between">
+        <div className="h-full w-full flex flex-col justify-between">
             
             {/* Top title */}
             <div className="text-center my-8 select-none">
