@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 7c0808f8d6006eef8076799fbe82aa55ee18e802..271d103e8add4ed07423fe3d5947fdaf37e6bb4a 100644
+--- a/package.json
++++ b/package.json
+@@ -128,6 +128,7 @@
+   },
+   "prettier": "@adonisjs/prettier-config",
+   "dependencies": {
++    "@poppinss/colors": "^4.1.4",
+     "@poppinss/dumper": "^0.6.3",
+     "@speed-highlight/core": "^1.2.7",
+     "cookie": "^1.0.2",
