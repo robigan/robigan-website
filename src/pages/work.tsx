@@ -31,8 +31,10 @@ const Work = () => (
                         <p><a className="hover:underline" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a> | 2016</p>
                     </Timeline>
                     <Timeline>
-                        <AdaptiveHeader>Work on embedded systems using C</AdaptiveHeader>
-                        <p><a className="hover:underline" href="https://mitrol.it/en" target="_blank" rel="noopener noreferrer">Mitrol</a> | 2019, 2021</p>
+                        <AdaptiveHeader>Internship at Mitrol</AdaptiveHeader>
+                        <p>Worked on embedded systems using C programming language.</p>
+                        <p>Gazzada, Italy | 2019, 2021</p>
+                        <a className="hover:underline" target="_blank" href="https://mitrol.it/en" rel="noopener noreferrer">mitrol.it</a>
                     </Timeline>
                     <Timeline>
                         <AdaptiveHeader>Self-taught full-stack web development</AdaptiveHeader>
@@ -98,6 +100,29 @@ const Work = () => (
                         <AdaptiveHeader>Hackathon</AdaptiveHeader>
                         <p>Participated in a hackathon organized by my institution&apos;s parent company. My team and I worked on a killer project focusing on education as a theme. We hope to bring it to market some day once everyone has more time.</p>
                         <p>School | 2023</p>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>IB Diploma Programme</AdaptiveHeader>
+                        <p>Completed the International Baccalaureate Diploma Programme.</p>
+                        <p>School | 2023 - 2025</p>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Leadership Course</AdaptiveHeader>
+                        <p>Completed a 40-day Seamester voyage where leadership was taught as the subject for the second half semester of the 2025 Summer Voyage.</p>
+                        <p>Pacific Ocean and South East Asian Seas | 2025 (40 Days)</p>
+                        <a className="hover:underline" target="_blank" href="https://www.seamester.com/" rel="noopener noreferrer">seamester.com</a>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Frontend Web Developer at Mitrol</AdaptiveHeader>
+                        <p>Developed web solutions for the Polaris HMI system at Mitrol. Solutions were developed in Angular/TypeScript, and ranged from IoT industrial machine oversight to web page performance enhancements with large data.</p>
+                        <p>Gazzada, Italy | 2025 (3 Months)</p>
+                        <a className="hover:underline" target="_blank" href="https://mitrol.it/en" rel="noopener noreferrer">mitrol.it</a>
+                    </Timeline>
+                    <Timeline>
+                        <AdaptiveHeader>Software Engineer at Fleverage</AdaptiveHeader>
+                        <p>Developing software solutions for Fleverage clients. Solutions included web-based solutions in React/TypeScript for a financial predictions startup and a custom integration for a communications provider built in React/TypeScript and AWS on the Salesforce Marketing Cloud platform.</p>
+                        <p>Remote | 2026 (4 Months)</p>
+                        <a className="hover:underline" target="_blank" href="https://www.fleverage.com/" rel="noopener noreferrer">fleverage.com</a>
                     </Timeline>
                     <div className="lg:hidden h-16" />
                 </div>
